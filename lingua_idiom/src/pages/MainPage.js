@@ -12,10 +12,21 @@ import { useState, useEffect } from "react";
 class MainPage extends React.Component {
   render() {
     return (
-      <div style={{ backgroundColor: "grey" }}>
-        <Footer />
+      <div>
+        {/* выводим футтер */}
+        <Footer buttons={this.buttons} />
       </div>
     );
   }
+
+  //Передаваемые кнопки в футер
+  buttons = [
+    <p onClick={() => {}}>О нас</p>,
+    <p onClick={() => {}}>Библиотека</p>,
+    <p onClick={() => {}}>Переводчик</p>,
+    <button className="buttonWhite" onClick={() => {}}>
+      Войти
+    </button>,
+  ];
 }
 export default MainPage;

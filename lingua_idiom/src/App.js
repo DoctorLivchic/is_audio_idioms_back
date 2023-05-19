@@ -11,9 +11,8 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   return (
-    <div style={{ backgroundColor: "grey" }}>
+    <div>
       <MainPage />
-      <h1>Hello</h1>
     </div>
   );
 };
