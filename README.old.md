@@ -1,1 +1,0 @@
-# is_exhibition_space_back
