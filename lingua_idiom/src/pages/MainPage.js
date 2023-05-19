@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Импорт компонентов
-import Footer from "../components/footer";
+import Header from "../components/header";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -14,7 +14,7 @@ class MainPage extends React.Component {
     return (
       <div>
         {/* выводим футтер */}
-        <Footer buttons={this.buttons} />
+        <Header buttons={this.buttons} />
       </div>
     );
   }

@@ -1,4 +1,16 @@
-.footer{
+.header{
     background-color: #F39036;
     border-radius: 25px;
+
+    
+
+    width: 89%;
+    height: 14%;
+
+    margin: 0 auto;
+}
+
+.headerInside{
+    display: inline-block;
+    /* padding-top: ; */
 }
