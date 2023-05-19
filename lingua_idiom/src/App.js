@@ -1,21 +1,21 @@
 import React, { Component } from "react";
-//import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { supabase } from "./supabaseClient";
 // import { RequireAuth } from "./RequireAuth";
 // import { AuthProvider } from "./AuthProvider";
 
 
-
-export default function App() {
+class App extends React.Component() {
   
-const App = ()=> {
+render(){
   return(
-    <header> Шапка</header>
-
+    <div>
+      <h1>lingvo</h1>
+    </div>
   )
 }
-return App
-}
 
+}
+export default App
 
