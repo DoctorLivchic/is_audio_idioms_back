@@ -5,17 +5,11 @@ import { useState, useEffect } from "react";
 // import { RequireAuth } from "./RequireAuth";
 // import { AuthProvider } from "./AuthProvider";
 
-
-class App extends React.Component() {
-  
-render(){
-  return(
+const App = () => {
+  return (
     <div>
-      <h1>lingvo</h1>
+      <h1>Hello</h1>
     </div>
-  )
-}
-
-}
-export default App
-
+  );
+};
+export default App;
