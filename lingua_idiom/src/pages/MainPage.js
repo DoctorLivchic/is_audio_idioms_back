@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 
 //Импорт компонентов
+import Footer from "../components/footer";
+import PageBodu from "../components/PageBodu";
 import Header from "../components/header";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -12,8 +14,9 @@ import { useState, useEffect } from "react";
 class MainPage extends React.Component {
   render() {
     return (
-      <div>
-        {/* выводим футтер */}
+      <div className="doby_MainPage">
+        {/* выводим футтер */} 
+        <PageBodu/>
         <Header buttons={this.buttons} />
       </div>
     );
