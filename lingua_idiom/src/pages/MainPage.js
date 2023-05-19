@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Импорт компонентов
-import MainPage from "./pages/MainPage";
+import Footer from "../components/footer";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -9,12 +9,13 @@ import { useState, useEffect } from "react";
 // import { RequireAuth } from "./RequireAuth";
 // import { AuthProvider } from "./AuthProvider";
 
-const App = () => {
-  return (
-    <div style={{ backgroundColor: "grey" }}>
-      <MainPage />
-      <h1>Hello</h1>
-    </div>
-  );
-};
-export default App;
+class MainPage extends React.Component {
+  render() {
+    return (
+      <div style={{ backgroundColor: "grey" }}>
+        <Footer />
+      </div>
+    );
+  }
+}
+export default MainPage;
