@@ -21,12 +21,20 @@ class MainPage extends React.Component {
 
   //Передаваемые кнопки в футер
   buttons = [
-    <p onClick={() => {}}>О нас</p>,
-    <p onClick={() => {}}>Библиотека</p>,
-    <p onClick={() => {}}>Переводчик</p>,
-    <button className="buttonWhite" onClick={() => {}}>
-      Войти
-    </button>,
+    <div>
+      <p onClick={() => {}}>О нас</p>
+    </div>,
+    <div>
+      <p onClick={() => {}}>Библиотека</p>
+    </div>,
+    <div>
+      <p onClick={() => {}}>Переводчик</p>
+    </div>,
+    <div>
+      <button className="buttonWhite" onClick={() => {}}>
+        Войти
+      </button>
+    </div>,
   ];
 }
 export default MainPage;

@@ -11,9 +11,11 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   return (
-    <div>
-      <MainPage />
-    </div>
+    <body>
+      <div>
+        <MainPage />
+      </div>
+    </body>
   );
 };
 export default App;
