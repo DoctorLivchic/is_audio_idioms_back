@@ -13,8 +13,8 @@ class RegistrationBody extends React.Component {
           <input className="inputAuth" placeholder="Повторите пароль" />
         </div>
         <div className="authButtonDiv">
-          <button className="AuthbuttonWhite">Назад</button>
-          <button className="AuthbuttonWhite">Зарегистрироваться</button>
+          <button className="RegbuttonWhite">Назад</button>
+          <button className="RegbuttonWhite">Зарегистрироваться</button>
         </div>
       </div>
     );
