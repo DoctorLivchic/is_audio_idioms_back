@@ -1,0 +1,200 @@
+Index: lingua_idiom/src/Main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* Импорты */\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;800&display=swap');\r\n/* хедер */\r\n.header{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:flex;  \r\n    justify-content: space-between;\r\n    width: 89%;\r\n    height: 14%;\r\n    padding-top: 40px;\r\n    margin: 0 auto;\r\n    margin-top: 40px;\r\n    padding: 37px;\r\n}\r\n.buttons{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n.buttons p{\r\n    padding-right: 5%;\r\n    font-size: 24px;\r\n    \r\n    letter-spacing: 2px;\r\n    color: #FFFFFF;\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n.buttonWhite{\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.headerChildren{\r\n    display: block;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n/* хедер ------------------------------------------*/\r\n\r\n\r\n.authDiv{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:block;\r\n    width: 624px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDivChild{\r\n    display: block;\r\n    padding: 20px;\r\n    padding-bottom: 16px;\r\n    \r\n}\r\n.authDivChild .authButtonDiv{\r\n    padding-bottom: 32px;\r\n    padding-left: 20px;\r\n    margin-right: 32px;\r\n}\r\n\r\n\r\n\r\n\r\n.authText{\r\n    font-family: 'Unbounded', cursive;\r\n    letter-spacing: 2px;\r\n    font-size: 36px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n\r\n.inputAuth:focus, input:focus {outline: none;}\r\n.inputAuth{\r\n    width: 500px;\r\n    height: 30px;\r\n    border-radius: 100px;\r\n    border-color: #FFFFFF; \r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-size: 26px;\r\n    padding: 1rem;\r\n    margin-bottom: 16px;\r\n    border: none;\r\n}\r\n\r\n\r\n.AuthbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 6%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.RegbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 12.2%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n\r\n.img_logo{\r\n    position: absolute;\r\nwidth: 40.2px;\r\nheight: 56.69px;\r\nleft: 80.4px;\r\ntop: 13.63px;\r\n}\r\n\r\n/* Общий задний фон */\r\nbody{\r\n    background-color: #434343;\r\n}\r\n\r\n/* Компонент page_bodu */\r\n.PageBobi{\r\n  padding-top: 3%;\r\n  width: 89%;\r\n  display: flex;\r\n  justify-content: space-between;\r\n height: 75%;\r\n flex-direction: row;\r\n \r\n}\r\n.Contentleft{\r\npadding: 3%;\r\nwidth: 7.5%;\r\ndisplay: block;\r\nflex-direction: row;\r\nbackground: #FFFFFF;\r\nborder-radius: 25px;\r\n\r\n}\r\n.Contentright{\r\ndisplay: block;\r\nflex-direction: row;\r\nwidth: 7.5%;\r\nheight: 21%;\r\nborder-radius: 25px;\r\n}\r\n \r\n.page_body_h1{\r\nwidth: 80.44%;\r\nheight: 12.96%;\r\ntop: 4%;\r\nfont-family: 'Unbounded', cursive;\r\nfont-style: normal;\r\nfont-weight: bold;\r\nfont-size: 64px;\r\nline-height: 70px;\r\n/* or 109% */\r\ncolor: #1F1F1F;\r\n}\r\n.page_body_h2{\r\npadding-top: 5%;\r\nwidth: 80.44%;\r\nheight: 12.96%;\r\nfont-family: 'Montserrat';\r\nfont-style: normal;\r\nfont-weight: 400;\r\nfont-size: 24px;\r\nline-height: 29px;\r\nletter-spacing: 0.03em;\r\ncolor: #1F1F1F;\r\n}\r\n.page_button{\r\n    position: relative;\r\n    width: 80.44%;\r\n    height: 12.96%;\r\n    left: 6%;\r\n    top: 40%;\r\n    \r\n    background: #F39036;\r\n    border-radius: 1000px; \r\n}\r\n.page_button_text{\r\n position: relative;\r\nwidth: 10%;\r\nheight: 0%;\r\nleft: 5%;\r\ntop: calc(20% - 38px/2 + 0.5px);\r\nfont-family: 'Dela Gothic One';\r\nfont-style: normal;\r\nfont-weight: 400;\r\nfont-size: 42px;\r\nline-height: 46px;\r\ncolor: #FFFFFF;\r\n}\r\n.page_button_circle{\r\n    position: relative;\r\nwidth: 0%;\r\nheight: 3.85%;\r\nleft: 85%;\r\ntop: -30%;\r\nbackground: #FFFFFF;\r\n} \r\n.body_MainPage{\r\n    width: 100%;\r\n    height: 100%;\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/Main.css b/lingua_idiom/src/Main.css
+--- a/lingua_idiom/src/Main.css	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/lingua_idiom/src/Main.css	(date 1684591825455)
+@@ -151,7 +151,7 @@
+ }
+ .Contentleft{
+ padding: 3%;
+-width: 7.5%;
++width: 40%;
+ display: block;
+ flex-direction: row;
+ background: #FFFFFF;
+@@ -161,7 +161,7 @@
+ .Contentright{
+ display: block;
+ flex-direction: row;
+-width: 7.5%;
++width: 40%;
+ height: 21%;
+ border-radius: 25px;
+ }
+@@ -224,4 +224,39 @@
+ .body_MainPage{
+     width: 100%;
+     height: 100%;
++}
++/* Body перевод----------------------------------- */
++.TranslatorBoby{
++padding-top: 3%;
++  width: 89%;
++  display: flex;
++  justify-content: space-between;
++ height: 79%;
++ flex-direction: row;
++}
++
++.Contentlefttransl{
++    display: block;
++    flex-direction: row;
++  
++    width: 40%;
++    height: 837px;
++   
++  
++    
++    background: #FFFFFF;
++    border-radius: 25px;
++}
++.Contentmiddletransl{
++    
++}
++.Contentrighttransl{
++    
++width: 690px;
++height: 764px;
++left: 1126px;
++top: 253px;
++
++background: #FFFFFF;
++border-radius: 25px;
+ }
+\ No newline at end of file
+Index: lingua_idiom/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\n//Импорт компонентов\r\nimport MainPage from \"./pages/MainPage\";\r\nimport AuthorizationBody from \"./components/AuthorizationBody\";\r\nimport RegistrationBody from \"./components/RegistrationBody\";\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nconst App = () => {\r\n  return (\r\n    <body>\r\n      <div>\r\n        {/* <AuthorizationBody />\r\n        <RegistrationBody /> */}\r\n        <MainPage />\r\n      </div>\r\n    </body>\r\n  );\r\n};\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/App.js b/lingua_idiom/src/App.js
+--- a/lingua_idiom/src/App.js	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/lingua_idiom/src/App.js	(date 1684589454405)
+@@ -4,6 +4,7 @@
+ import MainPage from "./pages/MainPage";
+ import AuthorizationBody from "./components/AuthorizationBody";
+ import RegistrationBody from "./components/RegistrationBody";
++import Translater from "./pages/Translater"
+ import { Route, Routes, BrowserRouter } from "react-router-dom";
+ import { useState, useEffect } from "react";
+ // import { supabase } from "./supabaseClient";
+@@ -16,7 +17,7 @@
+       <div>
+         {/* <AuthorizationBody />
+         <RegistrationBody /> */}
+-        <MainPage />
++        <Translater />
+       </div>
+     </body>
+   );
+Index: lingua_idiom/src/components/PageBody.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport { Layout } from \"antd\";\r\nimport page_body from \"../img/page_body_right.png\";\r\nimport Ellipse from \"../img/Ellipse.png\";\r\nimport Vector from \"../img/Vector.png\";\r\nconst { Content } = Layout;\r\n\r\n// npm i antd что бы работало с компонентами\r\nclass PageBody extends React.Component {\r\n  render() {\r\n    return (\r\n      <div className=\"PageBobi\">\r\n        <div className=\"Contentleft\">\r\n          <h1 className=\"page_body_h1\">Откройте мир фразеологизмов!</h1>\r\n          <h4 className=\"page_body_h2\">\r\n            Мы предлагаем платформу для тех, кто занимаеться изучением\r\n            французского или корейского языков и столкнулся с проблемой перевода\r\n            фразеологизмов и идиом\r\n          </h4>\r\n          <div className=\"page_button \">\r\n            <p className=\"page_button_text\">Начать переводить</p>\r\n            <div className=\"page_button_circle\">\r\n                 <img className=\"\" src={Ellipse} />               \r\n            </div>              \r\n          </div>\r\n          \r\n        </div>\r\n        <div className=\"Contentright\">\r\n          <div>\r\n            <img src={page_body} />\r\n          </div>\r\n        </div>\r\n      </div>\r\n    );\r\n  }\r\n}\r\nexport default PageBody;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/PageBody.js b/lingua_idiom/src/components/PageBody.js
+--- a/lingua_idiom/src/components/PageBody.js	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/lingua_idiom/src/components/PageBody.js	(date 1684586856835)
+@@ -22,8 +22,7 @@
+             <div className="page_button_circle">
+                  <img className="" src={Ellipse} />               
+             </div>              
+-          </div>
+-          
++          </div>    
+         </div>
+         <div className="Contentright">
+           <div>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Q0pJtB6t6VMXa8FXaqt7pDrMpX\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\" />\r\n      <created>1684500284382</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684500284382</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/.idea/workspace.xml	(date 1684591851976)
+@@ -5,7 +5,11 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
+-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/PageBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/PageBody.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: lingua_idiom/src/pages/Translater.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/pages/Translater.js b/lingua_idiom/src/pages/Translater.js
+--- a/lingua_idiom/src/pages/Translater.js	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/lingua_idiom/src/pages/Translater.js	(date 1684590384050)
+@@ -1,0 +1,23 @@
++import React, { Component } from "react";
++
++import TranslatorBoby from "../components/TranslatorBoby";
++import Header from "../components/header";
++
++class Translater extends React.Component {
++    render() {
++      return (
++        <div>
++        <Header buttons={this.buttons}/>
++         <TranslatorBoby/>
++        </div>
++      );
++    }
++    buttons = [
++        <p onClick={() => {}}>О нас</p>,
++        <p onClick={() => {}}>Библиотека</p>,
++        <button className="buttonWhite" onClick={() => {}}>
++         профиль
++        </button>,
++      ];
++  }
++  export default Translater;
+\ No newline at end of file
+Index: lingua_idiom/src/components/TranslatorBoby.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\nclass TranslatorBoby extends React.Component {\r\n    render() {\r\n      return (\r\n<h1>dsgs</h1>\r\n        );\r\n    }\r\n  }\r\n  export default TranslatorBoby;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/TranslatorBoby.js b/lingua_idiom/src/components/TranslatorBoby.js
+--- a/lingua_idiom/src/components/TranslatorBoby.js	(revision 57b3fa50d3b74275359efe9d2eeb784411c99a13)
++++ b/lingua_idiom/src/components/TranslatorBoby.js	(date 1684590883795)
+@@ -3,7 +3,16 @@
+ class TranslatorBoby extends React.Component {
+     render() {
+       return (
+-<h1>dsgs</h1>
++        <div className="TranslatorBoby">
++        <div className="Contentlefttransl">
++        </div>
++        <div className="Contentmiddletransl">
++
++        </div>
++        <div className="Contentrighttransl">
++
++</div>
++        </div>
+         );
+     }
+   }
