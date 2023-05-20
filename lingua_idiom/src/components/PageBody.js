@@ -20,15 +20,21 @@ class PageBody extends React.Component {
           <div className="page_button ">
             <p className="page_button_text">Начать переводить</p>
             <div className="page_button_circle">
-                 <img className="" src={Ellipse} />               
-            </div>              
+              <img className="" src={Ellipse} />
+            </div>
           </div>
-          
         </div>
         <div className="Contentright">
-          <div>
-            <img src={page_body} />
-          </div>
+          <div
+            className="imgPG"
+            style={{
+              backgroundImage: `url(${page_body})`,
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
+              backgroundSize: "cover",
+            }}
+          ></div>
+          {/* <img className="imgPG" src={page_body} /> */}
         </div>
       </div>
     );

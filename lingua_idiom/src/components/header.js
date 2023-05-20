@@ -6,10 +6,12 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <div className="headerChildren">
-          <img src={logoHeader} />
+        <div className="container">
+          <div className="headerChildren">
+            <img src={logoHeader} />
+          </div>
+          <div className="buttons">{this.props.buttons}</div>
         </div>
-        <div className="buttons">{this.props.buttons}</div>
       </div>
     );
   }
