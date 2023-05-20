@@ -106,25 +106,30 @@ body{
 }
 
 /* Компонент page_bodu */
+.PageBobi{
+  padding: 10px;
+  width: 89%;
+  margin: 0 auto;
+  display: flex;
+  padding: 40px;
+}
 .Contentleft{
-    
-    position: relative;
-width: 40.54%;
-height: 150.63%;
-left: 6%;
-top: 120%;
-
+position: relative;
+width: 48%;
+left: -2.5%;
+display: block;
+flex-direction: row;
 background: #FFFFFF;
 border-radius: 25px;
 }
-
 .Contentright{
+display: block;
 position: relative;
+flex-direction: row;
+width: 45%;
+height: 21%;
+left: 4%;
 
-width:13.54%;
-height: 50.63%;
-left: 50%;
-top: 120%;
 border-radius: 25px;
 }
  
@@ -171,7 +176,7 @@ color: #1F1F1F;
  position: relative;
 width: 10%;
 height: 0%;
-left: 18px;
+left: 5%;
 top: calc(20% - 38px/2 + 0.5px);
 font-family: 'Dela Gothic One';
 font-style: normal;
@@ -180,20 +185,12 @@ font-size: 42px;
 line-height: 46px;
 color: #FFFFFF;
 }
- .page_button_circle{
+.page_button_circle{
     position: relative;
 width: 0%;
 height: 3.85%;
-left: 83.85%;
-top: 7.85%;
+left: 85%;
+top: -30%;
 background: #FFFFFF;
 } 
-/* .page_button_circl1{
-    position: relative;
-    left: 53.52%;
-    right: -20.19%;
-    top: -1.56%;
-    bottom: 24.78%;  
-    background: #F39036;
-    transform: rotate(45deg);  
-} */
+ 
