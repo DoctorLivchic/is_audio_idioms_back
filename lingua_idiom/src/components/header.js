@@ -7,10 +7,10 @@ class Header extends React.Component {
     return (
       <div className="header">
         <div className="headerInside">
-          <div className="logo">
+          <div>
             <img src={logoHeader} />
           </div>
-          <div className="buttons">{this.props.buttons}</div>
+          <div>{this.props.buttons}</div>
         </div>
       </div>
     );
