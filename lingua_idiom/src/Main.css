@@ -44,19 +44,6 @@ left: 80.4px;
 top: 13.63px;
 }
 
-.buttonWhite{
-    width: 146px;
-    height: 49px;
-    border-radius: 50px;
-    border: #FFFFFF;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-
-
-
 
 body{
     background-color: #434343;
@@ -64,39 +51,33 @@ body{
 
 /* Компонент page_bodu */
 .Contentleft{
-    position: absolute;
-width: 836px;
-height: 752px;
-left: 104px;
-top: 253px;
+    
+    position: relative;
+width: 40.54%;
+height: 150.63%;
+left: 6%;
+top: 120%;
 
 background: #FFFFFF;
 border-radius: 25px;
 }
 
 .Contentright{
-position: absolute;
-width: 836px;
-height: 752px;
-left: 980px;
-top: 253px;
+position: relative;
 
-background: #F39036;
+width:13.54%;
+height: 50.63%;
+left: 50%;
+top: 120%;
 border-radius: 25px;
 }
-.Contentright1{
-    position: absolute;
-    width: 830px;
-    height: 750px;
-    left: 1px;
-    top: 1px;
-}
+ 
 .page_body_p1{
-    position: absolute;
-width: 738px;
-height: 140px;
-left: 48px;
-top: 48px;
+    position: relative;
+width: 80.44%;
+height: 12.96%;
+left: 6%;
+top: 4%;
 
 font-family: 'Dela Gothic One';
 font-style: normal;
@@ -107,11 +88,11 @@ line-height: 70px;
 color: #1F1F1F;
 }
 .page_body_p2{
-    position: absolute;
-width: 738px;
-height: 104px;
-left: 48px;
-top: 220px;
+position: relative;
+width: 80.44%;
+height: 12.96%;
+left: 6%;
+top: 10%;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -121,21 +102,21 @@ letter-spacing: 0.03em;
 color: #1F1F1F;
 }
 .page_button{
-    position: absolute;
-    width: 740px;
-    height: 100px;
-    left: 48px;
-    top: 604px;
+    position: relative;
+    width: 80.44%;
+    height: 12.96%;
+    left: 6%;
+    top: 40%;
     
     background: #F39036;
     border-radius: 1000px; 
 }
 .page_button_text{
- position: absolute;
-width: 775px;
-height: 21px;
+ position: relative;
+width: 10%;
+height: 0%;
 left: 18px;
-top: calc(1% - 38px/2 + 0.5px);
+top: calc(20% - 38px/2 + 0.5px);
 font-family: 'Dela Gothic One';
 font-style: normal;
 font-weight: 400;
@@ -143,22 +124,20 @@ font-size: 42px;
 line-height: 46px;
 color: #FFFFFF;
 }
-.page_button_circle{
-    position: absolute;
-width: 74px;
-height: 74px;
-left: 618px;
-top: 10px;
-
+ .page_button_circle{
+    position: relative;
+width: 0%;
+height: 3.85%;
+left: 83.85%;
+top: 7.85%;
 background: #FFFFFF;
-}
-.page_button_circl1{
-    position: absolute;
+} 
+/* .page_button_circl1{
+    position: relative;
     left: 53.52%;
     right: -20.19%;
     top: -1.56%;
-    bottom: 24.78%;
-    
+    bottom: 24.78%;  
     background: #F39036;
     transform: rotate(45deg);  
-}
+} */

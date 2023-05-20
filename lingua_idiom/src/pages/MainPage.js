@@ -16,6 +16,7 @@ class MainPage extends React.Component {
     return (
       <div className="doby_MainPage">
         <Header buttons={this.buttons} />
+        <PageBodu/>
       </div>
     );
   }
