@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 //Импорт компонентов
 import MainPage from "./pages/MainPage";
+import Authorization from "./pages/Authorization";
 import AuthorizationBody from "./components/AuthorizationBody";
 import RegistrationBody from "./components/RegistrationBody";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -14,9 +15,7 @@ const App = () => {
   return (
     <body>
       <div>
-        {/* <AuthorizationBody />
-        <RegistrationBody /> */}
-        <MainPage />
+        <Authorization />
       </div>
     </body>
   );

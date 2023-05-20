@@ -54,29 +54,54 @@
 }
 /* хедер ------------------------------------------*/
 
+/* авторизация/регистрация -----------------------------------------*/
+
+.switchDiv{
+    width:100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    
+}
+
+.switchDivChild{
+    justify-content: center;
+}
+
+.textAuth{
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    color: #FFFFFF;
+}
+
+.authRegDiv{
+    display: flex;
+    justify-content: space-between;
+    width: 45vw;
+    margin: 0 auto;
+}
 
 .authDiv{
     background-color: #F39036;
     border-radius: 25px;
     display:block;
-    width: 624px;
+    width: 45vw;
     margin: 0 auto;
 }
 
 .authDivChild{
-    display: block;
-    padding: 20px;
-    padding-bottom: 16px;
     
+    display: block;
+    padding: 4%;
+    padding-bottom: 16px;
+    margin: 0 auto;    
+    margin-top: 5%;
 }
 .authDivChild .authButtonDiv{
     padding-bottom: 32px;
     padding-left: 20px;
     margin-right: 32px;
 }
-
-
-
 
 .authText{
     font-family: 'Unbounded', cursive;
@@ -85,19 +110,29 @@
     color: #FFFFFF;
 }
 
+.inputDiv{
+    display: block;
+    width: 100%;
+}
 
 .inputAuth:focus, input:focus {outline: none;}
 .inputAuth{
-    width: 500px;
-    height: 30px;
+    
+    height: 15%;
+
     border-radius: 100px;
     border-color: #FFFFFF; 
+
     font-family: 'Montserrat', sans-serif;
     letter-spacing: 2px;
     font-size: 26px;
     padding: 1rem;
-    margin-bottom: 16px;
+    width: 95%;
+    margin-bottom: 4%;
     border: none;
+    
+
+
 }
 
 
@@ -132,34 +167,27 @@
     padding-right:4% ; 
 }
 
-.img_logo{
-    position: absolute;
-width: 40.2px;
-height: 56.69px;
-left: 80.4px;
-top: 13.63px;
+/* авторизация/регистрация---------------------------------- */
+
+/* Общий задний фон */
+body{
+    background-color: #1F1F1F;
 }
+
+/* Компонент page_body */
 
 .imgPG{
     height: 100%;
 }
 
-/* Общий задний фон */
-body{
-    background-color: #434343;
-}
-
-/* Компонент page_body */
 .PageBobi{
-  max-height: 65vh;
-  padding-top: 3%;
-  width: 89vw;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-    
- flex-direction: row;
- 
+    max-height: 65vh;
+    padding-top: 3%;
+    width: 89vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
 }
 .Contentleft{
     padding: 3%;
@@ -177,29 +205,25 @@ body{
     border-radius: 25px;
 }
  
-.page_body_h1{
-    
-width: 98%;
-font-family: 'Unbounded', cursive;
-font-style: normal;
-font-weight: bold;
-font-size: 50px;
-line-height: 70px;
-/* or 109% */
-color: #1F1F1F;
-
+.page_body_h1{ 
+    width: 98%;
+    font-family: 'Unbounded', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 70px;
+    color: #1F1F1F;
 }
 .page_body_h2{
-padding-top: 0.01%;
-width: 98%;
-
-font-family: 'Montserrat';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 29px;
-letter-spacing: 0.03em;
-color: #1F1F1F;
+    padding-top: 0.01%;
+    width: 98%;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.03em;
+    color: #1F1F1F;
 }
 
 .page_button{
