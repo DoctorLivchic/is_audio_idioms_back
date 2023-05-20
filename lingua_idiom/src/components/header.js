@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //Импорт картинок
-import logoHeader from "../img/logo_header_logout.png";
+import logoHeader from "../img/logo_header_logout2.png";
 
 class Header extends React.Component {
   render() {

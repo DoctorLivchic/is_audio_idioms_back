@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Импорт компонентов
-import Footer from "../components/footer";
+
 import PageBody from "../components/PageBody";
 import Header from "../components/header";
 

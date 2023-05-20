@@ -51,6 +51,7 @@
     display: block;
     flex-direction: row;
     align-items: center;
+    padding-top: 5px;
 }
 /* хедер ------------------------------------------*/
 
@@ -328,4 +329,130 @@ line-height: 29px;
 letter-spacing: 0.03em;
 
 color: #1F1F1F;
+}
+
+/* Переворот карточки */
+
+[type="checkbox"]:checked,
+[type="checkbox"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+
+.card-3d-wrap {
+    position: relative;
+    width: 440px;
+    max-width: 100%;
+    height: 400px;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    perspective: 800px;
+    margin-top: 60px;
+  }
+  .card-3d-wrapper {
+    width: 120%;
+    height: 120%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    transition: all 600ms ease-out;
+  }
+  .card-front,
+  .card-back {
+    width: 100%;
+    height: 100%;
+    background-color: #2a2b38;
+    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");*/
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    background-size: 300%;
+    position: absolute;
+    border-radius: 6px;
+    left: -5;
+    top: 60;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .card-back {
+    transform: rotateY(180deg);
+  }
+
+  /* Страница About */
+  .textDivAU{
+    margin-top: 2%;
+    font-family: 'Unbounded', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 70px;
+    
+    text-align: center;
+  }
+  .aboutUs{
+    background-color: #FFFFFF;
+    
+    width: 89vw;
+    margin: 0 auto;
+    border-radius: 25px;
+  }
+
+.personMainDiv{
+    width: 89vw;
+    margin: 0 auto;
+    border-radius: 25px;
+    
+}
+
+.avatarDiv{
+    
+    margin-top: 2%;
+    font-family: 'Unbounded', cursive;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 50px;
+    line-height: 70px;
+    display: flex;
+    text-align: left;
+    align-content: center;
+    align-items: baseline;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    
+}
+.avatar{
+    margin-top: 4%;
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    
+    border-radius: 50%;
+}
+
+.personMainDiv{
+    height: 580px;
+    
+    
+}
+
+.avatarDivChildren{
+    margin-right: 5%;
+    width: 6em;
+}
+
+.description{
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-top: -10px;
+}
+.descSmall{
+    color: antiquewhite;
+    font-size: 12px;
+    margin-top: -50px;
 }
