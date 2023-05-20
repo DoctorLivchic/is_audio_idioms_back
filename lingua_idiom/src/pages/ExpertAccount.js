@@ -3,7 +3,7 @@ import React, { Component } from "react";
 //Импорт компонентов
 import Header from "../components/header";
 
-class UserAccount extends React.Component {
+class ExpertAccount extends React.Component {
   render() {
     return (
       <div className="">
@@ -11,14 +11,12 @@ class UserAccount extends React.Component {
       </div>
     );
   }
-  //Передаваемые кнопки в футер
   buttons = [
-    <p onClick={() => {}}>О нас</p>,
-    <p onClick={() => {}}>Библиотека</p>,
-    <p onClick={() => {}}>Переводчик</p>,
+    <p onClick={() => {}}>Заявки на добавление</p>,
+    <p onClick={() => {}}>Заявки на редактирование</p>,
     <button className="buttonWhite" onClick={() => {}}>
       Выход
     </button>,
   ];
 }
-export default UserAccount;
+export default ExpertAccount;
