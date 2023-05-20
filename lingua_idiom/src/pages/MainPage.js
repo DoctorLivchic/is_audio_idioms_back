@@ -14,7 +14,7 @@ import { useState, useEffect } from "react";
 class MainPage extends React.Component {
   render() {
     return (
-      <div className="doby_MainPage">
+      <div className="body_MainPage">
         <Header buttons={this.buttons} />
         <PageBodu />
       </div>

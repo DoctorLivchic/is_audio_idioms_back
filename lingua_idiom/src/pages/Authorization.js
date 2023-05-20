@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 //Импорт компонентов
 import AuthorizationBody from "../components/AuthorizationBody";
+import RegistrationBody from "../components/RegistrationBody";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -14,6 +15,9 @@ class Authorization extends React.Component {
     return (
       <div>
         <AuthorizationBody />
+        <div>
+          <RegistrationBody />
+        </div>
       </div>
     );
   }

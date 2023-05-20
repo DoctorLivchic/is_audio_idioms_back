@@ -14,7 +14,9 @@ const App = () => {
   return (
     <body>
       <div>
-        <AuthorizationBody />
+        {/* <AuthorizationBody />
+        <RegistrationBody /> */}
+        <MainPage />
       </div>
     </body>
   );

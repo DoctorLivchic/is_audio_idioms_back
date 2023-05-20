@@ -19,12 +19,15 @@
     display:block;
     width: 624px;
     margin: 0 auto;
+    
+    
 }
 
 .authDivChild{
     display: block;
     padding: 20px;
     padding-bottom: 16px;
+    padding-top: 0.05%;
     
 }
 .authDivChild .authButtonDiv{
@@ -44,7 +47,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 60%;
+    width: 50%;
     
 }
 
@@ -57,9 +60,10 @@
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
 }
-@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
 .authText{
-    font-family: 'Dela Gothic One', cursive;
+    font-family: 'Unbounded', cursive;
     letter-spacing: 2px;
     font-size: 36px;
     color: #FFFFFF;
@@ -109,20 +113,6 @@
     padding-right:4% ; 
 }
 .RegbuttonWhite{
-    position: relative;
-    height: 50px;
-    border-radius: 50px;
-    border: #FFFFFF;
-    font-family:'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1.0px;
-    left: 4%;
-    margin-bottom: 4%;
-    margin-right: 12.2%;
-    padding-left: 4%;
-    padding-right:4% ; 
-}{
     position: relative;
     height: 50px;
     border-radius: 50px;
