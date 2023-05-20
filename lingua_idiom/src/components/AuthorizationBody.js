@@ -11,8 +11,8 @@ class AuthorizationBody extends React.Component {
           <input className="inputAuth" placeholder="Пароль" />
         </div>
         <div className="authButtonDiv">
-          <button className="buttonWhite">Назад</button>
-          <button className="buttonWhite">Войти</button>
+          <button  className="AuthbuttonWhite" >Назад</button>
+          <button className="AuthbuttonWhite">Войти</button>
         </div>
       </div>
     );

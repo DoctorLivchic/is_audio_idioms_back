@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/PageBodu.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/PageBodu.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
