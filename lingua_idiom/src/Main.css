@@ -44,6 +44,16 @@ left: 80.4px;
 top: 13.63px;
 }
 
+.buttonWhite{
+    width: 146px;
+    height: 49px;
+    border-radius: 50px;
+    border: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 
 
 
