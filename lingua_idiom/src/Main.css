@@ -13,6 +13,27 @@
     padding: 37px;
 }
 
+.authDiv{
+    background-color: #F39036;
+    border-radius: 25px;
+    display:block;
+    width: 624px;
+    height: 362px;
+    margin: 0 auto;
+}
+
+.authDivChild{
+    display: block;
+    padding: 20px;
+    padding-bottom: 16px;
+    
+}
+.authDivChild .authButtonDiv{
+    padding-bottom: 32px;
+    padding-left: 20px;
+    margin-right: 32px;
+}
+
 .headerChildren{
     display: block;
     flex-direction: row;
@@ -36,6 +57,28 @@
     letter-spacing: 2px;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
+}
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+.authText{
+    font-family: 'Dela Gothic One', cursive;
+    letter-spacing: 2px;
+    font-size: 36px;
+    color: #FFFFFF;
+}
+
+
+.inputAuth:focus, input:focus {outline: none;}
+.inputAuth{
+    width: 500px;
+    height: 30px;
+    border-radius: 100px;
+    border-color: #FFFFFF;
+    
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-size: 26px;
+    padding: 1rem;
+    margin-bottom: 16px;
 }
 
 .buttonWhite{

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 //Импорт компонентов
 import MainPage from "./pages/MainPage";
-
+import AuthorizationBody from "./components/AuthorizationBody";
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { supabase } from "./supabaseClient";
@@ -13,7 +13,7 @@ const App = () => {
   return (
     <body>
       <div>
-        <MainPage />
+        <AuthorizationBody />
       </div>
     </body>
   );
