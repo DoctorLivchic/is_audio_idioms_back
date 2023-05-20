@@ -1,13 +1,43 @@
 .header{
+    
     background-color: #F39036;
     border-radius: 25px;
-
+    display: flex;
     
-
+    justify-content: space-between;
     width: 89%;
     height: 14%;
     margin: 0 auto;
+    padding: 37px;
 }
+
+.headerChildren{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 40%;
+    
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
+}
+.buttons p{
+    padding-right: 10%;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
 .img_logo{
     position: absolute;
 width: 40.2px;
@@ -15,17 +45,11 @@ height: 56.69px;
 left: 80.4px;
 top: 13.63px;
 }
-.heder_button{
 
-}
 
-.headerChildren{
-    display: inline;
-}
 
-body{
-    background-color: #1F1F1F;
-}
+
+
 body{
     background-color: #434343;
 }
