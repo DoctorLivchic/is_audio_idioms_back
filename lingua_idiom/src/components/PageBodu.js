@@ -1,6 +1,7 @@
 import React from "react";
 import { Layout} from 'antd';
 import page_body from "../img/page_body_right.png";
+import Ellipse from "../img/Ellipse.png"
 const {  Content } = Layout;
 
 // npm i antd что бы работало с компонентами
@@ -15,15 +16,14 @@ class PageBodu extends React.Component{
             <p className="page_button_text">Начать переводить</p>
             <div className="page_button_circle" >
                 <div className="page_button_circl1"></div>
-
+                <img className="" src={Ellipse} />
                 
-            </div>
-           
+            </div>     
           </div>
            </Content>
            <Content className="Contentright">
            <div >
-           <img className="Contentright1" src={page_body} />
+           <img  src={page_body} />
            </div>
            </Content>
            </div>

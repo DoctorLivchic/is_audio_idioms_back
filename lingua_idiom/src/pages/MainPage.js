@@ -18,6 +18,7 @@ class MainPage extends React.Component {
         {/* выводим футтер */}
         {/* <PageBodu/> */}
         <Header buttons={this.buttons} />
+        <PageBodu/>
       </div>
     );
   }
