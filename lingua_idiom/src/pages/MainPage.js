@@ -15,8 +15,6 @@ class MainPage extends React.Component {
   render() {
     return (
       <div className="doby_MainPage">
-        {/* выводим футтер */}
-        {/* <PageBodu/> */}
         <Header buttons={this.buttons} />
       </div>
     );
