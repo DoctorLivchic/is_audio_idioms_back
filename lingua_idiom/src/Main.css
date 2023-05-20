@@ -2,7 +2,7 @@
     
     background-color: #F39036;
     border-radius: 25px;
-    display: flex;
+    display:flex;
     
     justify-content: space-between;
     width: 89%;
@@ -12,7 +12,7 @@
 }
 
 .headerChildren{
-    display: flex;
+    display: block;
     flex-direction: row;
     align-items: center;
 }
@@ -22,18 +22,16 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 40%;
+    width: 60%;
     
 }
 
-@font-face {
-    font-family: 'Montserrat';
-    src: url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
-}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .buttons p{
-    padding-right: 10%;
+    padding-right: 5%;
     font-size: 24px;
-    letter-spacing: 3px;
+    
+    letter-spacing: 2px;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
 }
