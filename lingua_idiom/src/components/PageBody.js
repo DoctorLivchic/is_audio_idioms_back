@@ -11,16 +11,16 @@ class PageBody extends React.Component {
     return (
       <div className="PageBobi">
         <div className="Contentleft">
-          <h1 className="page_body_h1">Откройте мир фразеологизмов!</h1>
-          <h4 className="page_body_h2">
+          <div className="page_body_h1">Откройте мир фразеологизмов!</div>
+          <div className="page_body_h2">
             Мы предлагаем платформу для тех, кто занимаеться изучением
             французского или корейского языков и столкнулся с проблемой перевода
             фразеологизмов и идиом
-          </h4>
-          <div className="page_button ">
-            <p className="page_button_text">Начать переводить</p>
+          </div>
+          <div className="page_button">
+            <div className="page_button_text">Начать переводить</div>
             <div className="page_button_circle">
-              <img className="" src={Ellipse} />
+              <img onClick={() => {}} src={Ellipse} />
             </div>
           </div>
         </div>

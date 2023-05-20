@@ -141,10 +141,7 @@ top: 13.63px;
 }
 
 .imgPG{
-    /* max-width: 100%; */
     height: 100%;
-    
-    /* object-position: 50% 50%; */
 }
 
 /* Общий задний фон */
@@ -165,42 +162,37 @@ body{
  
 }
 .Contentleft{
-    
-padding: 3%;
-width: 45.5%;
-
-display: block;
-flex-direction: row;
-background: #FFFFFF;
-border-radius: 25px;
-
+    padding: 3%;
+    word-wrap:break-word;
+    width: 45.5%;
+    display: block;
+    background: #FFFFFF;
+    border-radius: 25px;
 }
 .Contentright{
     overflow: hidden;
-    
-display: block;
-flex-direction: row;
-width: 45.5%;
-
-border-radius: 25px;
+    display: block;
+    flex-direction: row;
+    width: 45.5%;
+    border-radius: 25px;
 }
  
 .page_body_h1{
-width: 80.44%;
-height: 12.96%;
-
+    
+width: 98%;
 font-family: 'Unbounded', cursive;
 font-style: normal;
 font-weight: bold;
-font-size: 64px;
+font-size: 50px;
 line-height: 70px;
 /* or 109% */
 color: #1F1F1F;
+
 }
 .page_body_h2{
-padding-top: 5%;
-width: 80.44%;
-height: 12.96%;
+padding-top: 0.01%;
+width: 98%;
+
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -209,37 +201,49 @@ line-height: 29px;
 letter-spacing: 0.03em;
 color: #1F1F1F;
 }
+
 .page_button{
-    
-    width: 80.44%;
-    height: 12.96%;
-  
-    
+    width: 100%;
+    display:flex;
+    vertical-align: middle;
+    height: 25%;
     background: #F39036;
     border-radius: 1000px; 
+    flex-direction:row;
+    justify-content:space-between;
+    margin-top: 10%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 .page_button_text{
- position: relative;
-width: 10%;
-height: 0%;
-left: 5%;
-top: calc(20% - 38px/2 + 0.5px);
-font-family: 'Dela Gothic One';
-font-style: normal;
-font-weight: 400;
-font-size: 42px;
-line-height: 46px;
-color: #FFFFFF;
+    
+    padding-left: 1%;
+    
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 67%;
+  
+    font-family: 'Unbounded', cursive;
+    font-style: normal;
+    
+    font-size: 32px;
+    line-height: 46px;
+
+    color: #FFFFFF;
 }
+
 .page_button_circle{
-    position: relative;
-width: 0%;
-height: 3.85%;
-left: 85%;
-top: -30%;
-background: #FFFFFF;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 } 
+
 .body_MainPage{
     width: 100%;
     height: 100%;
+    padding-left: 1%;
+    padding-right: 1%;
 }
