@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 //Импорт компонентов
 import Footer from "../components/footer";
-import PageBodu from "../components/PageBodu";
+import PageBody from "../components/PageBody";
 import Header from "../components/header";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -16,7 +16,7 @@ class MainPage extends React.Component {
     return (
       <div className="body_MainPage">
         <Header buttons={this.buttons} />
-        <PageBodu />
+        <PageBody />
       </div>
     );
   }

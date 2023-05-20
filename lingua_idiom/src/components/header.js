@@ -6,7 +6,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header">
-        <div className="headerInside">
+        <div className="headerChildren">
           <img src={logoHeader} />
         </div>
         <div className="buttons">{this.props.buttons}</div>

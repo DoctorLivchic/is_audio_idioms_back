@@ -1,9 +1,12 @@
+/* Импорты */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;800&display=swap');
+/* хедер */
 .header{
-    
     background-color: #F39036;
     border-radius: 25px;
-    display:flex;
-    
+    display:flex;  
     justify-content: space-between;
     width: 89%;
     height: 14%;
@@ -12,46 +15,13 @@
     margin-top: 40px;
     padding: 37px;
 }
-
-.authDiv{
-    background-color: #F39036;
-    border-radius: 25px;
-    display:block;
-    width: 624px;
-    margin: 0 auto;
-    
-    
-}
-
-.authDivChild{
-    display: block;
-    padding: 20px;
-    padding-bottom: 16px;
-    padding-top: 0.05%;
-    
-}
-.authDivChild .authButtonDiv{
-    padding-bottom: 32px;
-    padding-left: 20px;
-    margin-right: 32px;
-}
-
-.headerChildren{
-    display: block;
-    flex-direction: row;
-    align-items: center;
-}
-
 .buttons{
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
     align-items: center;
-    width: 50%;
-    
+    width: 60%;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
 .buttons p{
     padding-right: 5%;
     font-size: 24px;
@@ -60,8 +30,48 @@
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
 }
+.buttonWhite{
+    height: 50px;
+    border-radius: 50px;
+    border: #FFFFFF;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1.0px;
+    padding-left: 4%;
+    padding-right:4% ; 
+}
+.headerChildren{
+    display: block;
+    flex-direction: row;
+    align-items: center;
+}
+/* хедер ------------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css2?family=Unbounded&display=swap');
+
+.authDiv{
+    background-color: #F39036;
+    border-radius: 25px;
+    display:block;
+    width: 624px;
+    margin: 0 auto;
+}
+
+.authDivChild{
+    display: block;
+    padding: 20px;
+    padding-bottom: 16px;
+    
+}
+.authDivChild .authButtonDiv{
+    padding-bottom: 32px;
+    padding-left: 20px;
+    margin-right: 32px;
+}
+
+
+
+
 .authText{
     font-family: 'Unbounded', cursive;
     letter-spacing: 2px;
@@ -84,19 +94,7 @@
     border: none;
 }
 
-.buttonWhite{
-    position: relative;
-    height: 50px;
-    border-radius: 50px;
-    border: #FFFFFF;
-    font-family:'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 1.0px;
-    left: 4%;
-    padding-left: 4%;
-    padding-right:4% ; 
-}
+
 .AuthbuttonWhite{
     position: relative;
     height: 50px;
@@ -143,53 +141,47 @@ body{
 
 /* Компонент page_bodu */
 .PageBobi{
-  padding: 10px;
+  padding-top: 3%;
   width: 89%;
-  margin: 0 auto;
   display: flex;
-  padding: 40px;
+  justify-content: space-between;
+ height: 75%;
+ flex-direction: row;
+ 
 }
 .Contentleft{
-position: relative;
-width: 48%;
-left: -2.5%;
+padding: 3%;
+width: 7.5%;
 display: block;
 flex-direction: row;
 background: #FFFFFF;
 border-radius: 25px;
+
 }
 .Contentright{
 display: block;
-position: relative;
 flex-direction: row;
-width: 45%;
+width: 7.5%;
 height: 21%;
-left: 4%;
-
 border-radius: 25px;
 }
  
-.page_body_p1{
-    position: relative;
+.page_body_h1{
 width: 80.44%;
 height: 12.96%;
-left: 6%;
 top: 4%;
-
-font-family: 'Dela Gothic One';
+font-family: 'Unbounded', cursive;
 font-style: normal;
-font-weight: 400;
+font-weight: bold;
 font-size: 64px;
 line-height: 70px;
 /* or 109% */
 color: #1F1F1F;
 }
-.page_body_p2{
-position: relative;
+.page_body_h2{
+padding-top: 5%;
 width: 80.44%;
 height: 12.96%;
-left: 6%;
-top: 10%;
 font-family: 'Montserrat';
 font-style: normal;
 font-weight: 400;
@@ -229,4 +221,7 @@ left: 85%;
 top: -30%;
 background: #FFFFFF;
 } 
- 
+.body_MainPage{
+    width: 100%;
+    height: 100%;
+}

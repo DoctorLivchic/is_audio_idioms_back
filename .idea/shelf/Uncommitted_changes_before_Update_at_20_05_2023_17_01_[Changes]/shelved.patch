@@ -1,0 +1,308 @@
+Index: lingua_idiom/src/Main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>.header{\r\n    \r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:flex;\r\n    \r\n    justify-content: space-between;\r\n    width: 89%;\r\n    height: 14%;\r\n    padding-top: 40px;\r\n    margin: 0 auto;\r\n    margin-top: 40px;\r\n    padding: 37px;\r\n}\r\n\r\n.authDiv{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:block;\r\n    width: 624px;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDivChild{\r\n    display: block;\r\n    padding: 20px;\r\n    padding-bottom: 16px;\r\n    \r\n}\r\n.authDivChild .authButtonDiv{\r\n    padding-bottom: 32px;\r\n    padding-left: 20px;\r\n    margin-right: 32px;\r\n}\r\n\r\n.headerChildren{\r\n    display: block;\r\n    flex-direction: row;\r\n    align-items: center;\r\n}\r\n\r\n.buttons{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    width: 60%;\r\n    \r\n}\r\n\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');\r\n.buttons p{\r\n    padding-right: 5%;\r\n    font-size: 24px;\r\n    \r\n    letter-spacing: 2px;\r\n    color: #FFFFFF;\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');\r\n.authText{\r\n    font-family: 'Dela Gothic One', cursive;\r\n    letter-spacing: 2px;\r\n    font-size: 36px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n\r\n.inputAuth:focus, input:focus {outline: none;}\r\n.inputAuth{\r\n    width: 500px;\r\n    height: 30px;\r\n    border-radius: 100px;\r\n    border-color: #FFFFFF; \r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-size: 26px;\r\n    padding: 1rem;\r\n    margin-bottom: 16px;\r\n    border: none;\r\n}\r\n\r\n.buttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.AuthbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 6%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.RegbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 12.2%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 12.2%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n\r\n.img_logo{\r\n    position: absolute;\r\nwidth: 40.2px;\r\nheight: 56.69px;\r\nleft: 80.4px;\r\ntop: 13.63px;\r\n}\r\n\r\n/* Общий задний фон */\r\nbody{\r\n    background-color: #434343;\r\n}\r\n\r\n/* Компонент page_bodu */\r\n.PageBobi{\r\n  padding: 10px;\r\n  width: 89%;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  padding: 40px;\r\n}\r\n.Contentleft{\r\nposition: relative;\r\nwidth: 48%;\r\nleft: -2.5%;\r\ndisplay: block;\r\nflex-direction: row;\r\nbackground: #FFFFFF;\r\nborder-radius: 25px;\r\n}\r\n.Contentright{\r\ndisplay: block;\r\nposition: relative;\r\nflex-direction: row;\r\nwidth: 45%;\r\nheight: 21%;\r\nleft: 4%;\r\n\r\nborder-radius: 25px;\r\n}\r\n \r\n.page_body_p1{\r\n    position: relative;\r\nwidth: 80.44%;\r\nheight: 12.96%;\r\nleft: 6%;\r\ntop: 4%;\r\n\r\nfont-family: 'Dela Gothic One';\r\nfont-style: normal;\r\nfont-weight: 400;\r\nfont-size: 64px;\r\nline-height: 70px;\r\n/* or 109% */\r\ncolor: #1F1F1F;\r\n}\r\n.page_body_p2{\r\nposition: relative;\r\nwidth: 80.44%;\r\nheight: 12.96%;\r\nleft: 6%;\r\ntop: 10%;\r\nfont-family: 'Montserrat';\r\nfont-style: normal;\r\nfont-weight: 400;\r\nfont-size: 24px;\r\nline-height: 29px;\r\nletter-spacing: 0.03em;\r\ncolor: #1F1F1F;\r\n}\r\n.page_button{\r\n    position: relative;\r\n    width: 80.44%;\r\n    height: 12.96%;\r\n    left: 6%;\r\n    top: 40%;\r\n    \r\n    background: #F39036;\r\n    border-radius: 1000px; \r\n}\r\n.page_button_text{\r\n position: relative;\r\nwidth: 10%;\r\nheight: 0%;\r\nleft: 5%;\r\ntop: calc(20% - 38px/2 + 0.5px);\r\nfont-family: 'Dela Gothic One';\r\nfont-style: normal;\r\nfont-weight: 400;\r\nfont-size: 42px;\r\nline-height: 46px;\r\ncolor: #FFFFFF;\r\n}\r\n.page_button_circle{\r\n    position: relative;\r\nwidth: 0%;\r\nheight: 3.85%;\r\nleft: 85%;\r\ntop: -30%;\r\nbackground: #FFFFFF;\r\n} \r\n 
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/Main.css b/lingua_idiom/src/Main.css
+--- a/lingua_idiom/src/Main.css	
++++ b/lingua_idiom/src/Main.css	
+@@ -1,17 +1,41 @@
++/* Импорты */
++
++@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
++
++/* Хедер */
+ .header{
+-    
+     background-color: #F39036;
+     border-radius: 25px;
+-    display:flex;
+-    
++    display:flex; 
+     justify-content: space-between;
+     width: 89%;
+     height: 14%;
+-    padding-top: 40px;
+     margin: 0 auto;
+     margin-top: 40px;
+-    padding: 37px;
++    padding: 2.2%;
++   
++}
++.buttons{
++    display: flex;
++    flex-direction: row;
++    justify-content: flex-end;
++    align-items: center;
++    width: 60%; 
++  
+ }
++.headerChildren{
++  
++
++}
++.buttons p{
++    padding-right: 2%;
++    font-size: 24px;
++    
++    letter-spacing: 2px;
++    color: #FFFFFF;
++    font-family: 'Montserrat', sans-serif;
++}
++/* Хедер---------------------------------------- */
+ 
+ .authDiv{
+     background-color: #F39036;
+@@ -33,30 +57,12 @@
+     margin-right: 32px;
+ }
+ 
+-.headerChildren{
+-    display: block;
+-    flex-direction: row;
+-    align-items: center;
+-}
++
+ 
+-.buttons{
+-    display: flex;
+-    flex-direction: row;
+-    justify-content: flex-end;
+-    align-items: center;
+-    width: 60%;
+-    
+-}
++
+ 
+-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+-.buttons p{
+-    padding-right: 5%;
+-    font-size: 24px;
+-    
+-    letter-spacing: 2px;
+-    color: #FFFFFF;
+-    font-family: 'Montserrat', sans-serif;
+-}
++
++
+ @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+ .authText{
+     font-family: 'Dela Gothic One', cursive;
+@@ -81,7 +87,7 @@
+ }
+ 
+ .buttonWhite{
+-    position: relative;
++   
+     height: 50px;
+     border-radius: 50px;
+     border: #FFFFFF;
+@@ -89,9 +95,10 @@
+     font-size: 24px;
+     font-weight: bold;
+     letter-spacing: 1.0px;
+-    left: 4%;
+     padding-left: 4%;
+-    padding-right:4% ; 
++    padding-right:4% ;
++ 
++    
+ }
+ .AuthbuttonWhite{
+     position: relative;
+@@ -122,22 +129,9 @@
+     margin-right: 12.2%;
+     padding-left: 4%;
+     padding-right:4% ; 
+-}{
+-    position: relative;
+-    height: 50px;
+-    border-radius: 50px;
+-    border: #FFFFFF;
+-    font-family:'Montserrat', sans-serif;
+-    font-size: 24px;
+-    font-weight: bold;
+-    letter-spacing: 1.0px;
+-    left: 4%;
+-    margin-bottom: 4%;
+-    margin-right: 12.2%;
+-    padding-left: 4%;
+-    padding-right:4% ; 
+ }
+ 
++
+ .img_logo{
+     position: absolute;
+ width: 40.2px;
+@@ -179,7 +173,7 @@
+ border-radius: 25px;
+ }
+  
+-.page_body_p1{
++.page_body_h1{
+     position: relative;
+ width: 80.44%;
+ height: 12.96%;
+@@ -194,7 +188,7 @@
+ /* or 109% */
+ color: #1F1F1F;
+ }
+-.page_body_p2{
++.page_body_h2{
+ position: relative;
+ width: 80.44%;
+ height: 12.96%;
+Index: lingua_idiom/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\n//Импорт компонентов\r\nimport MainPage from \"./pages/MainPage\";\r\nimport AuthorizationBody from \"./components/AuthorizationBody\";\r\nimport RegistrationBody from \"./components/RegistrationBody\";\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nconst App = () => {\r\n  return (\r\n    <body>\r\n      <div>\r\n        <AuthorizationBody />\r\n      </div>\r\n    </body>\r\n  );\r\n};\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/App.js b/lingua_idiom/src/App.js
+--- a/lingua_idiom/src/App.js	
++++ b/lingua_idiom/src/App.js	
+@@ -4,6 +4,7 @@
+ import MainPage from "./pages/MainPage";
+ import AuthorizationBody from "./components/AuthorizationBody";
+ import RegistrationBody from "./components/RegistrationBody";
++import Translater from "./pages/Translater";
+ import { Route, Routes, BrowserRouter } from "react-router-dom";
+ import { useState, useEffect } from "react";
+ // import { supabase } from "./supabaseClient";
+@@ -14,7 +15,7 @@
+   return (
+     <body>
+       <div>
+-        <AuthorizationBody />
++        <MainPage />
+       </div>
+     </body>
+   );
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Q0pJtB6t6VMXa8FXaqt7pDrMpX\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\" />\r\n      <created>1684500284382</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684500284382</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -6,6 +6,14 @@
+   <component name="ChangeListManager">
+     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/App.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/AuthorizationBody.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/AuthorizationBody.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/PageBodu.js" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/header.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Authorization.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Authorization.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/MainPage.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+Index: lingua_idiom/src/pages/Translater.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/pages/Translater.js b/lingua_idiom/src/pages/Translater.js
+--- a/lingua_idiom/src/pages/Translater.js	
++++ b/lingua_idiom/src/pages/Translater.js	
+@@ -1,0 +1,16 @@
++import React, { Component } from "react";
++
++//Импорт компонентов
++import Header from "../components/header";
++import TranslatorBoby from "../components/TranslatorBoby";
++class Translater extends React.Component {
++    render() {
++      return (
++        <div>
++        <Header buttons={this.buttons} />
++        <TranslatorBoby/>
++        </div>
++      )
++    }
++}
++export default Translater;
+\ No newline at end of file
+Index: lingua_idiom/src/pages/Authorization.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\n//Импорт компонентов\r\nimport AuthorizationBody from \"../components/AuthorizationBody\";\r\n\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nclass Authorization extends React.Component {\r\n  render() {\r\n    return (\r\n      <div>\r\n        <AuthorizationBody />\r\n      </div>\r\n    );\r\n  }\r\n}\r\nexport default Authorization;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/pages/Authorization.js b/lingua_idiom/src/pages/Authorization.js
+--- a/lingua_idiom/src/pages/Authorization.js	
++++ b/lingua_idiom/src/pages/Authorization.js	
+@@ -2,7 +2,7 @@
+ 
+ //Импорт компонентов
+ import AuthorizationBody from "../components/AuthorizationBody";
+-
++import RegistrationBody from "../components/RegistrationBody";
+ import { Route, Routes, BrowserRouter } from "react-router-dom";
+ import { useState, useEffect } from "react";
+ // import { supabase } from "./supabaseClient";
+@@ -14,6 +14,7 @@
+     return (
+       <div>
+         <AuthorizationBody />
++        
+       </div>
+     );
+   }
+Index: lingua_idiom/src/components/AuthorizationBody.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n//Импорт картинок\r\n\r\nclass AuthorizationBody extends React.Component {\r\n  render() {\r\n    return (\r\n      <div className=\"authDiv\">\r\n        <div className=\"authDivChild\">\r\n          <h1 className=\"authText\">Войти</h1>\r\n          <input className=\"inputAuth\" placeholder=\"Электронная почта\" />\r\n          <input className=\"inputAuth\" placeholder=\"Пароль\" />\r\n        </div>\r\n        <div className=\"authButtonDiv\">\r\n          <button  className=\"AuthbuttonWhite\" >Назад</button>\r\n          <button className=\"AuthbuttonWhite\">Войти</button>\r\n        </div>\r\n      </div>\r\n    );\r\n  }\r\n}\r\nexport default AuthorizationBody;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/AuthorizationBody.js b/lingua_idiom/src/components/AuthorizationBody.js
+--- a/lingua_idiom/src/components/AuthorizationBody.js	
++++ b/lingua_idiom/src/components/AuthorizationBody.js	
+@@ -14,6 +14,8 @@
+           <button  className="AuthbuttonWhite" >Назад</button>
+           <button className="AuthbuttonWhite">Войти</button>
+         </div>
++
++        
+       </div>
+     );
+   }
+Index: lingua_idiom/src/pages/MainPage.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\n//Импорт компонентов\r\nimport Footer from \"../components/footer\";\r\nimport PageBodu from \"../components/PageBodu\";\r\nimport Header from \"../components/header\";\r\n\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nclass MainPage extends React.Component {\r\n  render() {\r\n    return (\r\n      <div className=\"doby_MainPage\">\r\n        <Header buttons={this.buttons} />\r\n        <PageBodu />\r\n      </div>\r\n    );\r\n  }\r\n\r\n  //Передаваемые кнопки в футер\r\n  buttons = [\r\n    <p onClick={() => {}}>О нас</p>,\r\n    <p onClick={() => {}}>Библиотека</p>,\r\n    <p onClick={() => {}}>Переводчик</p>,\r\n    <button className=\"buttonWhite\" onClick={() => {}}>\r\n      Войти\r\n    </button>,\r\n  ];\r\n}\r\nexport default MainPage;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/pages/MainPage.js b/lingua_idiom/src/pages/MainPage.js
+--- a/lingua_idiom/src/pages/MainPage.js	
++++ b/lingua_idiom/src/pages/MainPage.js	
+@@ -2,7 +2,7 @@
+ 
+ //Импорт компонентов
+ import Footer from "../components/footer";
+-import PageBodu from "../components/PageBodu";
++import PageBody from "../components/PageBody";
+ import Header from "../components/header";
+ 
+ import { Route, Routes, BrowserRouter } from "react-router-dom";
+@@ -16,7 +16,7 @@
+     return (
+       <div className="doby_MainPage">
+         <Header buttons={this.buttons} />
+-        <PageBodu />
++        <PageBody />
+       </div>
+     );
+   }
