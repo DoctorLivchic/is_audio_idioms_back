@@ -36,6 +36,17 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.buttonWhite{
+    width: 146px;
+    height: 49px;
+    border-radius: 50px;
+    border: #FFFFFF;
+    font-family:'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
 .img_logo{
     position: absolute;
 width: 40.2px;
