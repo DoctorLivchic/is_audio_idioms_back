@@ -1,18 +1,18 @@
 import React, { Component } from "react";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 //Импорт компонентов
 import MainPage from "./pages/MainPage";
 import Authorization from "./pages/Authorization";
-import AuthorizationBody from "./components/AuthorizationBody";
-import RegistrationBody from "./components/RegistrationBody";
+import RegistrationForInternalUsers from "./pages/RegistrationForInternalUsers";
 import Translater from "./pages/Translater";
 import About from "./pages/About";
 import ModerAccount from "./pages/ModerAccount";
 import ExpertAccount from "./pages/ExpertAccount";
-import Library from "./pages/Library";
 import UserAccount from "./pages/UserAccount";
+import Library from "./pages/Library";
+import NotFound from "./pages/NotFound";
 
-import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
 // import { supabase } from "./supabaseClient";
 // import { RequireAuth } from "./RequireAuth";
@@ -20,11 +20,22 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   return (
-    <body>
-      <div>
-        <UserAccount />
-      </div>
-    </body>
+    <>
+      <body>
+        <div>
+          <NotFound />
+        </div>
+      </body>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/pages/Authorization" element={<Authorization />} />
+        <Route
+          path="/pages/RegistrationForInternalUsers"
+          element={<RegistrationForInternalUsers />}
+        />
+        <Route path="/pages/Translater" element={<Translater />} />
+      </Routes>
+    </>
   );
 };
 export default App;

@@ -454,3 +454,24 @@ color: #1F1F1F;
     font-size: 12px;
     margin-top: -50px;
 }
+
+/* Страница NotFound */
+
+.whiteBox{
+    
+    width: 89vw;
+    margin: 0 auto;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    margin-top: 2%;
+}
+
+.textNF{
+    font-family: 'Montserrat';
+    font-style: normal;
+    padding: 20px;
+    font-size: 36px;
+    line-height: 29px;
+    letter-spacing: 0.03em;
+    color: #1F1F1F
+}
