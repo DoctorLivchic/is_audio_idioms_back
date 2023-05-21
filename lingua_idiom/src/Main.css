@@ -460,6 +460,7 @@ color: #1F1F1F;
 }
   .checkbox:checked + label,
   .checkbox:not(:checked) + label {
+  
     position: relative;
     left: 50.5%;
     display: block;
@@ -470,10 +471,12 @@ color: #1F1F1F;
     margin: 10px auto;
     cursor: pointer;
     background-color: #F39036;
+    margin-top: 5%;
   }
   /* белый кружок */
   .checkbox:checked + label:before,
   .checkbox:not(:checked) + label:before {
+    
     position: absolute;
     display: block;
     width: 36px;
