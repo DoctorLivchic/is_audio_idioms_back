@@ -33,7 +33,6 @@ function Translater() {
   return (
     <div>
       <Header buttons={buttons} />
-
       <TranslatorBoby />
     </div>
   );

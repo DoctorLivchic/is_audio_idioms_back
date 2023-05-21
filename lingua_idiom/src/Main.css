@@ -62,7 +62,6 @@
     display: flex;
     justify-content: center;
     margin-top: 2%;
-
 }
 
 .switchDivChild{
@@ -243,19 +242,14 @@ body{
 .page_button_text{
 
     padding-left: 1%;
-
-
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 67%;
-
     font-family: 'Unbounded', cursive;
     font-style: normal;
-
     font-size: 32px;
     line-height: 46px;
-
     color: #FFFFFF;
 }
 
@@ -280,16 +274,23 @@ padding-top: 3%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
- height: 79%;
  flex-direction: row;
 }
 .Contentlefttransl{
     display: block;
     flex-direction: row;
+    margin-top: 1%;
     width: 40%;
-    height: 837px;
+    height: 80%;
     background: #FFFFFF;
     border-radius: 25px;
+}
+.Contentrighttransl{
+width: 40%;
+height: 80%;
+background: #FFFFFF;
+border-radius: 25px;
+margin-top: 1%;
 }
 .Contentmiddletransl{
     display: flex;
@@ -316,22 +317,64 @@ padding-top: 3%;
 .middl{
     padding-top: 20%;
 }
-.Contentrighttransl{
-width: 40%;
-height: 837px;
-background: #FFFFFF;
-border-radius: 25px;
-}
+/* Селектор выбора языка------------------------------------------------------ */
 .Language_selection{
-width: 12%;
-height: 17px;
-line-height: 29px;
-letter-spacing: 0.03em;
+    width: 269px;
+    height: 41px;
+    top: 40px;
+    margin-left: 10%;
+    padding-top: 5%;
+    background: #FFFFFF;
 
-color: #1F1F1F;
+    border-radius: 5px;
 }
+/* TextArea------------------------------------------------------ */
 
-
+.TextArea{
+position: relative;
+height: 350px;
+height: 475px;
+top: 113px;
+background: #FFFFFF;
+border-radius: 15px;
+}
+.Area{
+ size: 20%;
+ height: 20%;
+}
+.Chek{
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 268px;
+    height: 17px;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.03em;
+    color: #1F1F1F; 
+}
+.buttonsTop{
+    
+flex-direction: row;
+justify-content: flex-end;
+align-items: center;
+padding: 0%;
+width: 138px;
+height: 40px;
+background: #F39036;
+border-radius: 50px;
+color: #FFFFFF;
+flex: none;
+letter-spacing: 2.0px;
+font-family: 'Montserrat', sans-serif;
+margin-left: 3%;
+}
+.ButtonTr{
+    padding-top: 10%;  
+    
+}
   /* Страница About -------------------------------------------------------------------------*/
   .textDivAU{
     margin-top: 2%;
@@ -340,12 +383,10 @@ color: #1F1F1F;
     font-weight: bold;
     font-size: 50px;
     line-height: 70px;
-    
     text-align: center;
   }
   .aboutUs{
     background-color: #FFFFFF;
-    
     width: 89vw;
     margin: 0 auto;
     border-radius: 25px;
@@ -541,8 +582,6 @@ color: #1F1F1F;
   .card-back {
     transform: rotateY(180deg);
   }
-  
-
  
   .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
     transform: rotateY(180deg);
@@ -581,10 +620,8 @@ color: #1F1F1F;
     border: none;
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
-   
   }
  
-  
   .form-group input:-ms-input-placeholder {
     color: #c4c3ca;
     opacity: 0.7;
