@@ -2,23 +2,41 @@ import React, { Component } from "react";
 
 import TranslatorBoby from "../components/TranslatorBoby";
 import Header from "../components/header";
+import { useNavigate } from "react-router-dom";
 
-class Translater extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header buttons={this.buttons} />
-
-        <TranslatorBoby />
-      </div>
-    );
-  }
-  buttons = [
-    <p onClick={() => {}}>О нас</p>,
-    <p onClick={() => {}}>Библиотека</p>,
-    <button className="buttonWhite" onClick={() => {}}>
+function Translater() {
+  const navigate = useNavigate();
+  const buttons = [
+    <p
+      onClick={() => {
+        navigate("/pages/About");
+      }}
+    >
+      О нас
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Library");
+      }}
+    >
+      Библиотека
+    </p>,
+    <button
+      className="buttonWhite"
+      onClick={() => {
+        navigate("/pages/Authorization");
+      }}
+    >
       Вход
     </button>,
   ];
+  return (
+    <div>
+      <Header buttons={buttons} />
+
+      <TranslatorBoby />
+    </div>
+  );
 }
+
 export default Translater;

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 //Импорт компонентов
 import Header from "../components/header";
@@ -12,7 +13,7 @@ class NotFound extends React.Component {
           <div className="textNF">
             К сожалению, мы не нашли страницу, которую вы искали... Вы всегда
             можете вернуться на нашу главную{" "}
-            <a href="http://www.google.com">главную страницу.</a>
+            <Link to="/">главную страницу.</Link>
           </div>
         </div>
       </div>

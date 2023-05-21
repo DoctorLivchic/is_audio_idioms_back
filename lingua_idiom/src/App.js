@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
 
 //Импорт компонентов
 import MainPage from "./pages/MainPage";
@@ -21,11 +21,6 @@ import { useState, useEffect } from "react";
 const App = () => {
   return (
     <>
-      <body>
-        <div>
-          <NotFound />
-        </div>
-      </body>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/pages/Authorization" element={<Authorization />} />
@@ -34,6 +29,13 @@ const App = () => {
           element={<RegistrationForInternalUsers />}
         />
         <Route path="/pages/Translater" element={<Translater />} />
+        <Route path="/pages/About" element={<About />} />
+        <Route path="/pages/ModerAccount" element={<ModerAccount />} />
+        <Route path="/pages/ExpertAccount" element={<ExpertAccount />} />
+        <Route path="/pages/UserAccount" element={<UserAccount />} />
+        <Route path="/pages/Library" element={<Library />} />
+
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

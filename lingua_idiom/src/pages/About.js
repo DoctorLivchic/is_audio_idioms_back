@@ -12,28 +12,35 @@ import nastya from "../img/nastya.png";
 import slava from "../img/slava.png";
 import vera from "../img/vera.png";
 import vova from "../img/vova.png";
+import { useNavigate } from "react-router-dom";
 
-class About extends React.Component {
-  render() {
-    return (
-      <div>
-        <Header buttons={this.buttons} />
-
-        <AboutHeader />
-
-        <Avatar image={this.avatars} />
-      </div>
-    );
-  }
-  buttons = [
-    <p onClick={() => {}}>О нас</p>,
-    <p onClick={() => {}}>Библиотека</p>,
-    <button className="buttonWhite" onClick={() => {}}>
+function About(props) {
+  const navigate = useNavigate();
+  const buttons = [
+    <p
+      onClick={() => {
+        navigate("/pages/About");
+      }}
+    >
+      О нас
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Library");
+      }}
+    >
+      Библиотека
+    </p>,
+    <button
+      className="buttonWhite"
+      onClick={() => {
+        navigate("/pages/Authorization");
+      }}
+    >
       Вход
     </button>,
   ];
-
-  avatars = [
+  const avatars = [
     <div>
       <div className="avatarDivChildren">
         <img src={vova} className="avatar" />
@@ -73,5 +80,16 @@ class About extends React.Component {
       </div>
     </div>,
   ];
+
+  return (
+    <div>
+      <Header buttons={buttons} />
+
+      <AboutHeader />
+
+      <Avatar image={avatars} />
+    </div>
+  );
 }
+
 export default About;
