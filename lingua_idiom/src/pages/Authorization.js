@@ -11,14 +11,18 @@ import { Button, Form, Input, Checkbox, Affix, notification } from "antd";
 export default function Authorization() {
   const { signin } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+  const fromPage = location.state?.from?.pathname || "/";
 
   function LogIN() {
     const email = document.getElementById("logemailIn").value;
     const password = document.getElementById("logpassIn").value;
 
-    signin(true, () => {
-      navigate("/");
-    });
+    if (email == "k1@m.ru") {
+      signin(true, () => navigate("/pages/ModerAccount"));
+    } else if (email == "k2@m.ru")
+      signin(true, () => navigate("/pages/ExpertAccount"));
+    else signin(true, () => navigate("/pages/UserAccount"));
   }
 
   return (
@@ -72,9 +76,9 @@ export default function Authorization() {
                           </div>
                           <Form.Item>
                             <Button
-                              // onClick={() => {
-                              //   navigate("/");
-                              // }}
+                              onClick={() => {
+                                navigate(fromPage);
+                              }}
                               className="AuthbuttonWhite"
                             >
                               Назад

@@ -13,7 +13,6 @@ import UserAccount from "./pages/UserAccount";
 import Library from "./pages/Library";
 import NotFound from "./pages/NotFound";
 
-import LoginPage from "./pages/loginpage";
 import RequireAuth from "./hoc/RequireAuth";
 import { AuthProvider } from "./hoc/AuthProvider";
 
@@ -35,32 +34,10 @@ const App = () => {
           />
           <Route path="/pages/Translater" element={<Translater />} />
           <Route path="/pages/About" element={<About />} />
-          <Route
-            path="/pages/ModerAccount"
-            element={
-              <RequireAuth>
-                <ModerAccount />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/pages/ExpertAccount"
-            element={
-              <RequireAuth>
-                <ExpertAccount />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/pages/UserAccount"
-            element={
-              <RequireAuth>
-                <UserAccount />
-              </RequireAuth>
-            }
-          />
+          <Route path="/pages/ModerAccount" element={<ModerAccount />} />
+          <Route path="/pages/ExpertAccount" element={<ExpertAccount />} />
+          <Route path="/pages/UserAccount" element={<UserAccount />} />
           <Route path="/pages/Library" element={<Library />} />
-          <Route path="/pages/loginpage" element={<LoginPage />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

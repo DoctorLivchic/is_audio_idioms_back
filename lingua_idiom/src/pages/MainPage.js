@@ -15,16 +15,11 @@ import { useState, useEffect } from "react";
 
 function MainPage() {
   const navigate = useNavigate();
-  const { isAuth } = useAuth();
+  const { user } = useAuth();
+
+  console.log();
   //Передаваемые кнопки в футер
   const buttons = [
-    <p
-      onClick={() => {
-        navigate("/pages/loginpage");
-      }}
-    >
-      ТестАвторизация
-    </p>,
     <p
       onClick={() => {
         navigate("/pages/About");
@@ -59,13 +54,6 @@ function MainPage() {
   const buttons2 = [
     <p
       onClick={() => {
-        navigate("/pages/loginpage");
-      }}
-    >
-      ТестАвторизация
-    </p>,
-    <p
-      onClick={() => {
         navigate("/pages/About");
       }}
     >
@@ -95,17 +83,17 @@ function MainPage() {
     </button>,
   ];
 
-  if (isAuth) {
+  if (user) {
     return (
       <div className="body_MainPage">
-        <Header buttons={buttons} />
+        <Header buttons={buttons2} />
         <PageBody />
       </div>
     );
   } else {
     return (
       <div className="body_MainPage">
-        <Header buttons={buttons2} />
+        <Header buttons={buttons} />
         <PageBody />
       </div>
     );

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hoc/useAuth";
 //Импорт компонентов
 import Header from "../components/header";
 import AboutHeader from "../components/AboutHeader";
@@ -12,10 +13,10 @@ import nastya from "../img/nastya.png";
 import slava from "../img/slava.png";
 import vera from "../img/vera.png";
 import vova from "../img/vova.png";
-import { useNavigate } from "react-router-dom";
 
 function About(props) {
   const navigate = useNavigate();
+  const { user } = useAuth();
   const buttons = [
     <p
       onClick={() => {
@@ -31,6 +32,13 @@ function About(props) {
     >
       Библиотека
     </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Translater");
+      }}
+    >
+      Переводчик
+    </p>,
     <button
       className="buttonWhite"
       onClick={() => {
@@ -38,6 +46,37 @@ function About(props) {
       }}
     >
       Вход
+    </button>,
+  ];
+  const buttons2 = [
+    <p
+      onClick={() => {
+        navigate("/pages/About");
+      }}
+    >
+      О нас
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Library");
+      }}
+    >
+      Библиотека
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Translater");
+      }}
+    >
+      Переводчик
+    </p>,
+    <button
+      className="buttonWhite"
+      onClick={() => {
+        navigate("/pages/UserAccount");
+      }}
+    >
+      Профиль
     </button>,
   ];
   const avatars = [
@@ -81,15 +120,27 @@ function About(props) {
     </div>,
   ];
 
-  return (
-    <div>
-      <Header buttons={buttons} />
+  if (user) {
+    return (
+      <div>
+        <Header buttons={buttons2} />
 
-      <AboutHeader />
+        <AboutHeader />
 
-      <Avatar image={avatars} />
-    </div>
-  );
+        <Avatar image={avatars} />
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <Header buttons={buttons} />
+
+        <AboutHeader />
+
+        <Avatar image={avatars} />
+      </div>
+    );
+  }
 }
 
 export default About;

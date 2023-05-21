@@ -29,6 +29,7 @@
     width: 60%;
 }
 .buttons p{
+    cursor: pointer;
     padding-right: 5%;
     font-size: 24px;
     
@@ -37,6 +38,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 .buttonWhite{
+    cursor: pointer;
     height: 50px;
     border-radius: 50px;
     border: #FFFFFF;
@@ -48,6 +50,7 @@
     padding-right:4% ; 
 }
 .headerChildren{
+    cursor: pointer;
     display: block;
     flex-direction: row;
     align-items: center;
@@ -227,6 +230,7 @@ body{
 }
 
 .page_button{
+  cursor: pointer;
     width: 100%;
     display:flex;
     vertical-align: middle;
@@ -254,7 +258,7 @@ body{
 }
 
 .page_button_circle{
-
+    cursor: pointer;
     display: flex;
     justify-content: flex-end;
     align-items: center;
