@@ -18,6 +18,13 @@ function MainPage() {
   const buttons = [
     <p
       onClick={() => {
+        navigate("/pages/loginpage");
+      }}
+    >
+      ТестАвторизация
+    </p>,
+    <p
+      onClick={() => {
         navigate("/pages/About");
       }}
     >

@@ -13,6 +13,10 @@ import UserAccount from "./pages/UserAccount";
 import Library from "./pages/Library";
 import NotFound from "./pages/NotFound";
 
+import LoginPage from "./pages/loginpage";
+import RequireAuth from "./hoc/RequireAuth";
+import { AuthProvider } from "./hoc/AuthProvider";
+
 import { useState, useEffect } from "react";
 // import { supabase } from "./supabaseClient";
 // import { RequireAuth } from "./RequireAuth";
@@ -21,22 +25,32 @@ import { useState, useEffect } from "react";
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="/pages/Authorization" element={<Authorization />} />
-        <Route
-          path="/pages/RegistrationForInternalUsers"
-          element={<RegistrationForInternalUsers />}
-        />
-        <Route path="/pages/Translater" element={<Translater />} />
-        <Route path="/pages/About" element={<About />} />
-        <Route path="/pages/ModerAccount" element={<ModerAccount />} />
-        <Route path="/pages/ExpertAccount" element={<ExpertAccount />} />
-        <Route path="/pages/UserAccount" element={<UserAccount />} />
-        <Route path="/pages/Library" element={<Library />} />
+      <AuthProvider>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/pages/Authorization" element={<Authorization />} />
+          <Route
+            path="/pages/RegistrationForInternalUsers"
+            element={<RegistrationForInternalUsers />}
+          />
+          <Route path="/pages/Translater" element={<Translater />} />
+          <Route path="/pages/About" element={<About />} />
+          <Route path="/pages/ModerAccount" element={<ModerAccount />} />
+          <Route path="/pages/ExpertAccount" element={<ExpertAccount />} />
+          <Route
+            path="/pages/UserAccount"
+            element={
+              <RequireAuth>
+                <UserAccount />
+              </RequireAuth>
+            }
+          />
+          <Route path="/pages/Library" element={<Library />} />
+          <Route path="/pages/loginpage" element={<LoginPage />} />
 
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </AuthProvider>
     </>
   );
 };
