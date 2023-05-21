@@ -5,6 +5,7 @@ import { Button, Form, Input, Checkbox, Select, notification } from "antd";
 class TextArea extends React.Component {
     render() {
       return (
+        <div className="TextArea">
         <TextArea
         showCount
         // value={translitExit}
@@ -13,5 +14,6 @@ class TextArea extends React.Component {
         /*onChange={onChange}*/ placeholder="Перевод"
         className="Text_area"
       />
+      </div>
       )}}
 export default TextArea;
