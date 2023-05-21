@@ -8,8 +8,6 @@ const app = ReactDOMClient.createRoot(document.getElementById("root"));
 
 app.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </React.StrictMode>
 );

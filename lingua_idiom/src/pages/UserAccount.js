@@ -3,16 +3,8 @@ import React, { Component } from "react";
 //Импорт компонентов
 import Header from "../components/header";
 
-class UserAccount extends React.Component {
-  render() {
-    return (
-      <div className="">
-        <Header buttons={this.buttons} />
-      </div>
-    );
-  }
-  //Передаваемые кнопки в футер
-  buttons = [
+function UserAccount() {
+  const buttons = [
     <p onClick={() => {}}>О нас</p>,
     <p onClick={() => {}}>Библиотека</p>,
     <p onClick={() => {}}>Переводчик</p>,
@@ -20,5 +12,12 @@ class UserAccount extends React.Component {
       Выход
     </button>,
   ];
+  return (
+    <div className="">
+      <Header buttons={buttons} />
+    </div>
+  );
 }
+//Передаваемые кнопки в футер
+
 export default UserAccount;

@@ -24,8 +24,8 @@ import { useState, useEffect } from "react";
 
 const App = () => {
   return (
-    <>
-      <AuthProvider>
+    <AuthProvider>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/pages/Authorization" element={<Authorization />} />
@@ -35,8 +35,22 @@ const App = () => {
           />
           <Route path="/pages/Translater" element={<Translater />} />
           <Route path="/pages/About" element={<About />} />
-          <Route path="/pages/ModerAccount" element={<ModerAccount />} />
-          <Route path="/pages/ExpertAccount" element={<ExpertAccount />} />
+          <Route
+            path="/pages/ModerAccount"
+            element={
+              <RequireAuth>
+                <ModerAccount />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/pages/ExpertAccount"
+            element={
+              <RequireAuth>
+                <ExpertAccount />
+              </RequireAuth>
+            }
+          />
           <Route
             path="/pages/UserAccount"
             element={
@@ -50,8 +64,8 @@ const App = () => {
 
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </AuthProvider>
-    </>
+      </BrowserRouter>
+    </AuthProvider>
   );
 };
 export default App;

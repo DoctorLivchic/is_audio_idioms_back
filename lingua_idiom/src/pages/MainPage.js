@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../hoc/useAuth";
 
 //Импорт компонентов
 
@@ -14,6 +15,7 @@ import { useState, useEffect } from "react";
 
 function MainPage() {
   const navigate = useNavigate();
+  const { isAuth } = useAuth();
   //Передаваемые кнопки в футер
   const buttons = [
     <p
@@ -53,12 +55,61 @@ function MainPage() {
       Войти
     </button>,
   ];
-  return (
-    <div className="body_MainPage">
-      <Header buttons={buttons} />
-      <PageBody />
-    </div>
-  );
+
+  const buttons2 = [
+    <p
+      onClick={() => {
+        navigate("/pages/loginpage");
+      }}
+    >
+      ТестАвторизация
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/About");
+      }}
+    >
+      О нас
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Library");
+      }}
+    >
+      Библиотека
+    </p>,
+    <p
+      onClick={() => {
+        navigate("/pages/Translater");
+      }}
+    >
+      Переводчик
+    </p>,
+    <button
+      className="buttonWhite"
+      onClick={() => {
+        navigate("/pages/UserAccount");
+      }}
+    >
+      Профиль
+    </button>,
+  ];
+
+  if (isAuth) {
+    return (
+      <div className="body_MainPage">
+        <Header buttons={buttons} />
+        <PageBody />
+      </div>
+    );
+  } else {
+    return (
+      <div className="body_MainPage">
+        <Header buttons={buttons2} />
+        <PageBody />
+      </div>
+    );
+  }
 }
 
 export default MainPage;
