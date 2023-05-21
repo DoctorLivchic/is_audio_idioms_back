@@ -1,0 +1,671 @@
+Index: lingua_idiom/src/Main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* Импорты */\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;800&display=swap');\r\n\r\n/* хедер */\r\n.header{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    width: 89vw;\r\n    height: 5%;\r\n\r\n    margin: 0 auto;\r\n    margin-top: 40px;\r\n\r\n}\r\n.container{\r\n    padding: 35px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n\r\n\r\n}\r\n.buttons{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    width: 60%;\r\n}\r\n.buttons p{\r\n    padding-right: 5%;\r\n    font-size: 24px;\r\n    \r\n    letter-spacing: 2px;\r\n    color: #FFFFFF;\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n.buttonWhite{\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.headerChildren{\r\n    display: block;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-top: 5px;\r\n}\r\n/* хедер ------------------------------------------*/\r\n\r\n/* авторизация/регистрация -----------------------------------------*/\r\n\r\n.switchDiv{\r\n    width:100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-top: 2%;\r\n\r\n}\r\n\r\n.switchDivChild{\r\n    justify-content: center;\r\n}\r\n\r\n.textAuth{\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.authRegDiv{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 45vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDiv{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:block;\r\n    width: 45vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDivChild{\r\n\r\n    display: block;\r\n    padding: 4%;\r\n    padding-bottom: 16px;\r\n    margin: 0 auto;\r\n    margin-top: 5%;\r\n}\r\n.authDivChild .authButtonDiv{\r\n    padding-bottom: 32px;\r\n    padding-left: 20px;\r\n    margin-right: 32px;\r\n}\r\n\r\n.authText{\r\n    font-family: 'Unbounded', cursive;\r\n    letter-spacing: 2px;\r\n    font-size: 36px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.inputDiv{\r\n    display: block;\r\n    width: 100%;\r\n}\r\n\r\n.inputAuth:focus, input:focus {outline: none;}\r\n.inputAuth{\r\n\r\n    height: 15%;\r\n\r\n    border-radius: 100px;\r\n    border-color: #FFFFFF; \r\n\r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-size: 26px;\r\n    padding: 1rem;\r\n    width: 95%;\r\n    margin-bottom: 4%;\r\n    border: none;\r\n\r\n\r\n\r\n}\r\n\r\n\r\n.AuthbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 6%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.RegbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 12.2%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n\r\n/* авторизация/регистрация---------------------------------- */\r\n\r\n/* Общий задний фон */\r\nbody{\r\n    background-color: #1F1F1F;\r\n}\r\n\r\n/* Компонент page_body */\r\n\r\n.imgPG{\r\n    height: 100%;\r\n}\r\n\r\n.PageBobi{\r\n    max-height: 65vh;\r\n    padding-top: 3%;\r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n.Contentleft{\r\n    padding: 3%;\r\n    word-wrap:break-word;\r\n    width: 45.5%;\r\n    display: block;\r\n    background: #FFFFFF;\r\n    border-radius: 25px;\r\n}\r\n.Contentright{\r\n    overflow: hidden;\r\n    display: block;\r\n    flex-direction: row;\r\n    width: 45.5%;\r\n    border-radius: 25px;\r\n}\r\n \r\n.page_body_h1{\r\n    width: 98%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 50px;\r\n    line-height: 70px;\r\n    color: #1F1F1F;\r\n}\r\n.page_body_h2{\r\n    padding-top: 0.01%;\r\n    width: 98%;\r\n    font-family: 'Montserrat';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 24px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #1F1F1F;\r\n}\r\n\r\n.page_button{\r\n    width: 100%;\r\n    display:flex;\r\n    vertical-align: middle;\r\n    height: 25%;\r\n    background: #F39036;\r\n    border-radius: 1000px; \r\n    flex-direction:row;\r\n    justify-content:space-between;\r\n    margin-top: 10%;\r\n    padding-left: 1%;\r\n    padding-right: 1%;\r\n}\r\n.page_button_text{\r\n\r\n    padding-left: 1%;\r\n\r\n\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    width: 67%;\r\n\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n\r\n    font-size: 32px;\r\n    line-height: 46px;\r\n\r\n    color: #FFFFFF;\r\n}\r\n\r\n.page_button_circle{\r\n\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n} \r\n\r\n.body_MainPage{\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-left: 1%;\r\n    padding-right: 1%;\r\n}\r\n/* Body перевод----------------------------------- */\r\n.TranslatorBoby{\r\nmax-height: 65vh;\r\npadding-top: 3%;\r\n  width: 91.3%;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  justify-content: space-between;\r\n height: 79%;\r\n flex-direction: row;\r\n}\r\n.Contentlefttransl{\r\n    display: block;\r\n    flex-direction: row;\r\n    width: 40%;\r\n    height: 837px;\r\n    background: #FFFFFF;\r\n    border-radius: 25px;\r\n}\r\n.Contentmiddletransl{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: flex-start;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    padding: 16px 32px;\r\n    width: 192px;\r\n    height: 49px;\r\n    margin-top: 4%;\r\n    background: #F39036;\r\n    border-radius: 50px;\r\n    align-items: center;\r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    font-size: 24px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #FFFFFF;\r\n}\r\n.middl{\r\n    padding-top: 20%;\r\n}\r\n.Contentrighttransl{\r\nwidth: 40%;\r\nheight: 837px;\r\nbackground: #FFFFFF;\r\nborder-radius: 25px;\r\n}\r\n.Language_selection{\r\nwidth: 12%;\r\nheight: 17px;\r\nline-height: 29px;\r\nletter-spacing: 0.03em;\r\n\r\ncolor: #1F1F1F;\r\n}\r\n\r\n/* Переворот карточки */\r\n\r\n[type=\"checkbox\"]:checked,\r\n[type=\"checkbox\"]:not(:checked) {\r\n  position: absolute;\r\n  left: -9999px;\r\n}\r\n\r\n.card-3d-wrap {\r\n    position: relative;\r\n    width: 440px;\r\n    max-width: 100%;\r\n    height: 400px;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    perspective: 800px;\r\n    margin-top: 60px;\r\n  }\r\n  .card-3d-wrapper {\r\n    width: 120%;\r\n    height: 120%;\r\n    position: absolute;\r\n    top: 0;\r\n    left: 0;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    transition: all 600ms ease-out;\r\n  }\r\n  .card-front,\r\n  .card-back {\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color: #2a2b38;\r\n    /*background-image: url(\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg\");*/\r\n    background-position: bottom center;\r\n    background-repeat: no-repeat;\r\n    background-size: 300%;\r\n    position: absolute;\r\n    border-radius: 6px;\r\n    left: -5;\r\n    top: 60;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    -webkit-backface-visibility: hidden;\r\n    -moz-backface-visibility: hidden;\r\n    -o-backface-visibility: hidden;\r\n    backface-visibility: hidden;\r\n  }\r\n  .card-back {\r\n    transform: rotateY(180deg);\r\n  }\r\n\r\n  /* Страница About */\r\n  .textDivAU{\r\n    margin-top: 2%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 50px;\r\n    line-height: 70px;\r\n    \r\n    text-align: center;\r\n  }\r\n  .aboutUs{\r\n    background-color: #FFFFFF;\r\n    \r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    border-radius: 25px;\r\n  }\r\n\r\n.personMainDiv{\r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    border-radius: 25px;\r\n    \r\n}\r\n\r\n.avatarDiv{\r\n    \r\n    margin-top: 2%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 50px;\r\n    line-height: 70px;\r\n    display: flex;\r\n    text-align: left;\r\n    align-content: center;\r\n    align-items: baseline;\r\n    flex-direction: row;\r\n    flex-wrap: nowrap;\r\n    justify-content: space-around;\r\n    \r\n}\r\n.avatar{\r\n    margin-top: 4%;\r\n    vertical-align: middle;\r\n    width: 100px;\r\n    height: 100px;\r\n    \r\n    border-radius: 50%;\r\n}\r\n\r\n.personMainDiv{\r\n    height: 580px; \r\n}\r\n\r\n.avatarDivChildren{\r\n    margin-right: 5%;\r\n    width: 6em;\r\n}\r\n\r\n.description{\r\n    color: #FFFFFF;\r\n    font-size: 16px;\r\n    margin-top: -10px;\r\n}\r\n.descSmall{\r\n    color: antiquewhite;\r\n    font-size: 12px;\r\n    margin-top: -50px;\r\n}\r\n\r\n/* Страница NotFound */\r\n\r\n.whiteBox{\r\n    \r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    border-radius: 25px;\r\n    background-color: #FFFFFF;\r\n    margin-top: 2%;\r\n}\r\n\r\n.textNF{\r\n    font-family: 'Montserrat';\r\n    font-style: normal;\r\n    padding: 20px;\r\n    font-size: 36px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #1F1F1F\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/Main.css b/lingua_idiom/src/Main.css
+--- a/lingua_idiom/src/Main.css	(revision 1387f1783d311e863ca450f8e336eeb338f1f0f9)
++++ b/lingua_idiom/src/Main.css	(date 1684656636760)
+@@ -18,9 +18,9 @@
+     padding: 35px;
+     display:flex;
+     justify-content: space-between;
++}
+ 
+ 
+-}
+ .buttons{
+     display: flex;
+     flex-direction: row;
+@@ -272,7 +272,7 @@
+     padding-left: 1%;
+     padding-right: 1%;
+ }
+-/* Body перевод----------------------------------- */
++/* Body перевод---------------------------------------------------------------------------- */
+ .TranslatorBoby{
+ max-height: 65vh;
+ padding-top: 3%;
+@@ -331,59 +331,8 @@
+ color: #1F1F1F;
+ }
+ 
+-/* Переворот карточки */
+-
+-[type="checkbox"]:checked,
+-[type="checkbox"]:not(:checked) {
+-  position: absolute;
+-  left: -9999px;
+-}
+ 
+-.card-3d-wrap {
+-    position: relative;
+-    width: 440px;
+-    max-width: 100%;
+-    height: 400px;
+-    -webkit-transform-style: preserve-3d;
+-    transform-style: preserve-3d;
+-    perspective: 800px;
+-    margin-top: 60px;
+-  }
+-  .card-3d-wrapper {
+-    width: 120%;
+-    height: 120%;
+-    position: absolute;
+-    top: 0;
+-    left: 0;
+-    -webkit-transform-style: preserve-3d;
+-    transform-style: preserve-3d;
+-    transition: all 600ms ease-out;
+-  }
+-  .card-front,
+-  .card-back {
+-    width: 100%;
+-    height: 100%;
+-    background-color: #2a2b38;
+-    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");*/
+-    background-position: bottom center;
+-    background-repeat: no-repeat;
+-    background-size: 300%;
+-    position: absolute;
+-    border-radius: 6px;
+-    left: -5;
+-    top: 60;
+-    -webkit-transform-style: preserve-3d;
+-    transform-style: preserve-3d;
+-    -webkit-backface-visibility: hidden;
+-    -moz-backface-visibility: hidden;
+-    -o-backface-visibility: hidden;
+-    backface-visibility: hidden;
+-  }
+-  .card-back {
+-    transform: rotateY(180deg);
+-  }
+-
+-  /* Страница About */
++  /* Страница About -------------------------------------------------------------------------*/
+   .textDivAU{
+     margin-top: 2%;
+     font-family: 'Unbounded', cursive;
+@@ -455,7 +404,7 @@
+     margin-top: -50px;
+ }
+ 
+-/* Страница NotFound */
++/* Страница NotFound------------------------------------------------------------------------ */
+ 
+ .whiteBox{
+     
+@@ -474,4 +423,294 @@
+     line-height: 29px;
+     letter-spacing: 0.03em;
+     color: #1F1F1F
+-}
+\ No newline at end of file
++}
++
++.section {
++    position: relative;
++  
++    width: 100%;
++    display: block;
++    
++  }
++  .full-height {
++    min-height: 100vh;
++  }
++  [type="checkbox"]:checked,
++  [type="checkbox"]:not(:checked) {
++    position: absolute;
++    left: -9999px;
++  }
++  .Text_area{
++    position: relative;
++    left: -24%;
++    height: 150px;
++    width: 130%;
++  
++    
++  
++  
++  }
++  /*===========================
++      Авторизация---------------------------------------------------------------------------------------
++  ============================*/
++.container1{
++   
++    display:flex;
++  
++}
++  .checkbox:checked + label,
++  .checkbox:not(:checked) + label {
++    position: relative;
++    left: 162.5%;
++    display: block;
++    text-align: center;
++    width: 60px;
++    height: 16px;
++    border-radius: 8px;
++    padding: 0;
++    margin: 10px auto;
++    cursor: pointer;
++    background-color: #ffeba7;
++  }
++  .checkbox:checked + label:before,
++  .checkbox:not(:checked) + label:before {
++    position: absolute;
++    display: block;
++    width: 36px;
++    height: 36px;
++    border-radius: 50%;
++    color: #ffeba7;
++    background-color: #102770;
++    font-family: "unicons";
++    content: "\eb4f";
++    z-index: 20;
++    top: -10px;
++    left: -10px;
++    line-height: 36px;
++    text-align: center;
++    font-size: 24px;
++    transition: all 0.5s ease;
++  }
++  .checkbox:checked + label:before {
++    transform: translateX(44px) rotate(-270deg);
++  }
++  
++  /*----------------------------------------------*/
++  .card-3d-wrap {
++    position: relative;
++    width: 440px;
++    max-width: 100%;
++    height: 400px;
++    -webkit-transform-style: preserve-3d;
++    transform-style: preserve-3d;
++    perspective: 800px;
++    margin-top: 60px;
++     margin-left: 110%; 
++  }
++  .card-3d-wrapper { 
++    width: 120%;
++    height: 120%;
++    top: 0;
++   
++    -webkit-transform-style: preserve-3d;
++    transform-style: preserve-3d;
++    transition: all 600ms ease-out;
++  }
++  .card-front,
++  .card-back {
++    width: 45vw;
++    height: 100%;
++    
++    background-color: #F39036;
++    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");*/
++    background-position: bottom center;
++    background-repeat: no-repeat;
++    background-size: 300%;
++    position: absolute;
++    border-radius: 25px;
++    left: 6%;
++    top: 60;
++    -webkit-transform-style: preserve-3d;
++    transform-style: preserve-3d;
++    -webkit-backface-visibility: hidden;
++    -moz-backface-visibility: hidden;
++    -o-backface-visibility: hidden;
++    backface-visibility: hidden;
++  }
++  .card-back {
++    transform: rotateY(180deg);
++  }
++  
++  
++  /*Стили для регистрации\авторизации модераторов\экспертов */
++  
++  .card-front_Other,
++  .card-back_Other {
++    width: 100%;
++    height: 210%;
++    background-color: #2a2b38;
++    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");*/
++    background-position: bottom center;
++    background-repeat: no-repeat;
++    background-size: 300%;
++    position: absolute;
++    border-radius: 6px;
++    left: -5;
++    top: 60;
++    -webkit-transform-style: preserve-3d;
++    transform-style: preserve-3d;
++    -webkit-backface-visibility: hidden;
++    -moz-backface-visibility: hidden;
++    -o-backface-visibility: hidden;
++    backface-visibility: hidden;
++  }
++  .card-back_Other {
++    transform: rotateY(180deg);
++  }
++  .card-front_Add{
++    width: 100%;
++    height: 100%;
++    background-color: #2a2b38;
++    /*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg");*/
++    background-position: bottom center;
++    background-repeat: no-repeat;
++    background-size: 300%;
++    position: absolute;
++    border-radius: 6px;
++    left: -5;
++    top: 60;
++    -webkit-transform-style: preserve-3d;
++    transform-style: preserve-3d;
++    -webkit-backface-visibility: hidden;
++    -moz-backface-visibility: hidden;
++    -o-backface-visibility: hidden;
++    backface-visibility: hidden;
++  }
++  
++  
++  
++  
++  .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {
++    transform: rotateY(180deg);
++  }
++  .center-wrap {
++    position: absolute;
++    width: 100%;
++    padding: 0 35px;
++    top: 50%;
++    left: 0;
++    transform: translate3d(0, -50%, 35px) perspective(100px);
++    z-index: 20;
++    display: block;
++  }
++  .form-group {
++    position: relative;
++    left: -15%;
++    display: block;
++    margin: 0;
++    padding: 0;
++    width: 70%;
++    height: 90%;
++  }
++  .form-style {
++    padding: 13px 20px;
++    padding-left: 55px;
++    height: 48px;
++    width: 100%;
++    font-weight: 500;
++    border-radius: 4px;
++    font-size: 14px;
++    line-height: 22px;
++    letter-spacing: 0.5px;
++    outline: none;
++    color: #c4c3ca;
++    background-color: #1f2029;
++    border: none;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++    box-shadow: 0 4px 8px 0 rgba(255, 253, 253, 0.496);
++  }
++  .form-style1{
++    padding: 13px 20px;
++    padding-left: 55px;
++    height: 48px;
++    width: 100%;
++    font-weight: 500;
++    border-radius: 4px;
++    font-size: 14px;
++    line-height: 22px;
++    letter-spacing: 0.5px;
++    outline: none;
++    color: #c4c3ca;
++    background-color: #1f2029;
++    border: none;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++    box-shadow: 0 4px 8px 0 rgba(246, 52, 52, 0.496);
++  }
++  .form-style:focus,
++  .form-style:active {
++    border: none;
++    outline: none;
++    box-shadow: 0 4px 8px 0 rgba(255, 253, 253, 0.496);
++  }
++  .input-icon {
++    position: absolute;
++    top: 0;
++    left: 18px;
++    height: 48px;
++    font-size: 24px;
++    line-height: 48px;
++    text-align: left;
++    color: #ffeba7;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  
++  .form-group input:-ms-input-placeholder {
++    color: #c4c3ca;
++    opacity: 0.7;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input::-moz-placeholder {
++    color: #c4c3ca;
++    opacity: 0.7;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input:-moz-placeholder {
++    color: #c4c3ca;
++    opacity: 0.7;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input::-webkit-input-placeholder {
++    color: #c4c3ca;
++    opacity: 0.7;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input:focus:-ms-input-placeholder {
++    opacity: 0;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input:focus::-moz-placeholder {
++    opacity: 0;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input:focus:-moz-placeholder {
++    opacity: 0;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  .form-group input:focus::-webkit-input-placeholder {
++    opacity: 0;
++    -webkit-transition: all 200ms linear;
++    transition: all 200ms linear;
++  }
++  /*===========================
++      Авторизация---------------------------------------------------------------------------------------
++  ============================*/
+\ No newline at end of file
+Index: lingua_idiom/src/App.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\n\r\n//Импорт компонентов\r\nimport MainPage from \"./pages/MainPage\";\r\nimport Authorization from \"./pages/Authorization\";\r\nimport RegistrationForInternalUsers from \"./pages/RegistrationForInternalUsers\";\r\nimport Translater from \"./pages/Translater\";\r\nimport About from \"./pages/About\";\r\nimport ModerAccount from \"./pages/ModerAccount\";\r\nimport ExpertAccount from \"./pages/ExpertAccount\";\r\nimport UserAccount from \"./pages/UserAccount\";\r\nimport Library from \"./pages/Library\";\r\nimport NotFound from \"./pages/NotFound\";\r\n\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nconst App = () => {\r\n  return (\r\n    <>\r\n      <body>\r\n        <div>\r\n          <NotFound />\r\n        </div>\r\n      </body>\r\n      <Routes>\r\n        <Route path=\"/\" element={<MainPage />} />\r\n        <Route path=\"/pages/Authorization\" element={<Authorization />} />\r\n        <Route\r\n          path=\"/pages/RegistrationForInternalUsers\"\r\n          element={<RegistrationForInternalUsers />}\r\n        />\r\n        <Route path=\"/pages/Translater\" element={<Translater />} />\r\n      </Routes>\r\n    </>\r\n  );\r\n};\r\nexport default App;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/App.js b/lingua_idiom/src/App.js
+--- a/lingua_idiom/src/App.js	(revision 1387f1783d311e863ca450f8e336eeb338f1f0f9)
++++ b/lingua_idiom/src/App.js	(date 1684652710921)
+@@ -23,10 +23,10 @@
+     <>
+       <body>
+         <div>
+-          <NotFound />
++          <Authorization />
+         </div>
+       </body>
+-      <Routes>
++      {/* <Routes>
+         <Route path="/" element={<MainPage />} />
+         <Route path="/pages/Authorization" element={<Authorization />} />
+         <Route
+@@ -34,7 +34,7 @@
+           element={<RegistrationForInternalUsers />}
+         />
+         <Route path="/pages/Translater" element={<Translater />} />
+-      </Routes>
++      </Routes> */}
+     </>
+   );
+ };
+Index: lingua_idiom/public/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\r\n    \r\n    <title>React App</title>\r\n  </head>\r\n  <body>\r\n    <noscript>You need to enable JavaScript to run this app.</noscript>\r\n    <div id=\"root\"></div>\r\n  \r\n  </body>\r\n</html>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/public/index.html b/lingua_idiom/public/index.html
+--- a/lingua_idiom/public/index.html	(revision 1387f1783d311e863ca450f8e336eeb338f1f0f9)
++++ b/lingua_idiom/public/index.html	(date 1684653048808)
+@@ -4,7 +4,7 @@
+     <meta charset="utf-8" />
+     <meta name="viewport" content="width=device-width, initial-scale=1" />
+     
+-    <title>React App</title>
++    <title>LINGUA IDIOM</title>
+   </head>
+   <body>
+     <noscript>You need to enable JavaScript to run this app.</noscript>
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/App.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/App.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/Main.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/Main.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Q0pJtB6t6VMXa8FXaqt7pDrMpX\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\" />\r\n      <created>1684500284382</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684500284382</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1387f1783d311e863ca450f8e336eeb338f1f0f9)
++++ b/.idea/workspace.xml	(date 1684653142042)
+@@ -6,10 +6,10 @@
+   <component name="ChangeListManager">
+     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/public/index.html" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/App.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Authorization.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Authorization.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -27,13 +27,13 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front&quot;
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++    "RunOnceActivity.ShowReadmeOnStart": "true",
++    "last_opened_file_path": "C:/Users/user/IdeaProjects/new_project/is_audio_idioms_back1"
+   }
+-}</component>
++}]]></component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: lingua_idiom/src/pages/Authorization.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\n\r\n//Импорт компонентов\r\nimport AuthorizationBody from \"../components/AuthorizationBody\";\r\nimport RegistrationBody from \"../components/RegistrationBody\";\r\nimport Switch from \"../components/Switch\";\r\nimport { Route, Routes, BrowserRouter } from \"react-router-dom\";\r\nimport { useState, useEffect } from \"react\";\r\n// import { supabase } from \"./supabaseClient\";\r\n// import { RequireAuth } from \"./RequireAuth\";\r\n// import { AuthProvider } from \"./AuthProvider\";\r\n\r\nclass Authorization extends React.Component {\r\n  render() {\r\n    return (\r\n      <div className=\"mainDivAuth\">\r\n        <div className=\"authRegDiv\">\r\n          <div className=\"textAuth\">АВТОРИЗАЦИЯ</div>\r\n          <div className=\"textAuth\">РЕГИСТРАЦИЯ</div>\r\n        </div>\r\n        <div className=\"switchDiv\">\r\n          <div className=\"switchDivChild\">\r\n            <Switch />\r\n          </div>\r\n        </div>\r\n\r\n        <AuthorizationBody />\r\n        <div>\r\n          <RegistrationBody />\r\n        </div>\r\n      </div>\r\n    );\r\n  }\r\n}\r\nexport default Authorization;\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/pages/Authorization.js b/lingua_idiom/src/pages/Authorization.js
+--- a/lingua_idiom/src/pages/Authorization.js	(revision 1387f1783d311e863ca450f8e336eeb338f1f0f9)
++++ b/lingua_idiom/src/pages/Authorization.js	(date 1684656696945)
+@@ -6,6 +6,7 @@
+ import Switch from "../components/Switch";
+ import { Route, Routes, BrowserRouter } from "react-router-dom";
+ import { useState, useEffect } from "react";
++import { Button, Form, Input, Checkbox, Affix, notification } from "antd";
+ // import { supabase } from "./supabaseClient";
+ // import { RequireAuth } from "./RequireAuth";
+ // import { AuthProvider } from "./AuthProvider";
+@@ -24,10 +25,158 @@
+           </div>
+         </div>
+ 
+-        <AuthorizationBody />
++        {/* <AuthorizationBody />
+         <div>
+           <RegistrationBody />
+-        </div>
++        </div> */}
++
++<div className="authorization">
++        <div className="section">
++          <div className="container1">
++
++            
++            <div className="row full-height justify-content-center">
++              <div className="col-12 text-center align-self-center py-5">
++                <div className="section pb-5 pt-5 pt-sm-2 " align="center">
++                 
++                
++                  <input
++                    className="checkbox"
++                    type="checkbox"
++                    id="reg-log"
++                    name="reg-log"
++                  />
++                  <label htmlFor="reg-log"></label>
++                  
++                  <div className="card-3d-wrap mx-auto">
++                    <div className="card-3d-wrapper">
++                      <div className="card-front">
++                        <div className="center-wrap">
++                          <div className="section text-center">
++                            <h4 className="authText">Авторизоваться</h4>
++                            <div className="form-group">
++                              <input
++                                type="email"
++                                name="logemail"
++                                className="form-style"
++                                placeholder="Адрес электронной почты"
++                                id="logemailIn"
++                                autoComplete="off"
++                              />
++                              <i className="input-icon uil uil-at"></i>
++                            </div>
++
++                            <div className="form-group mt-2">
++                              <input
++                                type="password"
++                                name="logpass"
++                                className="form-style"
++                                placeholder="Пароль"
++                                id="logpassIn"
++                                autoComplete="off"
++                              />
++                              <i className="input-icon uil uil-lock-alt"></i>
++                            </div>
++                            <Form.Item>
++                              <Button
++                                // onClick={() => {
++                                //   logIn();
++                                // }}
++                                className="AuthbuttonWhite"
++                              >
++                                Авторизоваться
++                              </Button>
++                              <Button
++                                // onClick={() => {
++                                //   navigate("/");
++                                // }}
++                                className="AuthbuttonWhite"
++                              >
++                                Назад
++                              </Button>
++                            </Form.Item>
++                          </div>
++                        </div>
++                      </div>
++                      <div  className="card-back">
++                        <div className="center-wrap">
++                          <div className="section text-center">
++                            <h4 className="authText">Зарегистрироваться</h4>
++                            <div className="form-group">
++                              <input
++                                type="text"
++                                name="logname"
++                                className="form-style"
++                                placeholder="Имя"
++                                id="logname"
++                                autoComplete="off"
++                              
++                              />
++                              <i className="input-icon uil uil-user"></i>
++                            </div>
++                            <div className="form-group mt-2">
++                              <input
++                                type="email"
++                                name="logemail"
++                                className="form-style"
++                                placeholder="Адрес электронной почты"
++                                id="logemailUp"
++                                autoComplete="off"
++                               
++                              />
++                              <i className="input-icon uil uil-at"></i>
++                            </div>
++
++                            <div className="form-group mt-2">
++                              <input
++                                type="password"
++                                name="logpass"
++                                className="form-style"
++                                placeholder="Пароль"
++                                id="logpassUp"
++                                autoComplete="off"
++                                
++                              />
++                              <i className="input-icon uil uil-lock-alt"></i>
++                            </div>
++                            <div className="form-group mt-2">
++                              <input
++                                type="password"
++                                name="logpassAffirm"
++                                className="form-style"
++                                placeholder="Подтвердите пароль"
++                                id="logpassAffirm"
++                                autoComplete="off"
++                                
++                              />
++                              <i className="input-icon uil uil-lock-alt"></i>
++                            </div>
++                            <div className="button">
++                              <Form.Item>
++                                <Button  className="AuthbuttonWhite">
++                                  Регистрация
++                                </Button>
++                                <Button
++                                  // onClick={() => {
++                                  //   navigate("/");
++                                  // }}
++                                  className="AuthbuttonWhite"
++                                >
++                                  Назад
++                                </Button>
++                              </Form.Item>
++                            </div>
++                          </div>
++                        </div>
++                      </div>
++                    </div>
++                  </div>
++                </div>
++              </div>
++              </div>
++              </div>
++              </div>
++              </div>
+       </div>
+     );
+   }

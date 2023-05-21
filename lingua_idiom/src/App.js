@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 
 //Импорт компонентов
 import MainPage from "./pages/MainPage";
