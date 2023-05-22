@@ -1,0 +1,664 @@
+Index: lingua_idiom/src/Main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>/* Импорты */\r\n@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');\r\n@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@400;800&display=swap');\r\n\r\n/* хедер */\r\n.header{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    width: 89vw;\r\n    height: 5%;\r\n\r\n    margin: 0 auto;\r\n    margin-top: 40px;\r\n\r\n}\r\n.container{\r\n    padding: 35px;\r\n    display:flex;\r\n    justify-content: space-between;\r\n}\r\n.buttons{\r\n    display: flex;\r\n    flex-direction: row;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    width: 60%;\r\n    line-height: 20px;\r\n}\r\n.buttons p{\r\n    cursor: pointer;\r\n    padding-right: 5%;\r\n    font-size: 24px;\r\n    \r\n    letter-spacing: 2px;\r\n    color: #FFFFFF;\r\n    font-family: 'Montserrat', sans-serif;\r\n}\r\n.buttonWhite{\r\n    cursor: pointer;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.headerChildren{\r\n    cursor: pointer;\r\n    display: block;\r\n    flex-direction: row;\r\n    align-items: center;\r\n    padding-top: 5px;\r\n}\r\n.imgHeader{\r\n  background-position: \"center\";\r\n            background-repeat: \"no-repeat\";\r\n            background-size: \"cover\";\r\n}\r\n/* хедер ------------------------------------------*/\r\n\r\n/* авторизация/регистрация -----------------------------------------*/\r\n\r\n.switchDiv{\r\n    width:100%;\r\n    display: flex;\r\n    justify-content: center;\r\n    margin-top: 2%;\r\n}\r\n\r\n.switchDivChild{\r\n    justify-content: center;\r\n}\r\n\r\n.textAuth{\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.authRegDiv{\r\n    display: flex;\r\n    justify-content: space-between;\r\n    width: 45vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDiv{\r\n    background-color: #F39036;\r\n    border-radius: 25px;\r\n    display:block;\r\n    width: 45vw;\r\n    margin: 0 auto;\r\n}\r\n\r\n.authDivChild{\r\n\r\n    display: block;\r\n    padding: 4%;\r\n    padding-bottom: 16px;\r\n    margin: 0 auto;\r\n    margin-top: 5%;\r\n}\r\n.authDivChild .authButtonDiv{\r\n    padding-bottom: 32px;\r\n    padding-left: 20px;\r\n    margin-right: 32px;\r\n}\r\n\r\n.authText{\r\n    font-family: 'Unbounded', cursive;\r\n    letter-spacing: 2px;\r\n    font-size: 36px;\r\n    color: #FFFFFF;\r\n    margin-left: 2%;\r\n}\r\n\r\n.inputDiv{\r\n    display: block;\r\n    width: 100%;\r\n}\r\n\r\n.inputAuth:focus, input:focus {outline: none;}\r\n.inputAuth{\r\n\r\n    height: 15%;\r\n    border-radius: 100px;\r\n    border-color: #FFFFFF; \r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-size: 26px;\r\n    padding: 1rem;\r\n    width: 95%;\r\n    margin-bottom: 4%;\r\n    margin-left: 22%;\r\n    border: none;\r\n\r\n\r\n\r\n}\r\n\r\n\r\n.AuthbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 0.5%;\r\n    margin-bottom: 4%;\r\n    margin-right: 3%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n.RegbuttonWhite{\r\n    position: relative;\r\n    height: 50px;\r\n    border-radius: 50px;\r\n    border: #FFFFFF;\r\n    font-family:'Montserrat', sans-serif;\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    letter-spacing: 1.0px;\r\n    left: 4%;\r\n    margin-bottom: 4%;\r\n    margin-right: 12.2%;\r\n    padding-left: 4%;\r\n    padding-right:4% ; \r\n}\r\n\r\n/* авторизация/регистрация---------------------------------- */\r\n\r\n/* Общий задний фон */\r\nbody{\r\n    background-color: #1F1F1F;\r\n}\r\n\r\n/* Компонент page_body */\r\n\r\n.imgPG{\r\n    height: 100%;\r\n    border-radius: 25px;\r\n}\r\n\r\n.PageBobi{\r\n    max-height: 65vh;\r\n    padding-top: 3%;\r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n}\r\n.Contentleft{\r\n    padding: 3%;\r\n    word-wrap:break-word;\r\n    width: 45.5%;\r\n    display: block;\r\n    background: #FFFFFF;\r\n    border-radius: 25px;\r\n}\r\n.Contentright{\r\n    overflow: hidden;\r\n    display: block;\r\n    flex-direction: row;\r\n    width: 45.5%;\r\n    border-radius: 25px;\r\n}\r\n \r\n.page_body_h1{\r\n    width: 98%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 50px;\r\n    line-height: 70px;\r\n    color: #1F1F1F;\r\n}\r\n.page_body_h2{\r\n    padding-top: 0.01%;\r\n    width: 98%;\r\n    font-family: 'Montserrat';\r\n    font-style: normal;\r\n    font-weight: 400;\r\n    font-size: 24px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #1F1F1F;\r\n}\r\n\r\n.page_button{\r\n  cursor: pointer;\r\n    width: 100%;\r\n    display:flex;\r\n    vertical-align: middle;\r\n    height: 25%;\r\n    background: #F39036;\r\n    border-radius: 1000px; \r\n    flex-direction:row;\r\n    justify-content:space-between;\r\n    margin-top: 10%;\r\n    padding-left: 1%;\r\n    padding-right: 1%;\r\n}\r\n.page_button_text{\r\n\r\n    padding-left: 1%;\r\n    display: flex;\r\n    justify-content: flex-start;\r\n    align-items: center;\r\n    width: 67%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-size: 32px;\r\n    line-height: 46px;\r\n    color: #FFFFFF;\r\n}\r\n\r\n.page_button_circle{\r\n    cursor: pointer;\r\n    display: flex;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n} \r\n\r\n.body_MainPage{\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-left: 1%;\r\n    padding-right: 1%;\r\n}\r\n/* Body перевод---------------------------------------------------------------------------- */\r\n.TranslatorBoby{\r\nmax-height: 65vh;\r\npadding-top: 1%;\r\n  width: 89.6%;\r\n  margin: 0 auto;\r\n  display: flex;\r\n  justify-content: space-between;\r\n flex-direction: row;\r\n}\r\n.Contentlefttransl{\r\n    display: block;\r\n    flex-direction: row;\r\n    margin-top: 1%;\r\n    width: 40%;\r\n    height: 80%;\r\n    background: #FFFFFF;\r\n    border-radius: 25px;\r\n}\r\n.Contentrighttransl{\r\nwidth: 40%;\r\nheight: 80%;\r\nbackground: #FFFFFF;\r\nborder-radius: 25px;\r\nmargin-top: 1%;\r\n}\r\n.Contentmiddletransl{\r\n    display: flex;\r\n    flex-direction: row;\r\n    align-items: flex-start;\r\n    justify-content: flex-end;\r\n    align-items: center;\r\n    padding: 16px 32px;\r\n    width: 192px;\r\n    height: 49px;\r\n    margin-top: 4%;\r\n    background: #F39036;\r\n    border-radius: 50px;\r\n    align-items: center;\r\n    font-family: 'Montserrat', sans-serif;\r\n    letter-spacing: 2px;\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    font-size: 24px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #FFFFFF;\r\n}\r\n.middl{\r\n    padding-top: 17%;\r\n}\r\n/* Селектор выбора языка------------------------------------------------------ */\r\n.Language_selection{\r\n    width: 269px;\r\n    height: 41px;\r\n    top: 40px;\r\n    margin-left: 10%;\r\n    padding-top: 5%;\r\n    background: #FFFFFF;\r\n\r\n    border-radius: 5px;\r\n}\r\n/* TextArea------------------------------------------------------ */\r\n\r\n.TextArea{\r\nposition: relative;\r\nheight: 350px;\r\nheight: 475px;\r\ntop: 113px;\r\nbackground: #FFFFFF;\r\nborder-radius: 15px;\r\n}\r\n.Area{\r\n size: 20%;\r\n height: 20%;\r\n}\r\n.Chek{\r\n    margin-left: 5%;\r\n    margin-top: 2%;\r\n    width: 268px;\r\n    height: 17px;\r\n    font-family: 'Montserrat';\r\n    font-style: normal;\r\n    font-weight: 500;\r\n    font-size: 24px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #1F1F1F; \r\n}\r\n\r\n/* --- */\r\n\r\n/* --- */\r\n\r\n.buttonsTop{\r\nflex-direction: row;\r\njustify-content: flex-end;\r\nalign-items: center;\r\npadding: 0%;\r\nwidth: 138px;\r\nheight: 40px;\r\nbackground: #F39036;\r\nborder-radius: 50px;\r\ncolor: #FFFFFF;\r\nflex: none;\r\nletter-spacing: 2.0px;\r\nfont-family: 'Montserrat', sans-serif;\r\nmargin-left: 3%;\r\n}\r\n.ButtonTr{\r\n    padding-top: 10%;  \r\n    \r\n}\r\n  /* Страница About -------------------------------------------------------------------------*/\r\n  .textDivAU{\r\n    margin-top: 4%;\r\n    font-family: 'Unbounded', cursive;\r\n    font-style: normal;\r\n    font-weight: bold;\r\n    font-size: 50px;\r\n    line-height: 70px;\r\n    padding-left: 40px;\r\n    padding-top: 30px;\r\n  }\r\n\r\n.mainDiv2blocks{\r\n  width: 89vw;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n  \r\n\r\n}\r\n\r\n\r\n  .aboutLeft{\r\n    \r\n    margin-top: 2%;\r\n    width: 43.5vw;\r\n    height: 35vw;\r\n    \r\n    border-radius: 25px;\r\n  }\r\n\r\n  .aboutRight{\r\n    \r\n    margin-top: 2%;\r\n    width: 43.5vw;\r\n    height: 35vw;\r\n    \r\n    border-radius: 25px;\r\n  }\r\n\r\n.personMainDiv{\r\n    width: 100%;\r\n    padding-left: 50px;\r\n    \r\n    \r\n}\r\n\r\n\r\n.avatarDiv{\r\n    \r\n    padding-top: 15%;\r\n    margin: 0 auto;\r\n    display: flex;\r\n    justify-content: space-between;\r\n    flex-direction: row;\r\n    \r\n    \r\n}\r\n.avatar{\r\n    vertical-align: middle;\r\n    width: 110px;\r\n    height: 110px;\r\n    border-radius: 50%;\r\n    \r\n}\r\n\r\n.personMainDiv{\r\n    height: 580px; \r\n}\r\n\r\n.avatarDivChildren{\r\n    padding-left: 31px;\r\n    padding-bottom: 50px;\r\n    width: 40%;\r\n    display: flex;\r\n    flex-direction: row;\r\n    \r\n\r\n}\r\n\r\n.description{\r\n    color: #FFFFFF;\r\n    font-family: 'Unbounded', cursive;\r\n    font-weight: bold;\r\n    font-size: 18px;\r\n    padding-left: 10%;\r\n}\r\n.descSmall{\r\n    color: antiquewhite;\r\n    font-size: 12px;\r\n    padding-top: 5px;\r\n}\r\n\r\n/* Страница NotFound------------------------------------------------------------------------ */\r\n\r\n.whiteBox{\r\n    \r\n    width: 89vw;\r\n    margin: 0 auto;\r\n    border-radius: 25px;\r\n    background-color: #FFFFFF;\r\n    margin-top: 2%;\r\n}\r\n\r\n.textNF{\r\n    font-family: 'Montserrat';\r\n    font-style: normal;\r\n    padding: 20px;\r\n    font-size: 36px;\r\n    line-height: 29px;\r\n    letter-spacing: 0.03em;\r\n    color: #1F1F1F\r\n}\r\n\r\n.section {\r\n    position: relative;\r\n  \r\n    width: 100%;\r\n    display: block;\r\n    \r\n  }\r\n  .full-height {\r\n    min-height: 100vh;\r\n  }\r\n  [type=\"checkbox\"]:checked,\r\n  [type=\"checkbox\"]:not(:checked) {\r\n    position: absolute;\r\n    left: -9999px;\r\n  }\r\n  .Text_area{\r\n    position: relative;\r\n    left: -24%;\r\n    height: 150px;\r\n    width: 130%;\r\n  \r\n    \r\n  \r\n  \r\n  }\r\n  /*===========================\r\n      Авторизация---------------------------------------------------------------------------------------\r\n  ============================*/\r\n.container1{\r\n   \r\n    display:flex;\r\n  \r\n}\r\n  .checkbox:checked + label,\r\n  .checkbox:not(:checked) + label {\r\n  \r\n    position: relative;\r\n    left: 50.5%;\r\n    display: block;\r\n    width: 60px;\r\n    height: 16px;\r\n    border-radius: 8px;\r\n    padding: 0;\r\n    margin: 10px auto;\r\n    cursor: pointer;\r\n    background-color: #F39036;\r\n    margin-top: 5%;\r\n  }\r\n  /* белый кружок */\r\n  .checkbox:checked + label:before,\r\n  .checkbox:not(:checked) + label:before {\r\n    \r\n    position: absolute;\r\n    display: block;\r\n    width: 36px;\r\n    height: 36px;\r\n    border-radius: 50%;\r\n    color: #F39036;\r\n    background-color: #ffffff;\r\n    font-family: \"unicons\";\r\n    content: \"\\eb4f\";\r\n    z-index: 20;\r\n    top: -10px;\r\n    left: -10px;\r\n    line-height: 36px;\r\n    text-align: center;\r\n    font-size: 24px;\r\n    transition: all 0.5s ease;\r\n  }\r\n  .checkbox:checked + label:before {\r\n    transform: translateX(44px) rotate(-270deg);\r\n  }\r\n  \r\n  /*----------------------------------------------*/\r\n  .card-3d-wrap {\r\n    position: relative;\r\n    width: 940px;\r\n    max-width: 100%;\r\n    height: 500px;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    perspective: 800px;\r\n    margin-top: 60px;\r\n     \r\n  }\r\n  .card-3d-wrapper { \r\n    width: 120%;\r\n    height: 120%;\r\n    margin-left: 41%;\r\n    top: 0;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    transition: all 600ms ease-out;\r\n  }\r\n  .card-front,\r\n  .card-back {\r\n    width: 35vw;\r\n    height: 100%;\r\n    background-color: #F39036;\r\n    /*background-image: url(\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/pat.svg\");*/\r\n    background-position: bottom center;\r\n    background-repeat: no-repeat;\r\n    position: absolute;\r\n    border-radius: 25px;\r\n    left: 6%;\r\n    top: 60;\r\n    -webkit-transform-style: preserve-3d;\r\n    transform-style: preserve-3d;\r\n    -webkit-backface-visibility: hidden;\r\n    -moz-backface-visibility: hidden;\r\n    -o-backface-visibility: hidden;\r\n    backface-visibility: hidden;\r\n  }\r\n  .card-back {\r\n    transform: rotateY(180deg);\r\n  }\r\n \r\n  .checkbox:checked ~ .card-3d-wrap .card-3d-wrapper {\r\n    transform: rotateY(180deg);\r\n  }\r\n  .center-wrap {\r\n    position: absolute;\r\n    width: 100%;\r\n    padding: 0 35px;\r\n    top: 50%;\r\n    \r\n    transform: translate3d(0, -50%, 35px) perspective(100px);\r\n    z-index: 20;\r\n    display: block;\r\n  }\r\n  .form-group {\r\n    position: relative;\r\n    left: -15%;\r\n    display: block;\r\n    padding: 0;\r\n    width: 70%;\r\n    height: 90%;\r\n  }\r\n  .form-style {\r\n    padding: 13px 20px;\r\n    padding-left: 55px;\r\n    height: 48px;\r\n    width: 100%;\r\n    font-weight: 500;\r\n    border-radius: 4px;\r\n    font-size: 14px;\r\n    line-height: 22px;\r\n    letter-spacing: 0.5px;\r\n    outline: none;\r\n    color: #c4c3ca;\r\n    background-color: #1f2029;\r\n    border: none;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n \r\n  .form-group input:-ms-input-placeholder {\r\n    color: #c4c3ca;\r\n    opacity: 0.7;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input::-moz-placeholder {\r\n    color: #c4c3ca;\r\n    opacity: 0.7;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input:-moz-placeholder {\r\n    color: #c4c3ca;\r\n    opacity: 0.7;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input::-webkit-input-placeholder {\r\n    color: #c4c3ca;\r\n    opacity: 0.7;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input:focus:-ms-input-placeholder {\r\n    opacity: 0;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input:focus::-moz-placeholder {\r\n    opacity: 0;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input:focus:-moz-placeholder {\r\n    opacity: 0;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  .form-group input:focus::-webkit-input-placeholder {\r\n    opacity: 0;\r\n    -webkit-transition: all 200ms linear;\r\n    transition: all 200ms linear;\r\n  }\r\n  /*===========================\r\n      Авторизация---------------------------------------------------------------------------------------\r\n  ============================*/
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/Main.css b/lingua_idiom/src/Main.css
+--- a/lingua_idiom/src/Main.css	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/lingua_idiom/src/Main.css	(date 1684767981604)
+@@ -374,7 +374,7 @@
+ justify-content: flex-end;
+ align-items: center;
+ padding: 0%;
+-width: 138px;
++width: 130px;
+ height: 40px;
+ background: #F39036;
+ border-radius: 50px;
+@@ -384,6 +384,23 @@
+ font-family: 'Montserrat', sans-serif;
+ margin-left: 3%;
+ }
++
++.buttonsToplike{
++  flex-direction: row;
++  justify-content: flex-end;
++  align-items: center;
++  padding: 0%;
++  width: 60px;
++  height: 40px;
++  background: #F39036;
++  border-radius: 50px;
++  color: #FFFFFF;
++  flex: none;
++  letter-spacing: 2.0px;
++  font-family: 'Montserrat', sans-serif;
++  margin-left: 3%;
++  }
++
+ .ButtonTr{
+     padding-top: 10%;  
+     
+Index: lingua_idiom/public/manifest.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>{\r\n  \"short_name\": \"React App\",\r\n  \"name\": \"Create React App Sample\",\r\n  \"icons\": [\r\n    {\r\n      \"src\": \"favicon.png\",\r\n      \"sizes\": \"64x64 32x32 24x24 16x16\",\r\n      \"type\": \"image/x-png\"\r\n    }\r\n  ],\r\n  \"start_url\": \".\",\r\n  \"display\": \"standalone\",\r\n  \"theme_color\": \"#000000\",\r\n  \"background_color\": \"#ffffff\"\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/public/manifest.json b/lingua_idiom/public/manifest.json
+--- a/lingua_idiom/public/manifest.json	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/lingua_idiom/public/manifest.json	(date 1684758002910)
+@@ -3,9 +3,9 @@
+   "name": "Create React App Sample",
+   "icons": [
+     {
+-      "src": "favicon.png",
++      "src": "favicon.svg",
+       "sizes": "64x64 32x32 24x24 16x16",
+-      "type": "image/x-png"
++      "type": "image/x-svg"
+     }
+   ],
+   "start_url": ".",
+Index: lingua_idiom/src/components/SearchCategory.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport { Button, Form, Input, Checkbox, Select, notification } from \"antd\";\r\nimport { useState } from \"react\";\r\n\r\n\r\nfunction SearchCategory() {\r\n    const [tag, settag] = useState([]);\r\n  const [chbox, setchbox] = useState(\"none\");\r\n    async function onChange() {\r\n        var chec = document.getElementById(\"one\");\r\n        if (chec.checked) {\r\n          setchbox(\"contents\");\r\n          console.log(\"отобразить\", chbox);\r\n        } else {\r\n          setchbox(\"none\");\r\n          console.log(\"не отобразить\", chbox);\r\n        }\r\n        return chbox;\r\n      }\r\n    return ( \r\n        <div className=\"SearchCategory\">\r\n      <Checkbox id=\"one\" className=\"one\" colorBorder=\"#f44336\" onChange={onChange}>Поиск по категории</Checkbox>\r\n        \r\n    <Form.Item  style={{ display: chbox }}>\r\n    <Select\r\n      name=\"tag_id\"\r\n    //    onChange={handleChange}            \r\n      defaultValue=\"Выберите значение\"           \r\n      options={tag?.map((tag) => {\r\n        return {\r\n          label: tag.tag_name,\r\n          value: tag.tag_id,\r\n        };\r\n      })}\r\n    />\r\n   </Form.Item>\r\n   </div>\r\n   )\r\n}\r\nexport default SearchCategory
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/SearchCategory.js b/lingua_idiom/src/components/SearchCategory.js
+--- a/lingua_idiom/src/components/SearchCategory.js	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/lingua_idiom/src/components/SearchCategory.js	(date 1684766684214)
+@@ -1,10 +1,11 @@
+-import React from "react";
+ import { Button, Form, Input, Checkbox, Select, notification } from "antd";
+ import { useState } from "react";
++import React, { useEffect } from "react";
++import { supabase } from "../supabase/supabaseClient";
+ 
+ 
+ function SearchCategory() {
+-    const [tag, settag] = useState([]);
++  const [tag, settag] = useState([]);
+   const [chbox, setchbox] = useState("none");
+     async function onChange() {
+         var chec = document.getElementById("one");
+@@ -17,6 +18,63 @@
+         }
+         return chbox;
+       }
++      useEffect(() => {
++        gettags();
++      }, []);
++
++
++      async function HandleChange  (value)  {
++        const val = value
++        console.log(val+" значение")
++    
++        const translationLanguage =
++        document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык вывода
++      // console.log(translationLanguage);
++    
++      //Получаем язык на который переводим
++      let lang = 0;
++      if (translationLanguage == "rus") {
++        lang = 1;
++      } else if (translationLanguage == "kor") {
++        lang = 2;
++      } else {
++        lang = 3;
++      }
++      console.log(lang+" язык")
++    
++      document.getElementById("textAreaEnter").value =""
++      try {
++        //Получаем фразеологизм на языке, который выбран к переводу
++        const translate_tag = await supabase
++          .from("phraseological")
++          .select("phrase_id","tag_id")
++          .eq("tag_id", val)
++    
++          console.log(translate_tag.data)
++    
++        for(let i = 0; i <= translate_tag.data.length; i++){
++        const translate_tag_enter = await supabase
++          .from("phrase_text")
++          .select("phrase_text_text")
++          .eq("phrase_id",translate_tag.data[i]["phrase_id"])
++          .eq("language_id",lang)       
++          console.log(translate_tag_enter.data)
++          
++        document.getElementById("textAreaEnter").value +=
++        translate_tag_enter.data[0]["phrase_text_text"]+" ; " //то выводим во второй текстБокс перевод по выбранному языку к переводу
++      }} catch (error) {
++        notification.open({ message: "Успешно", description: "Найдены все фразеологизмы по выбранной категории" });
++      }
++      };
++
++      async function gettags() {
++        const tags = await supabase.from("tags").select();
++        const tag = (await tags).data;
++        const data_tag = await supabase.from("tags").select();
++        settag(data_tag.data);
++        return data_tag;
++      }
++
+     return ( 
+         <div className="SearchCategory">
+       <Checkbox id="one" className="one" colorBorder="#f44336" onChange={onChange}>Поиск по категории</Checkbox>
+@@ -24,7 +82,7 @@
+     <Form.Item  style={{ display: chbox }}>
+     <Select
+       name="tag_id"
+-    //    onChange={handleChange}            
++      onChange={HandleChange}            
+       defaultValue="Выберите значение"           
+       options={tag?.map((tag) => {
+         return {
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/public/favicon.ico\" beforeDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/public/manifest.json\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/public/manifest.json\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/Main.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/Main.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/components/SearchCategory.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/components/SearchCategory.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/lingua_idiom/src/pages/About.js\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/lingua_idiom/src/pages/About.js\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"MarkdownSettingsMigration\">\r\n    <option name=\"stateVersion\" value=\"1\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"2Q0pJtB6t6VMXa8FXaqt7pDrMpX\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front\"\r\n  }\r\n}]]></component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"ceed9a00-f6bf-4ed2-a737-db381e5b625d\" name=\"Changes\" comment=\"\" />\r\n      <created>1684500284382</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1684500284382</updated>\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/.idea/workspace.xml	(date 1684768127596)
+@@ -6,12 +6,12 @@
+   <component name="ChangeListManager">
+     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/lingua_idiom/public/favicon.ico" beforeDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/public/favicon.png" beforeDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/public/manifest.json" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/Language_selection.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/Language_selection.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/SearchCategory.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/SearchCategory.js" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/About.js" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -29,13 +29,13 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "last_opened_file_path": "C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/IdeaProjects/new_project/is_audio_idioms_front&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+Index: lingua_idiom/src/components/TranslatorBoby.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React, { Component } from \"react\";\r\nimport {Form,Input,Button} from \"antd\";\r\nimport Language_selection from \"./Language_selection\";\r\nimport TextArea from \"./TextArea\";\r\nimport SearchCategory from \"./SearchCategory\";\r\nimport { HeartTwoTone, DislikeTwoTone, LikeTwoTone } from \"@ant-design/icons\";\r\n\r\nclass TranslatorBoby extends React.Component {\r\n    render() {\r\n      const { TextArea } = Input;\r\n      return (\r\n        <div className=\"TranslatorBoby\">\r\n        <div className=\"Contentlefttransl\">\r\n          <div className=\"Language_selection\">              \r\n                  <Language_selection/>\r\n            </div>\r\n            <div className=\"TextArea\">\r\n                <TextArea style={{height:\"280px\"}}/>\r\n                <div className=\"Chek\">\r\n                <SearchCategory></SearchCategory>\r\n                </div>\r\n          <div  className=\"ButtonTr\">\r\n                <Button\r\n                className=\"buttonsTop\"\r\n                onClick={\"addToFavourite\"}\r\n                icon={<HeartTwoTone />}\r\n              ></Button>\r\n              <Button\r\n                className=\"buttonsTop\"\r\n                onClick={\"likePhrase\"}\r\n                id=\"like\"\r\n                icon={<LikeTwoTone />}\r\n              >\r\n                {}\r\n              </Button>\r\n              <Button\r\n                className=\"buttonsTop\"\r\n                onClick={\"\"}\r\n                id=\"dislike\"\r\n                icon={<DislikeTwoTone />}\r\n              >\r\n                {\"\"}\r\n              </Button>\r\n              <Button\r\n                // onClick={() => {\r\n                //   navigate(\"\");\r\n                // }}\r\n                onClick={\"\"}\r\n                className=\"buttonsTop\"\r\n              >\r\n                Прослушать\r\n              </Button>\r\n                </div>\r\n            </div>\r\n          \r\n          \r\n        </div>\r\n        <div className=\"middl\">\r\n        <button className=\"Contentmiddletransl\">Заменить</button>\r\n        <button className=\"Contentmiddletransl\">Перевести</button>\r\n        </div>\r\n        <div className=\"Contentrighttransl\">\r\n          <div className=\"Language_selection\">\r\n        <Language_selection/>\r\n         </div>\r\n         <div className=\"TextArea\">\r\n        <TextArea style={{height:\"280px\"}} />\r\n          </div> \r\n          <Button onClick={\"PlayAudio2\"} className=\"buttonsTop\">\r\n                Прослушать\r\n              </Button>      \r\n        </div>\r\n        </div>\r\n        );\r\n    }\r\n  }\r\n  export default TranslatorBoby;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/TranslatorBoby.js b/lingua_idiom/src/components/TranslatorBoby.js
+--- a/lingua_idiom/src/components/TranslatorBoby.js	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/lingua_idiom/src/components/TranslatorBoby.js	(date 1684771187315)
+@@ -1,77 +1,369 @@
+ import React, { Component } from "react";
+-import {Form,Input,Button} from "antd";
++import {Form,Input,Button, notification} from "antd";
+ import Language_selection from "./Language_selection";
+-import TextArea from "./TextArea";
++import Language_selectionExit from "./Language_selection";
+ import SearchCategory from "./SearchCategory";
+ import { HeartTwoTone, DislikeTwoTone, LikeTwoTone } from "@ant-design/icons";
++import { supabase } from "../supabase/supabaseClient";
++import { useState } from "react";
++
++export default function TranslatorBoby()  {
++
++  const [lidesc,setlidesc]= useState([]);
++  const [litranscEnter,setlitranscEnter] = useState([]);
++  const [translitExit,settranslitExit] = useState([]);
++  const [buttonTextLike, setButtonTextLike] = useState(0);
++  const [buttonTextDislike, setButtonTextDislike] = useState(0);
++  const [isplaying, setisplaying] = useState(false);
++  const [isplaying2, setisplaying2] = useState(false);
++
++
++  async function ChangeLanguage() {
++    const chosenLanguage = document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык ввода
++     const translationLanguage = document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
++     document.getElementById("select_lang_enter").value = translationLanguage;
++     document.getElementById("select_lang_exit").value = chosenLanguage;
++     const firstT = document.getElementById("textAreaEnter").value;
++     const firstText = firstT.toLowerCase(); //Возвращаем текст из левого блока
++     const secondT = document.getElementById("textAreaExit").value;
++     const secondText = secondT.toLowerCase(); //Возвращаем текст из правого блока
++     document.getElementById("textAreaEnter").value = secondT;
++     document.getElementById("textAreaExit").value = firstT;
++  }
++
++  async function TranslateFunction() {
++     GetLike();
++    const translationLanguage =
++      document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
++    // console.log(translationLanguage);
++
++    //Получаем язык на который переводим
++    let lang = 0;
++    if (translationLanguage == "rus") {
++      lang = 1;
++    } else if (translationLanguage == "kor") {
++      lang = 2;
++    } else {
++      lang = 3;
++    }
++
++    const firstT = document.getElementById("textAreaEnter").value;
++    const firstText = firstT.toLowerCase(); //Возвращаем текст к переводу
++
++    if (firstText == "") {
++      document.getElementById("textAreaExit").value = "";
++    } else {
++      //Получаем айди фразеологизма с которого переводим
++      const phrase = await supabase
++        .from("phrase_text")
++        .select()
++        .eq("phrase_text_text", firstText);
++
++      try {
++        //Получаем фразеологизм на языке, который выбран к переводу
++        const translate = await supabase
++          .from("phrase_text")
++          .select()
++          .eq("phrase_id", phrase.data[0]["phrase_id"])
++          .eq("language_id", lang);
++        settranslitExit((translate.data[0]["phrase_text_text"]))
++        setlidesc(translate.data[0]["phrase_text_desc"])
++        setlitranscEnter(translate.data[0]["phrase_text_transcription"])
++        
++         //то выводим во второй текстБокс перевод по выбранному языку к переводу
++        // document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
++      } catch (error) {
++        notification.open({ message: "Ошибка", description: error.message });
++      }
++      //-------------------------------------------------------------------------------
++      // Вывод лайков
++    }
++  }
++
++
++//Функция лайка
++async function LikePhrase() {
++  const firstT = document.getElementById("textAreaEnter").value;
++  const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
++
++  //Получаем айди фразеологизма
++  const phrase = await supabase
++    .from("phrase_text")
++    .select("phrase_id")
++    .eq("phrase_text_text", firstText);
++
++  const phrase2 = await supabase
++    .from("phraseological")
++    .select()
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  let like = phrase2.data[0]["rating_like"];
++  console.log("like: " + like);
++  const { error } = await supabase
++    .from("phraseological")
++    .update({ rating_like: like + 1 })
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  const phrase3 = await supabase
++    .from("phraseological")
++    .select()
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  setButtonTextLike(phrase3.data[0]["rating_like"]);
++}
++
++//Функция дизлайка
++async function DislikePhrase() {
++  const firstT = document.getElementById("textAreaEnter").value;
++  const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
++
++  //Получаем айди фразеологизма
++  const phrase = await supabase
++    .from("phrase_text")
++    .select("phrase_id")
++    .eq("phrase_text_text", firstText);
++
++  const phrase2 = await supabase
++    .from("phraseological")
++    .select()
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  let like = phrase2.data[0]["rating_dislike"];
++  console.log("like: " + like);
++  const { error } = await supabase
++    .from("phraseological")
++    .update({ rating_dislike: like + 1 })
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  const phrase3 = await supabase
++    .from("phraseological")
++    .select()
++    .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++  setButtonTextDislike(phrase3.data[0]["rating_dislike"]);
++}
++//Функция добавления в избранное
++async function AddToFavourite() {
++  notification.open({
++    message: "Внимание!",
++    description:
++      "Для добавления фразеологизма в избранное Вам необходимо войти.",
++  });
++}
++
++  async function GetLike() {
++    const firstT = document.getElementById("textAreaEnter").value;
++    const firstText = firstT.toLowerCase(); //Возвращаем текст
++
++    if (firstText == "") {
++      document.getElementById("textAreaExit").value = "";
++    } else {
++      const phrase = await supabase
++        .from("phrase_text")
++        .select()
++        .eq("phrase_text_text", firstText);
++
++      const likes = await supabase
++        .from("phraseological")
++        .select()
++        .eq("phrase_id", phrase.data[0]["phrase_id"]);
++
++      setButtonTextLike(likes.data[0]["rating_like"]);
++      setButtonTextDislike(likes.data[0]["rating_dislike"]);
++    }
++  }
++
++  async function PlayAudio() {
++    const firstT = document.getElementById("textAreaEnter").value;
++    const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
++
++    //Получаем айди фразеологизма
++    const audio_id = await supabase
++      .from("phrase_text")
++      .select("audio_id")
++      .eq("phrase_text_text", firstText);
++
++    //----------------------------Получаем аудиодорожку
++    const audio_path = await supabase
++      .from("audio_recording")
++      .select("audio_path")
++      .eq("audio_id", audio_id.data[0]["audio_id"]);
++
++    var path =
++      "https://inyxfjfjxzdevxwzukie.supabase.co/storage/v1/object/public/audio/";
++
++    path = path + audio_path.data[0]["audio_path"];
++
++    var audio = document.getElementById("audio");
++
++    audio.volume = 0.9;
++
++    audio.src = path;
++
++    if (isplaying) {
++      setisplaying(false);
++      audio.pause();
++    } else {
++      setisplaying(true);
++      audio.play();
++      setisplaying(false);
++    }
++  }
++
++
++  async function PlayAudio2() {
++    const firstT = document.getElementById("textAreaExit").value;
++    const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
++
++    //Получаем айди фразеологизма
++    const audio_id = await supabase
++      .from("phrase_text")
++      .select("audio_id")
++      .eq("phrase_text_text", firstText);
++
++    //Получаем аудиодорожку
++    const audio_path = await supabase
++      .from("audio_recording")
++      .select("audio_path")
++      .eq("audio_id", audio_id.data[0]["audio_id"]);
++
++    var path =
++      "https://inyxfjfjxzdevxwzukie.supabase.co/storage/v1/object/public/audio/";
++
++    path = path + audio_path.data[0]["audio_path"];
++
++    var audio = document.getElementById("audio");
++
++    audio.volume = 0.9;
++
++    audio.src = path;
++
++    if (isplaying) {
++      setisplaying2(false);
++      audio.pause();
++    } else {
++      setisplaying2(true);
++      audio.play();
++      setisplaying2(false);
++    }
++  }
+ 
+-class TranslatorBoby extends React.Component {
+-    render() {
++
++
+       const { TextArea } = Input;
+       return (
+         <div className="TranslatorBoby">
+         <div className="Contentlefttransl">
+-          <div className="Language_selection">              
+-                  <Language_selection/>
++          <div className="Language_selection"> 
++          <Form>
++        <Form.Item name="language_left" id="language_left">              
++                  <select
++                  className="Language_selection"
++                   id="select_lang_enter"
++                   onChange={(e) => {
++                     console.log(e.target.value);
++                   }}
++                  >
++                    <option id="rus" value="rus">
++                      Русский
++                    </option>
++                    <option id="fre" value="fre">
++                      French
++                    </option>
++                    <option id="kor" value="kor">
++                      Korean
++                    </option>
++                  </select>
++                
++              </Form.Item>
++              <audio id="audio" src=""></audio>
++            </Form>
++
+             </div>
+             <div className="TextArea">
+-                <TextArea style={{height:"280px"}}/>
++                <TextArea               
++                id="textAreaEnter"
++                maxLength={100}
++                 style={{height:"280px"}}
++                 placeholder="Введите текст для перевода"
++                 />
+                 <div className="Chek">
+                 <SearchCategory></SearchCategory>
+                 </div>
+           <div  className="ButtonTr">
+                 <Button
+-                className="buttonsTop"
+-                onClick={"addToFavourite"}
++                className="buttonsToplike"
++                onClick={AddToFavourite}
+                 icon={<HeartTwoTone />}
+               ></Button>
+               <Button
+-                className="buttonsTop"
+-                onClick={"likePhrase"}
++                className="buttonsToplike"
++                onClick={LikePhrase}
+                 id="like"
+                 icon={<LikeTwoTone />}
+               >
+-                {}
++                {buttonTextLike}
+               </Button>
+               <Button
+-                className="buttonsTop"
+-                onClick={""}
++                className="buttonsToplike"
++                onClick={DislikePhrase}
+                 id="dislike"
+                 icon={<DislikeTwoTone />}
+               >
+-                {""}
++                {buttonTextDislike}
+               </Button>
+               <Button
+-                // onClick={() => {
+-                //   navigate("");
+-                // }}
+-                onClick={""}
++                onClick={PlayAudio}
+                 className="buttonsTop"
+               >
+                 Прослушать
+               </Button>
+                 </div>
+-            </div>
+-          
+-          
++            </div>               
+         </div>
+         <div className="middl">
+-        <button className="Contentmiddletransl">Заменить</button>
+-        <button className="Contentmiddletransl">Перевести</button>
++        <Button className="Contentmiddletransl" onClick={ChangeLanguage}>Заменить</Button>
++        <Button className="Contentmiddletransl"onClick={TranslateFunction} >Перевести</Button>
+         </div>
+         <div className="Contentrighttransl">
+           <div className="Language_selection">
+-        <Language_selection/>
++          <Form>
++        <Form.Item name="language_left" id="language_left">            
++                  <select
++                  className="Language_selection"
++                   id="select_lang_exit"
++                   onChange={(e) => {
++                     console.log(e.target.value);
++                   }}
++                  >
++                    <option id="rus" value="rus">
++                      Русский
++                    </option>
++                    <option id="fre" value="fre">
++                      French
++                    </option>
++                    <option id="kor" value="kor">
++                      Korean
++                    </option>
++                  </select>               
++              </Form.Item>
++            </Form>
+          </div>
+          <div className="TextArea">
+-        <TextArea style={{height:"280px"}} />
++        <TextArea 
++         showCount
++        value={translitExit}
++         id="textAreaExit"
++         maxLength={100}
++         /*onChange={onChange}*/ placeholder="Перевод"
++        style={{height:"280px"}} 
++        />
+           </div> 
+-          <Button onClick={"PlayAudio2"} className="buttonsTop">
++          <Button onClick={PlayAudio2} className="buttonsTop">
+                 Прослушать
+               </Button>      
+         </div>
+         </div>
+         );
+-    }
++    
+   }
+-  export default TranslatorBoby;
+\ No newline at end of file
+Index: lingua_idiom/src/components/Language_selection.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import React from \"react\";\r\nimport { Button, Form, Input, Checkbox, Select, notification } from \"antd\";\r\n\r\n\r\n\r\n\r\nfunction Language_selection() {\r\n  async function HandleChange  (value)  {\r\n    const val = value\r\n    console.log(val+\" значение\")\r\n\r\n    const translationLanguage =\r\n    document.getElementById(\"select_lang_enter\").value; //Возвращаем выбранный язык вывода\r\n  // console.log(translationLanguage);\r\n  }\r\n      return (\r\n        <div className=\"Language_selection\">\r\n    <Form>\r\n        <Form.Item name=\"language_left\" id=\"language_left\">\r\n                \r\n                  <Select\r\n                    name=\"select_lang_enter\"\r\n                    defaultValue=\"Выберите язык\"  \r\n                    onChange={HandleChange}  \r\n                  >\r\n                    <option id=\"rus\" value=\"rus\">\r\n                      Русский\r\n                    </option>\r\n                    <option id=\"fre\" value=\"fre\">\r\n                      French\r\n                    </option>\r\n                    <option id=\"kor\" value=\"kor\">\r\n                      Korean\r\n                    </option>\r\n                  </Select>\r\n                \r\n              </Form.Item>\r\n            </Form>\r\n        </div>\r\n        );\r\n    \r\n  }\r\n  export default Language_selection;
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lingua_idiom/src/components/Language_selection.js b/lingua_idiom/src/components/Language_selection.js
+--- a/lingua_idiom/src/components/Language_selection.js	(revision eda13cd02973aac7a0870322968b930012e9c195)
++++ b/lingua_idiom/src/components/Language_selection.js	(date 1684763603236)
+@@ -2,9 +2,8 @@
+ import { Button, Form, Input, Checkbox, Select, notification } from "antd";
+ 
+ 
+-
+-
+ function Language_selection() {
++
+   async function HandleChange  (value)  {
+     const val = value
+     console.log(val+" значение")
+@@ -18,10 +17,12 @@
+     <Form>
+         <Form.Item name="language_left" id="language_left">
+                 
+-                  <Select
+-                    name="select_lang_enter"
+-                    defaultValue="Выберите язык"  
+-                    onChange={HandleChange}  
++                  <select
++                  className="Language_selection"
++                   id="select_lang_enter"
++                   onChange={(e) => {
++                     console.log(e.target.value);
++                   }}
+                   >
+                     <option id="rus" value="rus">
+                       Русский
+@@ -32,7 +33,7 @@
+                     <option id="kor" value="kor">
+                       Korean
+                     </option>
+-                  </Select>
++                  </select>
+                 
+               </Form.Item>
+             </Form>

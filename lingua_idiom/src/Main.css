@@ -389,7 +389,7 @@ flex-direction: row;
 justify-content: flex-end;
 align-items: center;
 padding: 0%;
-width: 138px;
+width: 130px;
 height: 40px;
 background: #F39036;
 border-radius: 50px;
@@ -399,6 +399,23 @@ letter-spacing: 2.0px;
 font-family: 'Montserrat', sans-serif;
 margin-left: 3%;
 }
+
+.buttonsToplike{
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0%;
+  width: 60px;
+  height: 40px;
+  background: #F39036;
+  border-radius: 50px;
+  color: #FFFFFF;
+  flex: none;
+  letter-spacing: 2.0px;
+  font-family: 'Montserrat', sans-serif;
+  margin-left: 3%;
+  }
+
 .ButtonTr{
     padding-top: 10%;  
     

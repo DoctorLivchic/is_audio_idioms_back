@@ -2,14 +2,14 @@ import React from "react";
 import { Button, Form, Input, Checkbox, Select, notification } from "antd";
 
 
-function Language_selection() {
+function Language_selectionExit() {
 
   async function HandleChange  (value)  {
     const val = value
     console.log(val+" значение")
 
     const translationLanguage =
-    document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык вывода
+    document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
   // console.log(translationLanguage);
   }
       return (
@@ -19,7 +19,7 @@ function Language_selection() {
                 
                   <select
                   className="Language_selection"
-                   id="select_lang_enter"
+                   id="select_lang_exit"
                    onChange={(e) => {
                      console.log(e.target.value);
                    }}
@@ -41,4 +41,4 @@ function Language_selection() {
         );
     
   }
-  export default Language_selection;
+  export default Language_selectionExit;
