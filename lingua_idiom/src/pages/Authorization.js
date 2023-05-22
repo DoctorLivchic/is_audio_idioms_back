@@ -147,9 +147,9 @@ export default function Authorization() {
                           <div className="button">
                             <Form.Item>
                               <Button
-                                // onClick={() => {
-                                //   navigate("/");
-                                // }}
+                               onClick={() => {
+                                navigate(fromPage);
+                              }}
                                 className="AuthbuttonWhite"
                               >
                                 Назад
