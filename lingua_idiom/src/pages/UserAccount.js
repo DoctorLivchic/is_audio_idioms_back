@@ -34,6 +34,13 @@ function UserAccount() {
     >
       Переводчик
     </p>,
+    <p
+      onClick={() => {
+        navigate("/");
+      }}
+    >
+      Мои запросы
+    </p>,
     <button
       className="buttonWhite"
       onClick={() => {
