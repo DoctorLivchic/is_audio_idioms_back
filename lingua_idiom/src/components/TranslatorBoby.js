@@ -174,6 +174,7 @@ async function AddToFavourite() {
   }
 
   async function PlayAudio() {
+    try{
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
@@ -209,9 +210,15 @@ async function AddToFavourite() {
       setisplaying(false);
     }
   }
+    catch  {
+    notification.open({ message: "Не найдено ", description:"Аудио-озвучка временно отсутствует" });
+  }      
+    
+  }
 
 
   async function PlayAudio2() {
+    try{
     const firstT = document.getElementById("textAreaExit").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
@@ -246,9 +253,11 @@ async function AddToFavourite() {
       audio.play();
       setisplaying2(false);
     }
-  }
-
-
+  } catch  {
+    notification.open({ message: "Не найдено ", description:"Аудио-озвучка временно отсутствует" });
+  }  
+}
+ 
 
       const { TextArea } = Input;
       return (
@@ -256,7 +265,7 @@ async function AddToFavourite() {
         <div className="Contentlefttransl">
           <div className="Language_selection"> 
           <Form>
-        <Form.Item name="language_left" id="language_left">              
+             <Form.Item name="language_left" id="language_left">              
                   <select
                   className="Language_selection"
                    id="select_lang_enter"
