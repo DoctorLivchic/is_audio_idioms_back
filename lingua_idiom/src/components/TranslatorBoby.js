@@ -64,7 +64,7 @@ class TranslatorBoby extends React.Component {
         <Language_selection/>
          </div>
          <div className="TextArea">
-        <TextArea />
+        <TextArea style={{height:"280px"}} />
           </div> 
           <Button onClick={"PlayAudio2"} className="buttonsTop">
                 Прослушать

@@ -82,21 +82,27 @@ function About(props) {
   const avatars = [
     <div>
       <div className="avatarDivChildren">
+      <a href="https://vk.com/w0ldemar">
         <img src={vova} className="avatar" />
+        </a>
         <div className="description">
           Мартынов Владимир <div className="descSmall">Архитектор</div>
         </div>
       </div>
 
       <div className="avatarDivChildren">
+      <a href="https://vk.com/klazarev1">
         <img src={kostya} className="avatar" />
+      </a>
         <div className="description">
           Лазарев Константин<div className="descSmall">Ведущий разработчик</div>
         </div>
       </div>
 
       <div className="avatarDivChildren">
+        <a href="https://vk.com/id64210580">
         <img src={nastya} className="avatar" />
+        </a>
         <div className="description">
           Кузнецова Анастасия
           <div className="descSmall">Эксперт по французскому языку</div>
@@ -105,7 +111,9 @@ function About(props) {
     </div>,
     <div>
       <div className="avatarDivChildren">
+      <a href="https://vk.com/verramishka">
         <img src={vera} className="avatar" />
+        </a>
         <div className="description">
           Дудина Вера{" "}
           <div className="descSmall">Эксперт по корейскому языку</div>
@@ -113,14 +121,18 @@ function About(props) {
       </div>
 
       <div className="avatarDivChildren">
+      <a href="https://vk.com/itcudbeworse">
         <img src={maxim} className="avatar" />
+        </a>
         <div className="description">
           Юров Максим <div className="descSmall">Веб-Дизайнер</div>
         </div>
       </div>
 
       <div className="avatarDivChildren">
+      <a href="https://vk.com/bravosexgoingdaun">
         <img src={slava} className="avatar" />
+        </a>
         <div className="description">
           Кучумов Вячеслав <div className="descSmall">Помощник</div>
         </div>
