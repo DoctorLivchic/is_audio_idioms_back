@@ -4,6 +4,10 @@ import { useNavigate } from "react-router-dom";
 //Импорт компонентов
 import Header from "../components/header";
 
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
+
 function UserAccount() {
   const { signout, user } = useAuth();
 
@@ -41,7 +45,7 @@ function UserAccount() {
   ];
   return (
     <div className="">
-      <Header buttons={buttons} />
+      <Header logo={logoHeaderAuthUser} buttons={buttons} />
     </div>
   );
 }

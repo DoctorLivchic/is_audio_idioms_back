@@ -3,9 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hoc/useAuth";
 
 //Импорт компонентов
-
 import PageBody from "../components/PageBody";
 import Header from "../components/header";
+
+//Импорт лого
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 
 import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { useState, useEffect } from "react";
@@ -86,14 +90,14 @@ function MainPage() {
   if (user) {
     return (
       <div className="body_MainPage">
-        <Header buttons={buttons2} />
+        <Header logo={logoHeaderAuthUser} buttons={buttons2} />
         <PageBody />
       </div>
     );
   } else {
     return (
       <div className="body_MainPage">
-        <Header buttons={buttons} />
+        <Header logo={logoHeader} buttons={buttons} />
         <PageBody />
       </div>
     );

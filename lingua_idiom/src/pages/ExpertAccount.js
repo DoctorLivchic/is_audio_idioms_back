@@ -5,6 +5,10 @@ import { useAuth } from "../hoc/useAuth";
 //Импорт компонентов
 import Header from "../components/header";
 
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
+
 function ExpertAccount() {
   const navigate = useNavigate();
   const { signout } = useAuth();
@@ -35,7 +39,7 @@ function ExpertAccount() {
 
   return (
     <div className="">
-      <Header buttons={buttons} />
+      <Header logo={logoHeaderAuthOther} buttons={buttons} />
     </div>
   );
 }

@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hoc/useAuth";
 //Импорт компонентов
 import Header from "../components/header";
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 
 function Library() {
   const navigate = useNavigate();
@@ -72,13 +75,13 @@ function Library() {
   if (user) {
     return (
       <div className="">
-        <Header buttons={buttons2} />
+        <Header logo={logoHeaderAuthUser} buttons={buttons2} />
       </div>
     );
   } else {
     return (
       <div className="">
-        <Header buttons={buttons} />
+        <Header logo={logoHeader} buttons={buttons} />
       </div>
     );
   }

@@ -27,6 +27,7 @@
     justify-content: flex-end;
     align-items: center;
     width: 60%;
+    line-height: 20px;
 }
 .buttons p{
     cursor: pointer;
@@ -55,6 +56,11 @@
     flex-direction: row;
     align-items: center;
     padding-top: 5px;
+}
+.imgHeader{
+  background-position: "center";
+            background-repeat: "no-repeat";
+            background-size: "cover";
 }
 /* хедер ------------------------------------------*/
 

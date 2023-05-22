@@ -4,6 +4,9 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 //Импорт компонентов
 import Header from "../components/header";
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 
 function ModerAccount() {
   const { signout } = useAuth();
@@ -50,7 +53,7 @@ function ModerAccount() {
   ];
   return (
     <div className="">
-      <Header buttons={buttons} />
+      <Header logo={logoHeaderAuthOther} buttons={buttons} />
     </div>
   );
 }

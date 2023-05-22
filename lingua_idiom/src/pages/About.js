@@ -13,6 +13,9 @@ import nastya from "../img/nastya.png";
 import slava from "../img/slava.png";
 import vera from "../img/vera.png";
 import vova from "../img/vova.png";
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 
 function About(props) {
   const navigate = useNavigate();
@@ -131,7 +134,7 @@ function About(props) {
   if (user) {
     return (
       <div>
-        <Header buttons={buttons2} />
+        <Header logo={logoHeaderAuthUser} buttons={buttons2} />
 
         <div className="mainDiv2blocks">
           <AboutHeader />
@@ -143,7 +146,7 @@ function About(props) {
   } else {
     return (
       <div>
-        <Header buttons={buttons} />
+        <Header logo={logoHeader} buttons={buttons} />
 
         <div className="mainDiv2blocks">
           <AboutHeader />

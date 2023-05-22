@@ -4,6 +4,11 @@ import TranslatorBoby from "../components/TranslatorBoby";
 import Header from "../components/header";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hoc/useAuth";
+
+import logoHeader from "../img/logo_header_logout2.png";
+import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
+import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
+
 function Translater() {
   const navigate = useNavigate();
   const { user } = useAuth();
@@ -58,14 +63,15 @@ function Translater() {
   if (user) {
     return (
       <div>
-        <Header buttons={buttons2} />
+        <Header logo={logoHeaderAuthUser} buttons={buttons2} />
         <TranslatorBoby />
       </div>
     );
   } else {
     return (
       <div>
-        <Header buttons={buttons} />
+        <Header logo={logoHeader} buttons={buttons} />
+
         <TranslatorBoby />
       </div>
     );

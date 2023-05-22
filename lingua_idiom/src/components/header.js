@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { useNavigate } from "react-router-dom";
 //Импорт картинок
-import logoHeader from "../img/logo_header_logout2.png";
 
 function Header(props) {
   const navigate = useNavigate();
@@ -42,10 +41,11 @@ function Header(props) {
       <div className="container">
         <div className="headerChildren">
           <img
+            className="imgHeader"
             onClick={() => {
               navigate("/");
             }}
-            src={logoHeader}
+            src={props.logo}
           />
         </div>
         <div className="buttons">{props.buttons}</div>
