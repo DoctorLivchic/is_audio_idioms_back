@@ -14,6 +14,19 @@
     margin-top: 40px;
 
 }
+
+
+
+.profileDiv{
+  cursor: pointer;
+  
+  width: 89vw;
+  height: 78vh;
+  margin: 0 auto;
+  margin-top: 2%;
+  
+  /* border-radius: 25px; */
+}
 .container{
     padding: 35px;
     display:flex;
@@ -366,6 +379,8 @@ border-radius: 15px;
 }
 
 /* --- */
+
+
 
 /* --- */
 

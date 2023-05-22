@@ -47,7 +47,6 @@ function PageBody() {
             backgroundSize: "cover",
           }}
         ></div>
-        {/* <img className="imgPG" src={page_body} /> */}
       </div>
     </div>
   );
