@@ -157,9 +157,8 @@ export default function TranslatorBoby() {
       });
     } else {
       notification.open({
-        message: "Внимание!",
-        description:
-          "Функция добавления фразеологизма будет в ближайшее время добавлена. Оставайтесь с нами!",
+        message: "Успешно!",
+        description: "Фразеологизм добавлен!",
       });
     }
   }
@@ -306,6 +305,7 @@ export default function TranslatorBoby() {
         </div>
         <div className="TextArea">
           <TextArea
+            className="txt"
             id="textAreaEnter"
             maxLength={100}
             style={{ height: "280px" }}
@@ -376,6 +376,7 @@ export default function TranslatorBoby() {
         </div>
         <div className="TextArea">
           <TextArea
+            className="txt"
             value={translitExit}
             id="textAreaExit"
             /*onChange={onChange}*/ placeholder="Перевод"
