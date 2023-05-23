@@ -395,8 +395,13 @@ background: #F39036;
 border-radius: 50px;
 color: #FFFFFF;
 flex: none;
-letter-spacing: 2.0px;
-font-family: 'Montserrat', sans-serif;
+
+font-size: 15px;
+    
+    letter-spacing: 2px;
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
 margin-left: 3%;
 }
 
