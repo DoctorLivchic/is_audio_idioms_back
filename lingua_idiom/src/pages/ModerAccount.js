@@ -14,28 +14,28 @@ function ModerAccount() {
   const buttons = [
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/UserApplications");
       }}
     >
       Заявки пользователей
     </p>,
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/ManageOfPhrase");
       }}
     >
       Управление фразеологизмами
     </p>,
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/ManageOfTag");
       }}
     >
       Управление категориями
     </p>,
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/ManageOfStat");
       }}
     >
       Управление статусами
