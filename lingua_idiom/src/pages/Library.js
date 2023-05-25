@@ -1,15 +1,63 @@
 import React, { Component } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hoc/useAuth";
+import { Table } from "antd";
 //Импорт компонентов
 import Header from "../components/header";
 import logoHeader from "../img/logo_header_logout2.png";
 import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
 import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
+import { supabase } from "../supabase/supabaseClient";
 
 function Library() {
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [phrase_text, setrequest] = useState([]);
+  const [selectedRowKeys, setSelectedRowKeys] = useState([]);
+  const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(true);
+
+  const columns = [
+    {
+      title:'Номер фразы',
+      dataIndex:'phrase_id',
+      key:'phrase_id'
+  },
+    {
+        title:'Дата добавления',
+        dataIndex:'created_at',
+        key:'created_at'
+    },
+    {
+        title:'Язык перевода',
+        dataIndex:'language_id',
+        key:'language_id'
+    },
+    {
+      title:'Текст фразеологизма',
+      dataIndex:'phrase_text_text',
+      key:'phrase_text_text'
+    },
+  {
+    title:'Транскрипция',
+    dataIndex:'phrase_text_transcription',
+    key:'phrase_text_transcription'
+  },
+  {
+    title:'Описание фразеологизма',
+    dataIndex:'phrase_text_desc',
+    key:'phrase_text_desc'
+  }
+  ]
+
+  const GridDataOption = {
+    rowCount:30,
+    page:1,
+    orderBy:'phrase_text_id',
+    from:'phrase_text'
+  }
+
   const buttons = [
     <p
       onClick={() => {
@@ -72,16 +120,54 @@ function Library() {
       Профиль
     </button>,
   ];
+  const onSelectChange = (newSelectedRowKeys) => {
+    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+    setSelectedRowKeys(newSelectedRowKeys);
+};
+
+  const rowSelection = {
+    selectedRowKeys,
+    onChange:onSelectChange
+};
+  useEffect(() => {
+    getphrase().then(()=>setLoading(false))
+   ;
+  }, [loading]);
+  async function getphrase() {
+    // const request = await supabase.from("request").select();
+    // const data = (await request).data;
+    const phraseological = await supabase.from("phrase_text").select();
+    const phre = (await phraseological).data;
+      const data = await supabase
+      .from('phrase_text')
+      .select()
+      .order('phrase_text_id')
+    setrequest(data.data)     
+  } 
   if (user) {
     return (
       <div className="">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
+        <div className="bodylibrary">
+        <Table
+      loading={loading}
+      dataSource={phrase_text}
+      columns={columns}
+      />
+      </div>
       </div>
     );
   } else {
     return (
       <div className="">
         <Header logo={logoHeader} buttons={buttons} />
+        <div className="bodylibrary">
+        <Table
+      loading={loading}
+      dataSource={phrase_text}
+      columns={columns}
+      />
+      </div>
       </div>
     );
   }
