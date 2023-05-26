@@ -15,14 +15,14 @@ function ExpertAccount() {
   const buttons = [
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/ExpertAdd");
       }}
     >
       Заявки на добавление
     </p>,
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/ExpertAdd");
       }}
     >
       Заявки на редактирование

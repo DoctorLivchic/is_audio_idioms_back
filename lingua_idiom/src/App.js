@@ -16,6 +16,7 @@ import UserApplications from "./pages/UserApplications";
 import ManageOfPhrase from "./pages/ManageOfPhrase";
 import ManageOfTag from "./pages/ManageOfTag";
 import ManageOfStat from "./pages/ManageOfStat"
+import ExpertAdd from "./pages/ExpertAdd"
 
 import RequireAuth from "./hoc/RequireAuth";
 import { AuthProvider } from "./hoc/AuthProvider";
@@ -46,6 +47,7 @@ const App = () => {
           <Route path="/pages/ManageOfPhrase" element={<ManageOfPhrase />} />
           <Route path="/pages/ManageOfTag" element={<ManageOfTag />} />
           <Route path="/pages/ManageOfStat" element={<ManageOfStat />} />
+          <Route path="/pages/ExpertAdd" element={<ExpertAdd />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

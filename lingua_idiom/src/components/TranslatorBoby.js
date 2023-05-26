@@ -71,7 +71,7 @@ export default function TranslatorBoby() {
         setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
 
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
-        // document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
+        //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
       } catch (error) {
         notification.open({
           message: "Простите!",
@@ -380,7 +380,14 @@ export default function TranslatorBoby() {
             value={translitExit}
             id="textAreaExit"
             /*onChange={onChange}*/ placeholder="Перевод"
-            style={{ height: "280px" }}
+            style={{ height: "140px" }}
+          />
+          <TextArea
+            className="txt"
+            value={translitExit}
+            id="textAreaExit1"
+            /*onChange={onChange}*/ placeholder="Описание"
+            style={{ height: "140px" }}
           />
         </div>
         <Button onClick={PlayAudio2} className="buttonsTop">
