@@ -155,6 +155,9 @@ export default function Authorization() {
                                 Назад
                               </Button>
                               <Button className="AuthbuttonWhite">
+                              onClick={() => {
+                                navigate(fromPage);
+                              }}
                                 Зарегистрироваться
                               </Button>
                             </Form.Item>

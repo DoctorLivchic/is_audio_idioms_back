@@ -67,9 +67,9 @@ export default function TranslatorBoby() {
           .eq("phrase_id", phrase.data[0]["phrase_id"])
           .eq("language_id", lang);
         settranslitExit(translate.data[0]["phrase_text_text"]);
-        setlidesc(translate.data[0]["phrase_text_desc"]);
+       
         setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
-
+ setlitranscEnter(translate.data[0]["phrase_text_desc"]);
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
         //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
       } catch (error) {
@@ -384,7 +384,7 @@ export default function TranslatorBoby() {
           />
           <TextArea
             className="txt"
-            value={translitExit}
+            value={litranscEnter}
             id="textAreaExit1"
             /*onChange={onChange}*/ placeholder="Описание"
             style={{ height: "140px" }}

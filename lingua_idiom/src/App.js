@@ -17,6 +17,8 @@ import ManageOfPhrase from "./pages/ManageOfPhrase";
 import ManageOfTag from "./pages/ManageOfTag";
 import ManageOfStat from "./pages/ManageOfStat"
 import ExpertAdd from "./pages/ExpertAdd"
+import ExpertEddit from "./pages/ExpertEddit"
+import Requests from "./pages/Requests"
 
 import RequireAuth from "./hoc/RequireAuth";
 import { AuthProvider } from "./hoc/AuthProvider";
@@ -48,6 +50,17 @@ const App = () => {
           <Route path="/pages/ManageOfTag" element={<ManageOfTag />} />
           <Route path="/pages/ManageOfStat" element={<ManageOfStat />} />
           <Route path="/pages/ExpertAdd" element={<ExpertAdd />} />
+          
+          <Route 
+          path="/pages/ExpertEddit" 
+
+          element={
+          <ExpertEddit />
+          
+          } />
+
+          <Route path="/pages/Requests" element={<Requests />} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

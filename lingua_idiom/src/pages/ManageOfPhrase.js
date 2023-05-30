@@ -264,7 +264,7 @@ async function change_phrase() {
           });
         }}
       >
-        Выход
+        Назад
       </button>,
     ];
     return (
@@ -273,7 +273,7 @@ async function change_phrase() {
         <div className="bodyApp">
         <Modal
         open={show}
-        title="Изменение фразеологизма"
+        title="Добавление фразеологизма"
         onCancel={cancel}
         footer={[
           <Button onClick={add_phrase}>Добавить</Button>,

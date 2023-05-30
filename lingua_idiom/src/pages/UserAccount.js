@@ -27,6 +27,13 @@ function UserAccount() {
     >
       Библиотека
     </p>,
+     <p
+     onClick={() => {
+       navigate("/pages/Translater");
+     }}
+   >
+     Избранное
+   </p>,
     <p
       onClick={() => {
         navigate("/pages/Translater");
@@ -36,7 +43,7 @@ function UserAccount() {
     </p>,
     <p
       onClick={() => {
-        navigate("/");
+        navigate("/pages/Requests");
       }}
     >
       Мои запросы

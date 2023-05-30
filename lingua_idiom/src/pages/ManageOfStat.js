@@ -169,22 +169,15 @@ function ManageOfStat() {
       >
       Добавить
       </p>,
-      <p
-        onClick={() => {
-          navigate("/pages/ModerAccount");
-        }}
-      >
-        Назад
-      </p>,
       <button
         className="buttonWhite"
         onClick={() => {
           signout(() => {
-            navigate("/", { replace: true });
+            navigate("/pages/ModerAccount", { replace: true });
           });
         }}
       >
-        Выход
+        Назад
       </button>,
     ];
     return (

@@ -12,6 +12,7 @@ import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 function Translater() {
   const navigate = useNavigate();
   const { user } = useAuth();
+  console.log(user)
   const buttons = [
     <p
       onClick={() => {

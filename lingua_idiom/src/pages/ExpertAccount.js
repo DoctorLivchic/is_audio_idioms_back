@@ -22,7 +22,7 @@ function ExpertAccount() {
     </p>,
     <p
       onClick={() => {
-        navigate("/pages/ExpertAdd");
+        navigate("/pages/ExpertEddit");
       }}
     >
       Заявки на редактирование

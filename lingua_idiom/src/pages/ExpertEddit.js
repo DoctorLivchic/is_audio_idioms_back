@@ -204,10 +204,10 @@ function ExpertEddit() {
       <button
         className="buttonWhite"
         onClick={() => {
-          signout(() => navigate("/", { replace: true }));
+          signout(() => navigate("/pages/ExpertAccount", { replace: true }));
         }}
       >
-        Выход
+       Назад
       </button>,
     ];
   
