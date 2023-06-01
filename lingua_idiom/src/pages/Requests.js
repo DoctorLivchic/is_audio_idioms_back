@@ -23,7 +23,11 @@ function Requests() {
   const [form] = useForm();
   const [tag, settag] = useState([]);
   const [sel_tag, setsel_tag] = useState([]);
-
+  const [lidesc, setlidesc] = useState([]);
+  const [litranscEnter, setlitranscEnter] = useState([]);
+  const [id,setid] =useState([]);
+  const [translitExit, settranslitExit] = useState([]);
+  const { TextArea } = Input;
   const navigate = useNavigate();
 
   const columns = [
@@ -137,6 +141,60 @@ const rowSelection = {
     return valid;
   }
 
+// -----------------------------------------------
+
+async function TranslateFunction() {
+const translationLanguage =
+      document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
+    // console.log(translationLanguage);
+
+    //Получаем язык на который переводим
+    let lang = 0;
+    if (translationLanguage == "rus") {
+      lang = 1;
+    } else if (translationLanguage == "kor") {
+      lang = 2;
+    } else {
+      lang = 3;
+    }
+
+    const firstT = document.getElementById("textAreaEnter").value;
+    const firstText = firstT.toLowerCase(); //Возвращаем текст к переводу
+
+    if (firstText == "") {
+      document.getElementById("textAreaExit").value = "";
+    } else {
+      //Получаем айди фразеологизма с которого переводим
+      const phrase = await supabase
+        .from("phrase_text")
+        .select()
+        .eq("phrase_text_text", firstText);
+
+      try {
+        //Получаем фразеологизм на языке, который выбран к переводу
+        const translate = await supabase
+          .from("phrase_text")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"])
+          .eq("language_id", lang);
+        settranslitExit(translate.data[0]["phrase_text_text"]);
+       
+        setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
+        setlidesc(translate.data[0]["phrase_text_desc"]);
+        
+        //то выводим во второй текстБокс перевод по выбранному языку к переводу
+        //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
+      } catch (error) {
+        notification.open({
+          message: "Простите!",
+          description:
+            "Мы не нашли нужного Вам фразеологизма. Вы всегда можете отправить нам запрос на добавление нового фразеологизма в Личном кабинете!",
+        });
+      }
+      //-------------------------------------------------------------------------------
+      // Вывод лайков
+    }
+  }
 
 
   function cancel() {
@@ -278,7 +336,7 @@ const rowSelection = {
                   type_id:1,
                   user_id:parseInt(userID),
                   tag_id:tag,
-                phrase_id:27
+                phrase_id:id
               });
           } catch (error) {
             alert(error.error_description || error.message);
@@ -421,13 +479,14 @@ const rowSelection = {
           </Form.Item>
         </Form>
       </Modal>
-{/* Модельное окно для обновления */}
+{/* Модельное окно для обновления --------------------------------------------*/}
 
 <Modal
         open={show1}
         title="Обновление фразеологизма"
         onCancel={cancel}
         footer={[
+          <Button onClick={TranslateFunction}>Найти</Button>,
           <Button onClick={editrequest}>Добавить</Button>,
           <Button onClick={cancel}>Назад</Button>,
         ]}
@@ -439,6 +498,34 @@ const rowSelection = {
           name="formRegistry"
           style={{ padding: 20 }}
         >
+        <Form.Item name="language_left" id="language_left">
+              <select
+                className="Language_selection"
+                id="select_lang_exit"
+                onChange={(e) => {
+                  console.log(e.target.value);
+                }}
+              >
+                <option id="rus" value="rus">
+                  Русский
+                </option>
+                <option id="fre" value="fre">
+                  French
+                </option>
+                <option id="kor" value="kor">
+                  Korean
+                </option>
+              </select>
+            </Form.Item>
+          <Form.Item>
+          <TextArea
+            className="txt"
+            id="textAreaEnter"
+            maxLength={100}
+            style={{ height: "70px" }}
+            placeholder="Введите текст для перевода"
+          />
+          </Form.Item>
           <Form.Item
             name="rus"
             label="Русский фразеологизм"
@@ -448,8 +535,9 @@ const rowSelection = {
                 message: "фразеологизм не может быть пустым",
               },
             ]}
+            value={translitExit}
           >
-            <Input name="rus" id="logrus" placeholder="Русский фразеологизм" />
+            <Input name="rus" id="logrus"  value={translitExit} />
           </Form.Item>
          
 
@@ -467,6 +555,7 @@ const rowSelection = {
               name="kor"
               placeholder="Корейский фразеологизм"
               id="logkor"
+              value={translitExit}
             />
           </Form.Item>
 
@@ -484,6 +573,7 @@ const rowSelection = {
               name="fre"
               placeholder="Французский фразеологизм"
               id="logfre"
+              value={translitExit}
             />
           </Form.Item>
 
@@ -492,6 +582,7 @@ const rowSelection = {
               name="rus_tr"
               id="log_rus_tr"
               placeholder="Транскрипция фразеологизма"
+              value={litranscEnter}
             />
           </Form.Item>
           <Form.Item name="rus_desc" label="Описание фразеологизма">

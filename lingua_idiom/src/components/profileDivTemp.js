@@ -23,7 +23,9 @@ function ProfileDivTemp() {
       <div className="UserIMG">
       <img src={User} ></img>
       </div>
-        <Button className="buttonUser"> Избранное</Button>
+        <Button className="buttonUser"   onClick={() => {
+        navigate("/pages/Favorites");
+      }}> Избранное</Button>
         <Button className="buttonUser"> Фразеологизм дня</Button>
       </div>
     </div>

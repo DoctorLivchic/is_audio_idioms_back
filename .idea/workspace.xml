@@ -5,39 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ceed9a00-f6bf-4ed2-a737-db381e5b625d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_0_19_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_0_19__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_12_03_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_12_03__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_12_45_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_12_45__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_13_11_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_13_11__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_17_01_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_17_01__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_19_11_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_19_11__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_21_35_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_20_05_2023_21_35__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_13_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_13_13__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_15_16_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_21_05_2023_15_16__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2023_16_13_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2023_16_13__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2023_21_01_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_22_05_2023_21_01__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/components/TranslatorBoby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertAccount.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertAdd.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertAdd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertEddit.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/ExpertEddit.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/ManageOfPhrase.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/ManageOfPhrase.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/ManageOfStat.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/ManageOfStat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/Translater.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lingua_idiom/src/pages/UserAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/lingua_idiom/src/pages/UserAccount.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

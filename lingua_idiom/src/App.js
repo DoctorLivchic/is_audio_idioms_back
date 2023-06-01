@@ -19,6 +19,7 @@ import ManageOfStat from "./pages/ManageOfStat"
 import ExpertAdd from "./pages/ExpertAdd"
 import ExpertEddit from "./pages/ExpertEddit"
 import Requests from "./pages/Requests"
+import Favorites from "./pages/Favorites"
 
 import RequireAuth from "./hoc/RequireAuth";
 import { AuthProvider } from "./hoc/AuthProvider";
@@ -50,7 +51,8 @@ const App = () => {
           <Route path="/pages/ManageOfTag" element={<ManageOfTag />} />
           <Route path="/pages/ManageOfStat" element={<ManageOfStat />} />
           <Route path="/pages/ExpertAdd" element={<ExpertAdd />} />
-          
+          <Route path="/pages/Favorites" element={<Favorites />} />
+
           <Route 
           path="/pages/ExpertEddit" 
 

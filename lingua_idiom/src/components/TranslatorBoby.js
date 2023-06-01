@@ -29,6 +29,8 @@ export default function TranslatorBoby() {
     const secondText = secondT.toLowerCase(); //Возвращаем текст из правого блока
     document.getElementById("textAreaEnter").value = secondT;
     document.getElementById("textAreaExit").value = firstT;
+    document.getElementById("textAreaExit1").value =""
+    document.getElementById("textAreaExit2").value =""
   }
 
   async function TranslateFunction() {
@@ -69,7 +71,8 @@ export default function TranslatorBoby() {
         settranslitExit(translate.data[0]["phrase_text_text"]);
        
         setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
- setlitranscEnter(translate.data[0]["phrase_text_desc"]);
+        setlidesc(translate.data[0]["phrase_text_desc"]);
+        
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
         //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
       } catch (error) {
@@ -81,14 +84,19 @@ export default function TranslatorBoby() {
       }
       //-------------------------------------------------------------------------------
       // Вывод лайков
-    }
+    }console.log(translitExit)
   }
-
+async function examinationlike() {
+    if (!user) {
+      notification.open({
+        message: "Внимание!",
+        description:
+          "Что бы поставить лайк Вам необходимо войти.",
+      });
+    } else {
   //Функция лайка
-  async function LikePhrase() {
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
-
     //Получаем айди фразеологизма
     const phrase = await supabase
       .from("phrase_text")
@@ -114,9 +122,16 @@ export default function TranslatorBoby() {
 
     setButtonTextLike(phrase3.data[0]["rating_like"]);
   }
-
+    }
   //Функция дизлайка
-  async function DislikePhrase() {
+  async function examinationdislike() {
+    if (!user) {
+      notification.open({
+        message: "Внимание!",
+        description:
+          "Что бы поставить дизлайк Вам необходимо войти.",
+      });
+    } else {
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
@@ -144,7 +159,7 @@ export default function TranslatorBoby() {
       .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
     setButtonTextDislike(phrase3.data[0]["rating_dislike"]);
-  }
+  }}
 
   const { user } = useAuth();
   //Функция добавления в избранное
@@ -162,6 +177,9 @@ export default function TranslatorBoby() {
       });
     }
   }
+
+
+
 
   async function GetLike() {
     const firstT = document.getElementById("textAreaEnter").value;
@@ -308,7 +326,7 @@ export default function TranslatorBoby() {
             className="txt"
             id="textAreaEnter"
             maxLength={100}
-            style={{ height: "280px" }}
+            style={{ height: "390px" }}
             placeholder="Введите текст для перевода"
           />
           <div className="Chek">
@@ -322,7 +340,7 @@ export default function TranslatorBoby() {
             ></Button>
             <Button
               className="buttonsToplike"
-              onClick={LikePhrase}
+              onClick={examinationlike}
               id="like"
               icon={<LikeTwoTone />}
             >
@@ -330,7 +348,7 @@ export default function TranslatorBoby() {
             </Button>
             <Button
               className="buttonsToplike"
-              onClick={DislikePhrase}
+              onClick={examinationdislike}
               id="dislike"
               icon={<DislikeTwoTone />}
             >
@@ -380,17 +398,24 @@ export default function TranslatorBoby() {
             value={translitExit}
             id="textAreaExit"
             /*onChange={onChange}*/ placeholder="Перевод"
-            style={{ height: "140px" }}
+            style={{ height: "130px" }}
           />
           <TextArea
             className="txt"
             value={litranscEnter}
             id="textAreaExit1"
+            /*onChange={onChange}*/ placeholder="Транскрипция"
+            style={{ height: "130px" }}
+          />
+          <TextArea
+            className="txt"
+            value={lidesc}
+            id="textAreaExit2"
             /*onChange={onChange}*/ placeholder="Описание"
-            style={{ height: "140px" }}
+            style={{ height: "130px" }}
           />
         </div>
-        <Button onClick={PlayAudio2} className="buttonsTop">
+        <Button onClick={PlayAudio2} className="buttonsTop1">
           Прослушать
         </Button>
       </div>

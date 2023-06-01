@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useAuth } from "../hoc/useAuth";
 import { useNavigate } from "react-router-dom";
+import { Table, notification,Input, Select , Modal, Form ,Button} from 'antd';
 //Импорт компонентов
 import Header from "../components/header";
 import ProfileDivTemp from "../components/profileDivTemp";
@@ -53,7 +54,7 @@ function UserAccount() {
   return (
     <div className="">
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
-      <ProfileDivTemp />
+      
     </div>
   );
 }

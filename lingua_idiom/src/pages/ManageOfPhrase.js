@@ -17,6 +17,7 @@ function ManageOfPhrase() {
     const [phrase_text, setrequest] = useState([]);
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [show, setShow] = useState(false);
+    const [showEdit, setShowEdit] = useState(false);
     const [loading, setLoading] = useState(true);
     const [form] = useForm();
     const [tag, settag] = useState([]);
@@ -91,6 +92,7 @@ function ManageOfPhrase() {
       };
       function cancel() {
         setShow(false);
+        setShowEdit(false);
       }
 
       async function gettags() {
@@ -156,6 +158,23 @@ async function change_phrase() {
     console.log("Точка2");
     update();
   }
+  // -------------------------------------------------------------------------------------
+
+  async function change_phrase1() {
+    setShowEdit(true);
+    const data = await supabase.from("phrase_text").select();
+    form.setFieldsValue(Object.keys(data).map((key) => ({
+      name: key,
+      value: data[key],
+      
+  })))
+    getphrase();
+
+    console.log(data)
+    console.log("Точка2");
+    update();
+  }
+
 
   async function add_phrase() {
     const rus1 = form.getFieldValue("rus");
@@ -423,6 +442,161 @@ async function change_phrase() {
           </Form.Item>
         </Form>
       </Modal>
+{/* ----------------------------------------------------------------------- */}
+
+<Modal
+        open={showEdit}
+        title="Редактирование фразеологизма"
+        onCancel={cancel}
+        footer={[
+          <Button onClick={add_phrase}>Добавить</Button>,
+          <Button onClick={cancel}>Назад</Button>,
+        ]}
+      >
+        <Form
+          form={form}
+          layout={"vertical"}
+          centered={true}
+          name="formRegistry"
+          style={{ padding: 20 }}
+        >
+          <Form.Item
+            name="rus"
+            label="Русский фразеологизм"
+            rules={[
+              {
+                required: true,
+                message: "фразеологизм не может быть пустым",
+              },
+            ]}
+          >
+            <Input name="rus" id="logrus" placeholder="Русский фразеологизм" />
+          </Form.Item>
+          <Form.Item name="rus_tr" label="Транскрипция русского фразеологизма">
+            <Input
+              name="rus_tr"
+              id="log_rus_tr"
+              placeholder="Транскрипция русского фразеологизма"
+            />
+          </Form.Item>
+          <Form.Item name="rus_desc" label="Описание русского фразеологизма">
+            <Input
+              name="rus_desc"
+              id="log_rus_desc"
+              placeholder="Описание русского фразеологизма"
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="kor"
+            label="Корейский фразеологизм"
+            rules={[
+              {
+                required: true,
+                message: "Корейский не может быть пустым",
+              },
+            ]}
+          >
+            <Input
+              name="kor"
+              placeholder="Корейский фразеологизм"
+              id="logkor"
+            />
+          </Form.Item>
+          <Form.Item name="kor_tr" label="Транскрипция корейкого фразеологизма">
+            <Input
+              name="kor_tr"
+              id="log_kor_tr"
+              placeholder="Транскрипция корейского фразеологизма"
+            />
+          </Form.Item>
+
+          <Form.Item name="kor_desc" label="Описание корейского фразеологизма">
+            <Input
+              name="fre_kor"
+              id="log_kor_desc"
+              placeholder="Описание корейского фразеологизма"
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="fre"
+            label="Французский фразеологизм"
+            rules={[
+              {
+                required: true,
+                message: "фразеологизм не может быть пустым",
+              },
+            ]}
+          >
+            <Input
+              name="fre"
+              placeholder="Французский фразеологизм"
+              id="logfre"
+            />
+          </Form.Item>
+          <Form.Item
+            name="fre_tr"
+            label="Транскрипция французского фразеологизма"
+          >
+            <Input
+              name="fre_tr"
+              id="log_fre_tr"
+              placeholder="Транскрипция французского фразеологизма"
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="fre_desc"
+            label="Описание французского фразеологизма"
+          >
+            <Input
+              name="fre_desc"
+              id="log_fre_desc"
+              placeholder="Описание французского фразеологизма"
+            />
+          </Form.Item>
+
+          <Form.Item
+            name="link_phraseologikal"
+            label="Ссылка на фразеологизм"
+            rules={[
+              {
+                required: true,
+                message: "Укажите источник фразеологизма",
+              },
+            ]}
+          >
+            <Input
+              name="link_phraseologikal"
+              placeholder="Ссылка на фразеологизм"
+            />
+          </Form.Item>
+          <Form.Item
+            name="tag_id"
+            label="Тематика фразеологизма"
+            rules={[
+              {
+                required: true,
+                message: "Укажите категорию фразеологизма",
+              },
+            ]}
+          >
+            <Select
+              name="tag_id"
+              defaultValue="Выберите значение"
+              onChange={handleChange}
+              options={tag?.map((tag) => {
+                return {
+                  label: tag.tag_name,
+                  value: tag.tag_id,
+                };
+              })}
+            />
+          </Form.Item>
+        </Form>
+      </Modal>
+
         <Table
         loading={loading}
         dataSource={phrase_text}
@@ -430,7 +604,9 @@ async function change_phrase() {
         rowSelection={rowSelection}
         rowKey={(record) => record.phrase_text_id}
         onRow={(record) => ({
-          onClick: () => {},
+          onClick: () => {
+            change_phrase1()
+          },
         })}
       />
       </div>

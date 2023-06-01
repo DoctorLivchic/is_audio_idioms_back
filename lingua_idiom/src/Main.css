@@ -203,13 +203,13 @@ body{
 
 .BobyUser{
   position: absolute;
-  width: 1712px;
+  width: 1707px;
   height: 768px;
   left: 104px;
   top: 220px;
-  
   background: #FFFFFF;
   border-radius: 25px;
+  margin-left: -0.3%;
 }
 
 .buttonUser{
@@ -258,7 +258,15 @@ margin: 3%;
 
 }
 
+.PageBobiExp{
+  max-height: 68vh;
+  padding-top: 3%;
+  width: 89vw;
+  margin: 0 auto;
+  display: flex;
+  
 
+}
 .PageBobi{
     max-height: 65vh;
     padding-top: 3%;
@@ -417,7 +425,7 @@ margin-top: 1%;
 .TextArea{
 position: relative;
 height: 350px;
-height: 475px;
+height: 555px;
 top: 113px;
 background: #FFFFFF;
 border-radius: 15px;
@@ -463,14 +471,31 @@ background: #F39036;
 border-radius: 50px;
 color: #FFFFFF;
 flex: none;
-
 font-size: 15px;
-    
     letter-spacing: 2px;
     color: #FFFFFF;
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
 margin-left: 3%;
+}
+.buttonsTop1{
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0%;
+  width: 130px;
+  height: 40px;
+  background: #F39036;
+  border-radius: 50px;
+  color: #FFFFFF;
+  flex: none;
+  font-size: 15px;
+      letter-spacing: 2px;
+      color: #FFFFFF;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: bold;
+  margin-left: 3%;
+  margin-top: 6.4%;
 }
 
 .buttonsToplike{

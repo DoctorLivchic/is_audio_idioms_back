@@ -8,7 +8,7 @@ import Header from "../components/header";
 import logoHeader from "../img/logo_header_logout2.png";
 import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
 import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
-
+import ExpertBody from "../components/ExpertBody";
 function ExpertAccount() {
   const navigate = useNavigate();
   const { signout } = useAuth();
@@ -40,6 +40,7 @@ function ExpertAccount() {
   return (
     <div className="">
       <Header logo={logoHeaderAuthOther} buttons={buttons} />
+      <ExpertBody></ExpertBody>
     </div>
   );
 }
