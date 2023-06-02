@@ -144,19 +144,7 @@ const rowSelection = {
 // -----------------------------------------------
 
 async function TranslateFunction() {
-const translationLanguage =
-      document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
-    // console.log(translationLanguage);
 
-    //Получаем язык на который переводим
-    let lang = 0;
-    if (translationLanguage == "rus") {
-      lang = 1;
-    } else if (translationLanguage == "kor") {
-      lang = 2;
-    } else {
-      lang = 3;
-    }
 
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст к переводу
@@ -176,14 +164,34 @@ const translationLanguage =
           .from("phrase_text")
           .select()
           .eq("phrase_id", phrase.data[0]["phrase_id"])
-          .eq("language_id", lang);
-        settranslitExit(translate.data[0]["phrase_text_text"]);
-       
-        setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
-        setlidesc(translate.data[0]["phrase_text_desc"]);
-        
+          .eq("language_id", 1);
+
+          const translatekor = await supabase
+          .from("phrase_text")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"])
+          .eq("language_id", 2);
+          document.getElementById("logkor").value =translatekor.data[0]["phrase_text_text"];
+
+
+          const translatefre = await supabase
+          .from("phrase_text")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"])
+          .eq("language_id", 3);
+          document.getElementById("logfre").value =translatefre.data[0]["phrase_text_text"];
+        //settranslitExit(translate.data[0]["phrase_text_text"]);
+        const translate1 = await supabase
+        .from("phraseological")
+        .select()
+        .eq("phrase_id", phrase.data[0]["phrase_id"])
+
+        document.getElementById("link").value = translate1.data[0]["link_phraseological"];
+        document.getElementById("log_rus_tr").value =translate.data[0]["phrase_text_transcription"];
+        document.getElementById("log_rus_desc").value =translate.data[0]["phrase_text_desc"];
+        document.getElementById("tag_id").value=translate1.data[0]["tag_id"];
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
-        //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
+          document.getElementById("logrus").value = translate.data[0]["phrase_text_text"];
       } catch (error) {
         notification.open({
           message: "Простите!",
@@ -498,25 +506,6 @@ const translationLanguage =
           name="formRegistry"
           style={{ padding: 20 }}
         >
-        <Form.Item name="language_left" id="language_left">
-              <select
-                className="Language_selection"
-                id="select_lang_exit"
-                onChange={(e) => {
-                  console.log(e.target.value);
-                }}
-              >
-                <option id="rus" value="rus">
-                  Русский
-                </option>
-                <option id="fre" value="fre">
-                  French
-                </option>
-                <option id="kor" value="kor">
-                  Korean
-                </option>
-              </select>
-            </Form.Item>
           <Form.Item>
           <TextArea
             className="txt"
@@ -586,7 +575,7 @@ const translationLanguage =
             />
           </Form.Item>
           <Form.Item name="rus_desc" label="Описание фразеологизма">
-            <Input
+            <TextArea
               name="rus_desc"
               id="log_rus_desc"
               placeholder="Описание фразеологизма"
@@ -605,6 +594,7 @@ const translationLanguage =
           >
             <Input
               name="link_phraseologikal"
+              id="link"
               placeholder="Ссылка на фразеологизм"
             />
           </Form.Item>
@@ -620,6 +610,7 @@ const translationLanguage =
           >
             <Select
               name="tag_id"
+              id="tag_id"
               defaultValue="Выберите значение"
               onChange={handleChange}
               options={tag?.map((tag) => {
