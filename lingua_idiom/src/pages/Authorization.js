@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { useState } from "react";
 
 //Импорт компонентов
 import { Route, Routes, BrowserRouter } from "react-router-dom";
@@ -9,20 +10,72 @@ import { supabase } from "../supabase/supabaseClient";
 import { Button, Form, Input, Checkbox, Affix, notification } from "antd";
 
 export default function Authorization() {
+  const [user_id, setUser_id] = useState(0);
   const { signin } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const fromPage = location.state?.from?.pathname || "/";
 
-  function LogIN() {
+  // function LogIN() {
+  //   const email = document.getElementById("logemailIn").value;
+  //   const password = document.getElementById("logpassIn").value;
+
+  //   if (email == "k1@m.ru") {
+  //     signin(true, () => navigate("/pages/ModerAccount"));
+  //   } else if (email == "k2@m.ru")
+  //     signin(true, () => navigate("/pages/ExpertAccount"));
+  //   else signin(true, () => navigate("/pages/UserAccount"));
+  // }
+
+  async function logIn() {
     const email = document.getElementById("logemailIn").value;
     const password = document.getElementById("logpassIn").value;
 
-    if (email == "k1@m.ru") {
-      signin(true, () => navigate("/pages/ModerAccount"));
-    } else if (email == "k2@m.ru")
-      signin(true, () => navigate("/pages/ExpertAccount"));
-    else signin(true, () => navigate("/pages/UserAccount"));
+    //Ищем пользователя в таблице - если нет - выдаем ошибку
+    try {
+      const user = await supabase
+        .from("user")
+        .select()
+        .eq("login", email)
+        .eq("password", password);
+
+      if (user.data.length == 0) {
+        notification.open({
+          message: "Ошибка",
+          description: "Вы ввели некорректные данные!",
+        });
+      } else {
+        if (user.data[0]["role_id"] == 1) {
+          localStorage.setItem("userID", user.data[0]["user_id"]);
+
+          setUser_id(user.data[0]["user_id"]);
+          console.log(String(user_id));
+          signin(true, () => navigate("/pages/ModerAccount"));
+          notification.open({
+            message: "Успешно",
+            description: "Вы успешно авторизовались!",
+          });
+        } else if (user.data[0]["role_id"] == 2) {
+          localStorage.setItem("userID", user.data[0]["user_id"]);
+          setUser_id(user.data[0]["user_id"]);
+          signin(true, () => navigate("/pages/ExpertAccount"));
+          notification.open({
+            message: "Успешно",
+            description: "Вы успешно авторизовались!",
+          });
+        } else {
+          localStorage.setItem("userID", user.data[0]["user_id"]);
+          setUser_id(user.data[0]["user_id"]);
+          signin(true, () => navigate("/pages/UserAccount"));
+          notification.open({
+            message: "Успешно",
+            description: "Вы успешно авторизовались!",
+          });
+        }
+      }
+    } catch (error) {
+      notification.open({ message: "Ошибка", description: error.message });
+    }
   }
 
   //Валидация мэйла
@@ -179,7 +232,7 @@ export default function Authorization() {
                             </Button>
                             <Button
                               onClick={() => {
-                                LogIN();
+                                logIn();
                               }}
                               className="AuthbuttonWhite"
                             >
