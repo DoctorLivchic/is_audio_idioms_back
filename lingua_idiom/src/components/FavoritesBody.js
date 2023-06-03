@@ -27,11 +27,6 @@ function FavoritesBody() {
       key: "phrase_id",
     },
     {
-      title: "Язык перевода",
-      dataIndex: "language_id",
-      key: "language_id",
-    },
-    {
       title: "Текст фразеологизма",
       dataIndex: "phrase_text_text",
       key: "phrase_text_text",
@@ -51,7 +46,7 @@ function FavoritesBody() {
   const GridDataOption = {
     rowCount: 10,
     page: 1,
-    orderBy: "phrase_text_id",
+    orderBy: "phrase_id",
     from: "phrase_text",
   };
 
@@ -74,7 +69,7 @@ function FavoritesBody() {
       const { data, error } = await supabase
         .from("favourites_phraseological")
         .select("phrase_id, language_id")
-        .eq("user_id", localStorage.getItem("userID"))
+        .eq("user_id", localStorage.getItem("userID"));
 
       if (error) console.log("Error fetching user IDs:", error.message);
       else {
@@ -87,43 +82,19 @@ function FavoritesBody() {
 
   useEffect(() => {
     const fetchOrders = async () => {
-      const { data, error } = await supabase
+      const data = await supabase
         .from("phrase_text")
         .select(
-          "phrase_text_text, phrase_text_transcription, phrase_text_desc, phrase_id "
+          "phrase_text_text, phrase_text_transcription, phrase_text_desc, phrase_id"
         )
         .in("phrase_id", phraseIds);
 
-      console.log(data);
+      setrequest(data.data);
     };
 
     if (phraseIds.length > 0) fetchOrders();
-  }, [phraseIds]);
-  // async function getphrase() {
-  //   try {
-  //     const phraseId = await supabase
-  //       .from("favourites_phraseological")
-  //       .select("phrase_id")
-  //       .eq("user_id", localStorage.getItem("userID"));
-
-  //     const arr = [];
-  //     for (let i = 0; i < phraseId.length; i++) {
-  //       arr[i] = phraseId[i]["phrase_id"];
-  //     }
-
-  //     const phrase = await supabase
-  //       .from("phrase_text")
-  //       .select(
-  //         "phrase_text_text, phrase_text_transcription, phrase_text_desc, phrase_id "
-  //       )
-  //       .in("phrase_id", arr);
-
-  //     console.log(phraseId);
-  //     console.log(arr);
-  //   } catch (error) {
-  //     console.log(error.message);
-  //   }
-  // }
+    fetchOrders().then(() => setLoading(false));
+  }, [phraseIds, loading]);
 
   return (
     <div className="FavoritesBody">
@@ -132,7 +103,7 @@ function FavoritesBody() {
         dataSource={phrase_text}
         columns={columns}
         rowSelection={rowSelection}
-        rowKey={(record) => record.phrase_text_id}
+        rowKey={(record) => record.phrase_id}
         onRow={(record) => ({
           onClick: () => {},
         })}
