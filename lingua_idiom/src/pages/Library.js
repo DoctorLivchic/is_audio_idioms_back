@@ -20,43 +20,43 @@ function Library() {
 
   const columns = [
     {
-      title:'Номер фразы',
-      dataIndex:'phrase_id',
-      key:'phrase_id'
-  },
-    {
-        title:'Дата добавления',
-        dataIndex:'created_at',
-        key:'created_at'
+      title: "Номер фразы",
+      dataIndex: "phrase_id",
+      key: "phrase_id",
     },
     {
-        title:'Язык перевода',
-        dataIndex:'language_id',
-        key:'language_id'
+      title: "Дата добавления",
+      dataIndex: "created_at",
+      key: "created_at",
     },
     {
-      title:'Текст фразеологизма',
-      dataIndex:'phrase_text_text',
-      key:'phrase_text_text'
+      title: "Язык перевода",
+      dataIndex: "language_id",
+      key: "language_id",
     },
-  {
-    title:'Транскрипция',
-    dataIndex:'phrase_text_transcription',
-    key:'phrase_text_transcription'
-  },
-  {
-    title:'Описание фразеологизма',
-    dataIndex:'phrase_text_desc',
-    key:'phrase_text_desc'
-  }
-  ]
+    {
+      title: "Текст фразеологизма",
+      dataIndex: "phrase_text_text",
+      key: "phrase_text_text",
+    },
+    {
+      title: "Транскрипция",
+      dataIndex: "phrase_text_transcription",
+      key: "phrase_text_transcription",
+    },
+    {
+      title: "Описание фразеологизма",
+      dataIndex: "phrase_text_desc",
+      key: "phrase_text_desc",
+    },
+  ];
 
   const GridDataOption = {
-    rowCount:30,
-    page:1,
-    orderBy:'phrase_text_id',
-    from:'phrase_text'
-  }
+    rowCount: 30,
+    page: 1,
+    orderBy: "phrase_text_id",
+    from: "phrase_text",
+  };
 
   const buttons = [
     <p
@@ -121,40 +121,35 @@ function Library() {
     </button>,
   ];
   const onSelectChange = (newSelectedRowKeys) => {
-    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
-};
+  };
 
   const rowSelection = {
     selectedRowKeys,
-    onChange:onSelectChange
-};
+    onChange: onSelectChange,
+  };
   useEffect(() => {
-    getphrase().then(()=>setLoading(false))
-   ;
+    getphrase().then(() => setLoading(false));
   }, [loading]);
   async function getphrase() {
     // const request = await supabase.from("request").select();
     // const data = (await request).data;
     const phraseological = await supabase.from("phrase_text").select();
     const phre = (await phraseological).data;
-      const data = await supabase
-      .from('phrase_text')
+    const data = await supabase
+      .from("phrase_text")
       .select()
-      .order('phrase_text_id')
-    setrequest(data.data)     
-  } 
+      .order("phrase_text_id");
+    setrequest(data.data);
+  }
   if (user) {
     return (
       <div className="">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
         <div className="bodylibrary">
-        <Table
-      loading={loading}
-      dataSource={phrase_text}
-      columns={columns}
-      />
-      </div>
+          <Table loading={loading} dataSource={phrase_text} columns={columns} />
+        </div>
       </div>
     );
   } else {
@@ -162,12 +157,8 @@ function Library() {
       <div className="">
         <Header logo={logoHeader} buttons={buttons} />
         <div className="bodylibrary">
-        <Table
-      loading={loading}
-      dataSource={phrase_text}
-      columns={columns}
-      />
-      </div>
+          <Table loading={loading} dataSource={phrase_text} columns={columns} />
+        </div>
       </div>
     );
   }

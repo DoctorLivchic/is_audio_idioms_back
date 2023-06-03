@@ -44,7 +44,7 @@ function FavoritesBody() {
   ];
 
   const GridDataOption = {
-    rowCount: 10,
+    rowCount: 12,
     page: 1,
     orderBy: "phrase_id",
     from: "phrase_text",
@@ -87,7 +87,8 @@ function FavoritesBody() {
         .select(
           "phrase_text_text, phrase_text_transcription, phrase_text_desc, phrase_id"
         )
-        .in("phrase_id", phraseIds);
+        .in("phrase_id", phraseIds)
+        .order("phrase_id", { ascending: true });
 
       setrequest(data.data);
     };
