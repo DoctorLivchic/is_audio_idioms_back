@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Table, notification,Input, Select , Modal, Form ,Button} from 'antd';
 //Импорт компонентов
 import Header from "../components/header";
-import ProfileDivTemp from "../components/profileDivTemp";
+import FavoritesBody from "../components/FavoritesBody";
 import logoHeader from "../img/logo_header_logout2.png";
 import logoHeaderAuthUser from "../img/logoHeaderAuthUser.png";
 import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
@@ -54,7 +54,9 @@ function UserAccount() {
   return (
     <div className="">
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
-      
+      <div className="FavoritesBody">
+      <FavoritesBody></FavoritesBody>
+      </div>
     </div>
   );
 }
