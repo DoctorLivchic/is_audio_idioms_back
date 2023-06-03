@@ -25,6 +25,100 @@ export default function Authorization() {
     else signin(true, () => navigate("/pages/UserAccount"));
   }
 
+  //Валидация мэйла
+  function ValidMail(email) {
+    var re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    var valid = re.test(email);
+    return valid;
+  }
+
+  //Валидация имени
+  function validName(name, surname, patronymic) {
+    var re = /^[A-ZА-ЯЁ]+$/i;
+    var valid = re.test(name, surname, patronymic);
+    return valid;
+  }
+
+  //Сравнение паролей
+  function comparePass(password, passAffirm) {
+    if (password == passAffirm) {
+      if (password != "") return true;
+    } else {
+      return false;
+    }
+  }
+
+  //Получение таблицы user
+  async function getUser() {
+    const profiles = await supabase.from("user").select();
+    return profiles;
+  }
+
+  //Регистрация нового пользователя
+  async function addUser() {
+    const email1 = document.getElementById("logemailUp").value;
+    const password1 = document.getElementById("logpassUp").value;
+    const name1 = document.getElementById("logname").value;
+    const passAffirm = document.getElementById("logpassAffirm").value;
+    const surname1 = document.getElementById("logsurname").value;
+    const lastname = document.getElementById("loglastname").value;
+
+    //console.log(styles.box-shadow)
+
+    //Запись
+    if (validName(name1, surname1, lastname)) {
+      if (ValidMail(email1)) {
+        if (comparePass(password1, passAffirm)) {
+          try {
+            const { error } = await supabase.from("user").insert({
+              name: name1,
+              email: email1,
+              password: password1,
+              role_id: 3,
+              login: email1,
+            });
+          } catch (error) {
+            notification.open({
+              message: "Ошибка",
+              description: error.message,
+            });
+          }
+          notification.open({
+            message: "Успешно",
+            description: "Регистрация прошла успешно",
+          });
+          window.location.reload();
+        } else {
+          notification.open({
+            message: "Ошибка",
+            description: "Ваши пароли не совпадают!",
+          });
+          document.getElementById("logpassUp").value = "";
+          document.getElementById("logpassAffirm").value = "";
+        }
+      } else {
+        notification.open({
+          message: "Ошибка",
+          description: "Вы ввели некорректный email!",
+        });
+        document.getElementById("logemailUp").value = "";
+      }
+    } else {
+      notification.open({
+        message: "Ошибка",
+        description: "Вы ввели некорректное имя, фамилию или отчество!",
+      });
+      document.getElementById("logname").value = "";
+    }
+
+    //попытка получить последнего добавленного юзера
+
+    const user = getUser();
+    const data = (await user).data;
+
+    // const usr = data[data.length-1]; //получаем последнюю запись
+  }
+
   return (
     <div className="mainDivAuth">
       <div className="authRegDiv">
@@ -104,8 +198,30 @@ export default function Authorization() {
                               type="text"
                               name="logname"
                               className="inputAuth"
-                              placeholder="Как вас зовут ?"
+                              placeholder="Имя"
                               id="logname"
+                              autoComplete="off"
+                            />
+                            <i className="input-icon uil uil-user"></i>
+                          </div>
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              name="logname"
+                              className="inputAuth"
+                              placeholder="Фамилия"
+                              id="logsurname"
+                              autoComplete="off"
+                            />
+                            <i className="input-icon uil uil-user"></i>
+                          </div>
+                          <div className="form-group">
+                            <input
+                              type="text"
+                              name="logname"
+                              className="inputAuth"
+                              placeholder="Отчество"
+                              id="loglastname"
                               autoComplete="off"
                             />
                             <i className="input-icon uil uil-user"></i>
@@ -147,15 +263,18 @@ export default function Authorization() {
                           <div className="button">
                             <Form.Item>
                               <Button
-                               onClick={() => {
-                                navigate(fromPage);
-                              }}
+                                onClick={() => {
+                                  navigate(fromPage);
+                                }}
                                 className="AuthbuttonWhite"
                               >
                                 Назад
                               </Button>
-                              <Button className="AuthbuttonWhite">
-                              Зарегистрироваться
+                              <Button
+                                className="AuthbuttonWhite"
+                                onClick={addUser}
+                              >
+                                Зарегистрироваться
                               </Button>
                             </Form.Item>
                           </div>
