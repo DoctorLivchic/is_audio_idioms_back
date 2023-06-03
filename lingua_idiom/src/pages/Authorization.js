@@ -47,6 +47,8 @@ export default function Authorization() {
       } else {
         if (user.data[0]["role_id"] == 1) {
           localStorage.setItem("userID", user.data[0]["user_id"]);
+          localStorage.setItem("userName", user.data[0]["name"]);
+          localStorage.setItem("userSurname", user.data[0]["surname"]);
 
           setUser_id(user.data[0]["user_id"]);
           console.log(String(user_id));
@@ -57,6 +59,8 @@ export default function Authorization() {
           });
         } else if (user.data[0]["role_id"] == 2) {
           localStorage.setItem("userID", user.data[0]["user_id"]);
+          localStorage.setItem("userName", user.data[0]["name"]);
+          localStorage.setItem("userSurname", user.data[0]["surname"]);
           setUser_id(user.data[0]["user_id"]);
           signin(true, () => navigate("/pages/ExpertAccount"));
           notification.open({
@@ -65,6 +69,8 @@ export default function Authorization() {
           });
         } else {
           localStorage.setItem("userID", user.data[0]["user_id"]);
+          localStorage.setItem("userName", user.data[0]["name"]);
+          localStorage.setItem("userSurname", user.data[0]["surname"]);
           setUser_id(user.data[0]["user_id"]);
           signin(true, () => navigate("/pages/UserAccount"));
           notification.open({
