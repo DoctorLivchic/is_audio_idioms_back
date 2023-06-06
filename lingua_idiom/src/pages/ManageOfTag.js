@@ -20,7 +20,21 @@ function ManageOfTag() {
     const [show, setShow] = useState(false);
     const [loading, setLoading] = useState(true);
     const [form] = useForm()
-
+    const[pagination]=useState({
+      current:1,
+      pageSize:10,
+      showSizeChanger:true,
+      showTotal:(total)=>{
+        return "Всего "+total
+      },
+      onChange:(page,pageSize)=>{
+        pagination.pageSize=pageSize;
+        pagination.current=page;
+        GridDataOption.page=page;
+        GridDataOption.rowCount=pageSize;
+        
+      }
+    })
     const columns = [
         {
             title:'Номер категории',
@@ -218,6 +232,7 @@ function ManageOfTag() {
       loading={loading}
       dataSource={tags}
       columns={columns}
+      pagination={pagination}
       rowSelection={rowSelection}
       rowKey={(record) => record.tag_id}
       onRow={(record) => ({

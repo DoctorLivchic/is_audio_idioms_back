@@ -16,6 +16,21 @@ function UserApplications() {
     const [selectedRowKeys, setSelectedRowKeys] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const[pagination]=useState({
+      current:1,
+      pageSize:10,
+      showSizeChanger:true,
+      showTotal:(total)=>{
+        return "Всего "+total
+      },
+      onChange:(page,pageSize)=>{
+        pagination.pageSize=pageSize;
+        pagination.current=page;
+        GridDataOption.page=page;
+        GridDataOption.rowCount=pageSize;
+        
+      }
+    })
     const columns = [
         {
           title: 'Номер запроса',
@@ -176,6 +191,7 @@ function UserApplications() {
         <div className="bodyApp">
         <Table
         loading={loading}
+        pagination={pagination}
         dataSource={request}
         columns={columns}
         rowSelection={rowSelection}

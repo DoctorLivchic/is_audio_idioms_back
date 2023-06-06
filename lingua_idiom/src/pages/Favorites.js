@@ -16,10 +16,10 @@ function UserAccount() {
   const buttons = [
     <p
       onClick={() => {
-        navigate("/pages/About");
+        navigate();
       }}
     >
-      О нас
+     Удалить
     </p>,
     <p
       onClick={() => {

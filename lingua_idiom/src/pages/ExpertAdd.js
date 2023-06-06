@@ -17,7 +17,21 @@ function ExpertAdd() {
   const [request, setrequest] = useState([]);
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [loading, setLoading] = useState(true);
-
+  const[pagination]=useState({
+    current:1,
+    pageSize:10,
+    showSizeChanger:true,
+    showTotal:(total)=>{
+      return "Всего "+total
+    },
+    onChange:(page,pageSize)=>{
+      pagination.pageSize=pageSize;
+      pagination.current=page;
+      GridDataOption.page=page;
+      GridDataOption.rowCount=pageSize;
+      
+    }
+  })
   const columns = [
     {
       title: "Номер запроса",
@@ -243,6 +257,7 @@ function ExpertAdd() {
         loading={loading}
         dataSource={request}
         columns={columns}
+        pagination={pagination}
         rowSelection={rowSelection}
         rowKey={(record) => record.request_id}
         onRow={(record) => ({

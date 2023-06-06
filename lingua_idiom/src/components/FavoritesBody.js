@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import User from "../img/User.png";
 import { useEffect, useState } from "react";
 import profileDiv from "../img/profileDiv.png";
-import { Table, notification, Button, Form, Input, Select, Modal } from "antd";
+import { Table, notification, Button, Form, Input, Select, Modal, Pagination } from "antd";
 import { useForm } from "antd/es/form/Form";
 import { supabase } from "../supabase/supabaseClient";
 
@@ -20,6 +20,21 @@ function FavoritesBody() {
   const [form] = useForm();
   const [tag, settag] = useState([]);
   const [sel_tag, setsel_tag] = useState([]);
+  const[pagination]=useState({
+    current:1,
+    pageSize:10,
+    showSizeChanger:true,
+    showTotal:(total)=>{
+      return "Всего "+total
+    },
+    onChange:(page,pageSize)=>{
+      pagination.pageSize=pageSize;
+      pagination.current=page;
+      GridDataOption.page=page;
+      GridDataOption.rowCount=pageSize;
+      
+    }
+  })
   const columns = [
     {
       title: "Номер фразы",
@@ -44,7 +59,7 @@ function FavoritesBody() {
   ];
 
   const GridDataOption = {
-    rowCount: 12,
+    rowCount: 30,
     page: 1,
     orderBy: "phrase_id",
     from: "phrase_text",
@@ -102,6 +117,7 @@ function FavoritesBody() {
       <Table
         loading={loading}
         dataSource={phrase_text}
+        pagination={pagination}
         columns={columns}
         rowSelection={rowSelection}
         rowKey={(record) => record.phrase_id}

@@ -17,7 +17,21 @@ function Library() {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
-
+  const[pagination]=useState({
+    current:1,
+    pageSize:10,
+    showSizeChanger:true,
+    showTotal:(total)=>{
+      return "Всего "+total
+    },
+    onChange:(page,pageSize)=>{
+      pagination.pageSize=pageSize;
+      pagination.current=page;
+      GridDataOption.page=page;
+      GridDataOption.rowCount=pageSize;
+      
+    }
+  })
   const columns = [
     {
       title: "Номер фразы",
@@ -28,11 +42,6 @@ function Library() {
       title: "Дата добавления",
       dataIndex: "created_at",
       key: "created_at",
-    },
-    {
-      title: "Язык перевода",
-      dataIndex: "language_id",
-      key: "language_id",
     },
     {
       title: "Текст фразеологизма",
@@ -52,7 +61,7 @@ function Library() {
   ];
 
   const GridDataOption = {
-    rowCount: 30,
+    rowCount: 10,
     page: 1,
     orderBy: "phrase_text_id",
     from: "phrase_text",
@@ -157,7 +166,7 @@ function Library() {
       <div className="">
         <Header logo={logoHeader} buttons={buttons} />
         <div className="bodylibrary">
-          <Table loading={loading} dataSource={phrase_text} columns={columns} />
+          <Table loading={loading} dataSource={phrase_text} columns={columns} pagination={pagination}/>
         </div>
       </div>
     );

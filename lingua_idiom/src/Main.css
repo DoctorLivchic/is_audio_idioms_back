@@ -216,6 +216,10 @@ body{
   margin-left: -0.3%;
 }
 
+.button_favorite{
+  margin-top: 5%;
+}
+
 .buttonUser{
   flex-direction: row;
   justify-content: flex-end;
@@ -256,9 +260,8 @@ body{
   justify-content: flex-end;
 }
 .UserIMG{
-
-
-
+display: flex;
+margin-left: 4.17%;
 
 }
 

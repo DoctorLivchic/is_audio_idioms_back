@@ -16,6 +16,8 @@ export default function TranslatorBoby() {
   const [buttonTextDislike, setButtonTextDislike] = useState(0);
   const [isplaying, setisplaying] = useState(false);
   const [isplaying2, setisplaying2] = useState(false);
+  const [userid, setuserid] = useState(0);
+  const [phreid, setphreid] = useState([]);
 
   async function ChangeLanguage() {
     const chosenLanguage = document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык ввода
@@ -69,7 +71,7 @@ export default function TranslatorBoby() {
           .eq("phrase_id", phrase.data[0]["phrase_id"])
           .eq("language_id", lang);
         settranslitExit(translate.data[0]["phrase_text_text"]);
-       
+        setphreid(translate.data[0]["phrase_id"]);
         setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
         setlidesc(translate.data[0]["phrase_text_desc"]);
         
@@ -97,6 +99,12 @@ async function examinationlike() {
   //Функция лайка
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+    if (firstText==""){ notification.open({
+      message: "Внимание!",
+      description:
+        "Введите фразеологизм что бы поставить лайк!",
+    });}
+    else{
     //Получаем айди фразеологизма
     const phrase = await supabase
       .from("phrase_text")
@@ -122,7 +130,7 @@ async function examinationlike() {
 
     setButtonTextLike(phrase3.data[0]["rating_like"]);
   }
-    }
+    }}
   //Функция дизлайка
   async function examinationdislike() {
     if (!user) {
@@ -134,7 +142,12 @@ async function examinationlike() {
     } else {
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
-
+if(firstText==""){notification.open({
+  message: "Внимание!",
+  description:
+    "Введите фразеологизм что бы поставить дизлайк!",
+});
+}else{
     //Получаем айди фразеологизма
     const phrase = await supabase
       .from("phrase_text")
@@ -159,11 +172,13 @@ async function examinationlike() {
       .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
     setButtonTextDislike(phrase3.data[0]["rating_dislike"]);
-  }}
-
+  }}}
+  
   const { user } = useAuth();
   //Функция добавления в избранное
   async function AddToFavourite() {
+    
+   
     if (!user) {
       notification.open({
         message: "Внимание!",
@@ -171,6 +186,16 @@ async function examinationlike() {
           "Для добавления фразеологизма в избранное Вам необходимо войти.",
       });
     } else {
+      
+      
+    
+      const {error} = await supabase
+      .from("favourites_phraseological")
+      .insert({ 
+        phrase_id:phreid,
+        user_id:localStorage.getItem("userID"),
+       });
+
       notification.open({
         message: "Успешно!",
         description: "Фразеологизм добавлен!",

@@ -22,7 +22,21 @@ function ManageOfPhrase() {
     const [form] = useForm();
     const [tag, settag] = useState([]);
     const [sel_tag, setsel_tag] = useState([]);
-
+    const[pagination]=useState({
+      current:1,
+      pageSize:10,
+      showSizeChanger:true,
+      showTotal:(total)=>{
+        return "Всего "+total
+      },
+      onChange:(page,pageSize)=>{
+        pagination.pageSize=pageSize;
+        pagination.current=page;
+        GridDataOption.page=page;
+        GridDataOption.rowCount=pageSize;
+        
+      }
+    })
     const columns = [
         {
           title: "Номер текста фразеологизма",
@@ -599,6 +613,7 @@ async function change_phrase() {
 
         <Table
         loading={loading}
+        pagination={pagination}
         dataSource={phrase_text}
         columns={columns}
         rowSelection={rowSelection}

@@ -29,7 +29,21 @@ function Requests() {
   const [translitExit, settranslitExit] = useState([]);
   const { TextArea } = Input;
   const navigate = useNavigate();
-
+  const[pagination]=useState({
+    current:1,
+    pageSize:10,
+    showSizeChanger:true,
+    showTotal:(total)=>{
+      return "Всего "+total
+    },
+    onChange:(page,pageSize)=>{
+      pagination.pageSize=pageSize;
+      pagination.current=page;
+      GridDataOption.page=page;
+      GridDataOption.rowCount=pageSize;
+      
+    }
+  })
   const columns = [
     {
       title: 'Номер запроса',
@@ -166,6 +180,7 @@ async function TranslateFunction() {
           .eq("phrase_id", phrase.data[0]["phrase_id"])
           .eq("language_id", 1);
 
+          setid(translate.data[0]["phrase_id"])
           const translatekor = await supabase
           .from("phrase_text")
           .select()
@@ -627,6 +642,7 @@ async function TranslateFunction() {
       <div className="bodyApp">
         <Table
         loading={loading}
+        pagination={pagination}
         dataSource={request}
         columns={columns}
         rowSelection={rowSelection}

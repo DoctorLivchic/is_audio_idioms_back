@@ -65,7 +65,7 @@ export default function Authorization() {
           signin(true, () => navigate("/pages/ExpertAccount"));
           notification.open({
             message: "Успешно",
-            description: "Вы успешно авторизовались!",
+            description:  "Вы успешно авторизовались!",
           });
         } else {
           localStorage.setItem("userID", user.data[0]["user_id"]);
