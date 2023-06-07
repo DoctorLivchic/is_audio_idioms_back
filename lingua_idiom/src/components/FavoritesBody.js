@@ -112,6 +112,8 @@ function FavoritesBody() {
     fetchOrders().then(() => setLoading(false));
   }, [phraseIds, loading]);
 
+
+
   return (
     <div className="FavoritesBody">
       <Table

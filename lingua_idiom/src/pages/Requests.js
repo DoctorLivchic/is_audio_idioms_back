@@ -162,7 +162,14 @@ async function TranslateFunction() {
 
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст к переводу
-
+if(firstText==""){
+  notification.open({
+    message: "Внимание!",
+    description:
+      "Введите введите фразеологизм который вы хотите найти в текстовое поле!",
+  });
+}
+else{
     if (firstText == "") {
       document.getElementById("textAreaExit").value = "";
     } else {
@@ -214,17 +221,15 @@ async function TranslateFunction() {
             "Мы не нашли нужного Вам фразеологизма. Вы всегда можете отправить нам запрос на добавление нового фразеологизма в Личном кабинете!",
         });
       }
-      //-------------------------------------------------------------------------------
-      // Вывод лайков
     }
   }
-
+}
 
   function cancel() {
     setShow(false);
     setShow1(false);
-  }
-
+  
+}
   async function change_phrase() {
     setShow(true);
     for (let i = 0; i < selectedRowKeys.length; i++) {
@@ -297,42 +302,39 @@ async function TranslateFunction() {
     const kor1 = form.getFieldValue("kor");
     const tag = form.getFieldValue("tag_id");
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
-    try {
-      var update1 = new Date().toISOString().toLocaleString();
-
-      //Получаем последний phrase_id
-      const id = await supabase.from("request").select("request_id");
-      let max = -10;
-      for (let i = 0; i < id.data.length; i++) {
-        if (id.data[i]["request_id"] > max) {
-          max = id.data[i]["request_id"];
+    if (validrus(rus1)) {
+      if (validfre(fre1)) {
+        if (validkor(kor1)) {
+          try {
+            const { error } = await supabase
+              .from("request")
+              .insert({
+                rus_request: rus1,
+                  fre_request: fre1,
+                  kor_request: kor1,
+                  status_id:1,
+                  type_id:0,
+                  user_id:parseInt(userID),
+                  tag_id:tag,
+              });
+          } catch (error) {
+            alert(error.error_description || error.message);
+          }
+          notification.open({message:'Успешно',description:'Вы успешно добавили запрос!'})
+        } else {      
+          notification.open({message:'Ошибка',description:'Вы ввели некорректный корейский перевод!'})
+         
         }
+      } else {       
+        notification.open({message:'Ошибка',description:'Вы ввели некорректный французский перевод перевод!'})
+       
       }
-      const { error1 } = await supabase.from("request").insert([
-        {
-          rus_request: rus1,
-          fre_request: fre1,
-          kor_request: kor1,
-          status_id:1,
-          type_id:1,
-          user_id:parseInt(userID),
-          tag_id:tag
-          
-        },
-      ]);
-
-      //------------------------------------------------------------------------------------------------------------
-      notification.open({
-        message: "УСПЕШНО",
-        description: "Запрос был успешно добавлен в систему!",
-      });
-      console.log("Запись добавленна");
-      update();
-    } catch (error) {
-      notification.open({ message: "Ошибка", description: error.message });
-      update();
+    } else {
+      notification.open({message:'Ошибка',description:'Вы ввели некорректный русский перевод!'})
+      
     }
   }
+
   function update() {
     setLoading(true);
   }
@@ -356,7 +358,7 @@ async function TranslateFunction() {
                   fre_request: fre1,
                   kor_request: kor1,
                   status_id:1,
-                  type_id:1,
+                  type_id:0,
                   user_id:parseInt(userID),
                   tag_id:tag,
                 phrase_id:id

@@ -157,7 +157,7 @@ function Library() {
       <div className="">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
         <div className="bodylibrary">
-          <Table loading={loading} dataSource={phrase_text} columns={columns} />
+          <Table loading={loading} dataSource={phrase_text} columns={columns} pagination={pagination}/>
         </div>
       </div>
     );

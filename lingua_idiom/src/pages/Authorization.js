@@ -31,13 +31,17 @@ export default function Authorization() {
     const email = document.getElementById("logemailIn").value;
     const password = document.getElementById("logpassIn").value;
 
-    //Ищем пользователя в таблице - если нет - выдаем ошибку
+    //Ищем пользователя в таблице - если нет - выдаем ошибку role
     try {
       const user = await supabase
         .from("user")
         .select()
         .eq("login", email)
         .eq("password", password);
+
+        const ril = await supabase
+        .from("role")
+        .select()
 
       if (user.data.length == 0) {
         notification.open({
@@ -49,7 +53,9 @@ export default function Authorization() {
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
-
+          localStorage.setItem("userpatronymic", user.data[0]["patronymic"]);
+          localStorage.setItem("useremail", user.data[0]["email"]);
+          localStorage.setItem("userol", ril.data[0+1]["role_name"]);
           setUser_id(user.data[0]["user_id"]);
           console.log(String(user_id));
           signin(true, () => navigate("/pages/ModerAccount"));
@@ -61,6 +67,9 @@ export default function Authorization() {
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
+          localStorage.setItem("userpatronymic", user.data[0]["patronymic"]);
+          localStorage.setItem("useremail", user.data[0]["email"]);
+          localStorage.setItem("userol", ril.data[0]["role_name"]);
           setUser_id(user.data[0]["user_id"]);
           signin(true, () => navigate("/pages/ExpertAccount"));
           notification.open({
@@ -71,6 +80,9 @@ export default function Authorization() {
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
+          localStorage.setItem("userpatronymic", user.data[0]["patronymic"]);
+          localStorage.setItem("useremail", user.data[0]["email"]);
+          localStorage.setItem("userol", ril.data[0+2]["role_name"]);
           setUser_id(user.data[0]["user_id"]);
           signin(true, () => navigate("/pages/UserAccount"));
           notification.open({
