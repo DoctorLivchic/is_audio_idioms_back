@@ -50,7 +50,7 @@ function ModerAccount() {
       }}
     >
       Выход
-    </button>,
+    </button>
   ];
   return (
     <div className="">
