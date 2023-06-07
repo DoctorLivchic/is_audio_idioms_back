@@ -62,7 +62,7 @@ export default function TranslatorBoby() {
       const phrase = await supabase
         .from("phrase_text")
         .select()
-        .eq("phrase_text_text", firstText);
+        .ilike("phrase_text_text", `%${firstText}%`);
 
       try {
         //Получаем фразеологизм на языке, который выбран к переводу
