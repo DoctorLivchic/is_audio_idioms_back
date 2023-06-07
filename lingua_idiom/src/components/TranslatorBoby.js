@@ -31,12 +31,13 @@ export default function TranslatorBoby() {
     const secondText = secondT.toLowerCase(); //Возвращаем текст из правого блока
     document.getElementById("textAreaEnter").value = secondT;
     document.getElementById("textAreaExit").value = firstT;
-    document.getElementById("textAreaExit1").value =""
-    document.getElementById("textAreaExit2").value =""
+    document.getElementById("textAreaExit1").value = "";
+    document.getElementById("textAreaExit2").value = "";
   }
 
   async function TranslateFunction() {
     GetLike();
+    isAddFav();
     const translationLanguage =
       document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
     // console.log(translationLanguage);
@@ -74,7 +75,7 @@ export default function TranslatorBoby() {
         setphreid(translate.data[0]["phrase_id"]);
         setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
         setlidesc(translate.data[0]["phrase_text_desc"]);
-        
+
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
         //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
       } catch (error) {
@@ -86,99 +87,159 @@ export default function TranslatorBoby() {
       }
       //-------------------------------------------------------------------------------
       // Вывод лайков
-    }console.log(translitExit)
+    }
+    console.log(translitExit);
   }
-async function examinationlike() {
+  async function examinationlike() {
     if (!user) {
       notification.open({
         message: "Внимание!",
-        description:
-          "Что бы поставить лайк Вам необходимо войти.",
+        description: "Что бы поставить лайк Вам необходимо войти.",
       });
     } else {
-  //Функция лайка
-    const firstT = document.getElementById("textAreaEnter").value;
-    const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
-    if (firstText==""){ notification.open({
-      message: "Внимание!",
-      description:
-        "Введите фразеологизм что бы поставить лайк!",
-    });}
-    else{
-    //Получаем айди фразеологизма
-    const phrase = await supabase
-      .from("phrase_text")
-      .select("phrase_id")
-      .eq("phrase_text_text", firstText);
+      //Функция лайка
+      const firstT = document.getElementById("textAreaEnter").value;
+      const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+      if (firstText == "") {
+        notification.open({
+          message: "Внимание!",
+          description: "Введите фразеологизм что бы поставить лайк!",
+        });
+      } else {
+        //Получаем айди фразеологизма
+        const phrase = await supabase
+          .from("phrase_text")
+          .select("phrase_id")
+          .eq("phrase_text_text", firstText);
 
-    const phrase2 = await supabase
-      .from("phraseological")
-      .select()
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
+        const phrase2 = await supabase
+          .from("phraseological")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
-    let like = phrase2.data[0]["rating_like"];
-    console.log("like: " + like);
-    const { error } = await supabase
-      .from("phraseological")
-      .update({ rating_like: like + 1 })
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
+        let like = phrase2.data[0]["rating_like"];
+        console.log("like: " + like);
+        const { error } = await supabase
+          .from("phraseological")
+          .update({ rating_like: like + 1 })
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
-    const phrase3 = await supabase
-      .from("phraseological")
-      .select()
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
+        const phrase3 = await supabase
+          .from("phraseological")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
-    setButtonTextLike(phrase3.data[0]["rating_like"]);
+        setButtonTextLike(phrase3.data[0]["rating_like"]);
+      }
+    }
   }
-    }}
   //Функция дизлайка
   async function examinationdislike() {
     if (!user) {
       notification.open({
         message: "Внимание!",
-        description:
-          "Что бы поставить дизлайк Вам необходимо войти.",
+        description: "Что бы поставить дизлайк Вам необходимо войти.",
       });
     } else {
+      const firstT = document.getElementById("textAreaEnter").value;
+      const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+      if (firstText == "") {
+        notification.open({
+          message: "Внимание!",
+          description: "Введите фразеологизм что бы поставить дизлайк!",
+        });
+      } else {
+        //Получаем айди фразеологизма
+        const phrase = await supabase
+          .from("phrase_text")
+          .select("phrase_id")
+          .eq("phrase_text_text", firstText);
+
+        const phrase2 = await supabase
+          .from("phraseological")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
+
+        let like = phrase2.data[0]["rating_dislike"];
+        console.log("like: " + like);
+        const { error } = await supabase
+          .from("phraseological")
+          .update({ rating_dislike: like + 1 })
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
+
+        const phrase3 = await supabase
+          .from("phraseological")
+          .select()
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
+
+        setButtonTextDislike(phrase3.data[0]["rating_dislike"]);
+      }
+    }
+  }
+
+  const { user } = useAuth();
+
+  // //Функция добавления в избранное
+  // async function AddToFavourite() {
+  //   if (!user) {
+  //     notification.open({
+  //       message: "Внимание!",
+  //       description:
+  //         "Для добавления фразеологизма в избранное Вам необходимо войти.",
+  //     });
+  //   } else {
+  //     const { error } = await supabase
+  //       .from("favourites_phraseological")
+  //       .insert({
+  //         phrase_id: phreid,
+  //         user_id: localStorage.getItem("userID"),
+  //       });
+
+  //     notification.open({
+  //       message: "Успешно!",
+  //       description: "Фразеологизм добавлен!",
+  //     });
+  //   }
+  // }
+
+  //--------------------------Состояния цветов ------------------------------------------
+  const [color, setcolor] = useState("");
+  const [stylBut, setstylBut] = useState([]);
+
+  async function isAddFav() {
+    const fav = await supabase
+      .from("favourites_phraseological")
+      .select("phrase_id")
+      .eq("user_id", localStorage.getItem("userID"));
+
     const firstT = document.getElementById("textAreaEnter").value;
-    const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
-if(firstText==""){notification.open({
-  message: "Внимание!",
-  description:
-    "Введите фразеологизм что бы поставить дизлайк!",
-});
-}else{
+    var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+
     //Получаем айди фразеологизма
     const phrase = await supabase
       .from("phrase_text")
       .select("phrase_id")
       .eq("phrase_text_text", firstText);
 
-    const phrase2 = await supabase
-      .from("phraseological")
-      .select()
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
+    let ok = false;
 
-    let like = phrase2.data[0]["rating_dislike"];
-    console.log("like: " + like);
-    const { error } = await supabase
-      .from("phraseological")
-      .update({ rating_dislike: like + 1 })
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
+    for (let i = 0; i < fav.data.length; i++) {
+      if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
+        // delFromFav();
+        ok = true;
+        break;
+      }
+    }
+    if (!ok) {
+      setcolor("");
+      setstylBut("");
+    } else {
+      setstylBut("#f5988c");
+      setcolor("#eb2f96");
+    }
+  }
 
-    const phrase3 = await supabase
-      .from("phraseological")
-      .select()
-      .eq("phrase_id", phrase.data[0]["phrase_id"]);
-
-    setButtonTextDislike(phrase3.data[0]["rating_dislike"]);
-  }}}
-  
-  const { user } = useAuth();
-  //Функция добавления в избранное
-  async function AddToFavourite() {
-    
-   
+  async function addToFavButton() {
     if (!user) {
       notification.open({
         message: "Внимание!",
@@ -186,25 +247,112 @@ if(firstText==""){notification.open({
           "Для добавления фразеологизма в избранное Вам необходимо войти.",
       });
     } else {
-      
-      
-    
-      const {error} = await supabase
-      .from("favourites_phraseological")
-      .insert({ 
-        phrase_id:phreid,
-        user_id:localStorage.getItem("userID"),
-       });
+      try {
+        const fav = await supabase
+          .from("favourites_phraseological")
+          .select("phrase_id")
+          .eq("user_id", localStorage.getItem("userID"));
 
-      notification.open({
-        message: "Успешно!",
-        description: "Фразеологизм добавлен!",
-      });
+        const firstT = document.getElementById("textAreaEnter").value;
+        var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+
+        //Получаем айди фразеологизма
+        const phrase = await supabase
+          .from("phrase_text")
+          .select("phrase_id")
+          .eq("phrase_text_text", firstText);
+
+        let ok = false;
+
+        for (let i = 0; i < fav.data.length; i++) {
+          if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
+            // delFromFav();
+            ok = true;
+            break;
+          }
+        }
+        if (!ok) {
+          addToFavourite();
+          notification.open({
+            message: "Успешно!",
+            description: "Фразеологизм добавлен!",
+          });
+        } else {
+          delFromFav();
+          notification.open({
+            message: "Успешно!",
+            description: "Фразеологизм удален!",
+          });
+        }
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 
+  async function delFromFav() {
+    if (isAddFav) {
+      const firstT = document.getElementById("textAreaEnter").value;
+      const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
+      //Получаем айди фразеологизма
+      const phrase = await supabase
+        .from("phrase_text")
+        .select("phrase_id")
+        .eq("phrase_text_text", firstText);
+      try {
+        const { error } = await supabase
+          .from("favourites_phraseological")
+          .delete()
+          .eq("phrase_id", phrase.data[0]["phrase_id"]);
+        isAddFav();
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+  }
 
+  async function addToFavourite() {
+    const firstT = document.getElementById("textAreaEnter").value;
+    const firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+    const translationLanguage =
+      document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык вывода
+    //Получаем язык на который переводим
+    let lang = 0;
+    if (translationLanguage == "rus") {
+      lang = 1;
+    } else if (translationLanguage == "kor") {
+      lang = 2;
+    } else {
+      lang = 3;
+    }
+
+    //Получаем айди фразеологизма
+    const phrase = await supabase
+      .from("phrase_text")
+      .select("phrase_id")
+      .eq("phrase_text_text", firstText);
+
+    //Получаем айди пользователя
+    let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
+    console.log(userID);
+
+    //Добавляем фразеологизм в избранные
+    try {
+      const { error2 } = await supabase
+        .from("favourites_phraseological")
+        .insert([
+          {
+            phrase_id: phrase.data[0]["phrase_id"],
+            user_id: parseInt(userID),
+            language_id: lang,
+          },
+        ]);
+      isAddFav();
+    } catch (error2) {
+      alert(error2.message);
+    }
+  }
 
   async function GetLike() {
     const firstT = document.getElementById("textAreaEnter").value;
@@ -360,8 +508,9 @@ if(firstText==""){notification.open({
           <div className="ButtonTr">
             <Button
               className="buttonsToplike"
-              onClick={AddToFavourite}
-              icon={<HeartTwoTone />}
+              onClick={addToFavButton}
+              style={{ backgroundColor: stylBut }}
+              icon={<HeartTwoTone twoToneColor={color} />}
             ></Button>
             <Button
               className="buttonsToplike"
