@@ -279,41 +279,20 @@ async function change_phrase() {
     const kor_tr1 = form.getFieldValue("kor_tr");
     const kor_desc1 = form.getFieldValue("kor_desc");
     const link = form.getFieldValue("link_phraseologikal");
+    
     try {
       for (let i = 0; i < selectedRowKeys.length; i++) {
-        //Получаем выбранный запрос
-        const phrase = await supabase
-          .from("request")
-          .select()
-          .eq("phrase_id", selectedRowKeys.at(i));
-
-        console.log(phrase.data[0]);
-
-        for (let i = 1; i < 4; i++) {
-          let lang = "";
-          if (i == 1) {
-            lang = "rus_request";
-          } else if (i == 2) {
-            lang = "kor_request";
-          } else {
-            lang = "fre_request";
-          }
-          console.log("Выбранный язык: " + lang);
-          console.log("Фрэйз айди: " + phrase.data[0]["phrase_id"]);
-          console.log("Передаваемый текст: " + phrase.data[0][lang]);
+        
           const { error } = await supabase
             .from("phrase_text")
-            .update({ phrase_text_text: phrase.data[0][lang] })
-            .eq("phrase_id", phrase.data[0]["phrase_id"])
-            .eq("language_id", i);
+            .update({ phrase_text_text:  rus1, 
+              phrase_text_transcription: rus_tr1,
+              phrase_text_desc: rus_desc1,
+            })
+            .eq("phrase_text_id", selectedRowKeys.at(i))
+            
         }
-        //Обновляем поле update_at
-        var update1 = new Date().toISOString().toLocaleString();
-        const { error1 } = await supabase
-          .from("request")
-          .update({ status_id: "3", update_at: update1 })
-          .eq("phrase_id", selectedRowKeys.at(i));
-      }
+      
 
       notification.open({
         message: "УСПЕШНО",
@@ -523,7 +502,7 @@ async function change_phrase() {
         title="Редактирование фразеологизма"
         onCancel={cancel}
         footer={[
-          <Button onClick={edit_phre}>Добавить</Button>,
+          <Button onClick={edit_phre}>Обновить</Button>,
           <Button onClick={cancel}>Назад</Button>,
         ]}
       >
@@ -536,7 +515,7 @@ async function change_phrase() {
         >
           <Form.Item
             name="rus"
-            label="Русский фразеологизм"
+            label="Обновленный фразеологизм"
             rules={[
               {
                 required: true,
@@ -544,90 +523,20 @@ async function change_phrase() {
               },
             ]}
           >
-            <Input name="rus" id="logrus" placeholder="Русский фразеологизм" />
+            <Input name="rus" id="logrus" placeholder="Обновленный фразеологизм" />
           </Form.Item>
-          <Form.Item name="rus_tr" label="Транскрипция русского фразеологизма">
+          <Form.Item name="rus_tr" label="Транскрипция  фразеологизма">
             <Input
               name="rus_tr"
               id="log_rus_tr"
-              placeholder="Транскрипция русского фразеологизма"
+              placeholder="Транскрипция  фразеологизма"
             />
           </Form.Item>
-          <Form.Item name="rus_desc" label="Описание русского фразеологизма">
+          <Form.Item name="rus_desc" label="Описание  фразеологизма">
             <Input
               name="rus_desc"
               id="log_rus_desc"
-              placeholder="Описание русского фразеологизма"
-            />
-          </Form.Item>
-
-          <Form.Item
-            name="kor"
-            label="Корейский фразеологизм"
-            rules={[
-              {
-                required: true,
-                message: "Корейский не может быть пустым",
-              },
-            ]}
-          >
-            <Input
-              name="kor"
-              placeholder="Корейский фразеологизм"
-              id="logkor"
-            />
-          </Form.Item>
-          <Form.Item name="kor_tr" label="Транскрипция корейкого фразеологизма">
-            <Input
-              name="kor_tr"
-              id="log_kor_tr"
-              placeholder="Транскрипция корейского фразеологизма"
-            />
-          </Form.Item>
-
-          <Form.Item name="kor_desc" label="Описание корейского фразеологизма">
-            <Input
-              name="fre_kor"
-              id="log_kor_desc"
-              placeholder="Описание корейского фразеологизма"
-            />
-          </Form.Item>
-
-          <Form.Item
-            name="fre"
-            label="Французский фразеологизм"
-            rules={[
-              {
-                required: true,
-                message: "фразеологизм не может быть пустым",
-              },
-            ]}
-          >
-            <Input
-              name="fre"
-              placeholder="Французский фразеологизм"
-              id="logfre"
-            />
-          </Form.Item>
-          <Form.Item
-            name="fre_tr"
-            label="Транскрипция французского фразеологизма"
-          >
-            <Input
-              name="fre_tr"
-              id="log_fre_tr"
-              placeholder="Транскрипция французского фразеологизма"
-            />
-          </Form.Item>
-
-          <Form.Item
-            name="fre_desc"
-            label="Описание французского фразеологизма"
-          >
-            <Input
-              name="fre_desc"
-              id="log_fre_desc"
-              placeholder="Описание французского фразеологизма"
+              placeholder="Описание  фразеологизма"
             />
           </Form.Item>
 
