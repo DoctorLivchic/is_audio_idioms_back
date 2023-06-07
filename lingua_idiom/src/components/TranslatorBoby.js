@@ -110,7 +110,7 @@ export default function TranslatorBoby() {
         const phrase = await supabase
           .from("phrase_text")
           .select("phrase_id")
-          .eq("phrase_text_text", firstText);
+          .ilike("phrase_text_text", `%${firstText}%`);
 
         const phrase2 = await supabase
           .from("phraseological")
@@ -153,7 +153,7 @@ export default function TranslatorBoby() {
         const phrase = await supabase
           .from("phrase_text")
           .select("phrase_id")
-          .eq("phrase_text_text", firstText);
+          .ilike("phrase_text_text", `%${firstText}%`);
 
         const phrase2 = await supabase
           .from("phraseological")
@@ -219,7 +219,7 @@ export default function TranslatorBoby() {
     const phrase = await supabase
       .from("phrase_text")
       .select("phrase_id")
-      .eq("phrase_text_text", firstText);
+      .ilike("phrase_text_text", `%${firstText}%`);
 
     let ok = false;
 
@@ -260,7 +260,7 @@ export default function TranslatorBoby() {
         const phrase = await supabase
           .from("phrase_text")
           .select("phrase_id")
-          .eq("phrase_text_text", firstText);
+          .ilike("phrase_text_text", `%${firstText}%`);
 
         let ok = false;
 
@@ -299,7 +299,7 @@ export default function TranslatorBoby() {
       const phrase = await supabase
         .from("phrase_text")
         .select("phrase_id")
-        .eq("phrase_text_text", firstText);
+        .ilike("phrase_text_text", `%${firstText}%`);
       try {
         const { error } = await supabase
           .from("favourites_phraseological")
@@ -331,7 +331,7 @@ export default function TranslatorBoby() {
     const phrase = await supabase
       .from("phrase_text")
       .select("phrase_id")
-      .eq("phrase_text_text", firstText);
+      .ilike("phrase_text_text", `%${firstText}%`);
 
     //Получаем айди пользователя
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
@@ -365,7 +365,7 @@ export default function TranslatorBoby() {
         const phrase = await supabase
           .from("phrase_text")
           .select()
-          .eq("phrase_text_text", firstText);
+          .ilike("phrase_text_text", `%${firstText}%`);
 
         const likes = await supabase
           .from("phraseological")
