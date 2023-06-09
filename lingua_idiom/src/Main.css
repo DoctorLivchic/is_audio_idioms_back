@@ -220,6 +220,28 @@ body{
   margin-top: 2%;
   margin-left: 4%;
 }
+.red{
+  width: 209px;
+height: 14px;
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 24px;
+letter-spacing: 0.03em;
+color: #F39036;
+flex: none;
+order: 2;
+flex-grow: 0;
+}
+.linmin{
+width: 535px;
+height: 0px;
+border: 1px solid #9F9F9F;
+flex: none;
+order: 1;
+flex-grow: 0;
+}
 
 .buttonUser{
   flex-direction: row;
@@ -274,11 +296,14 @@ body{
       color: #FFFFFF;
       font-family: 'Montserrat', sans-serif;
       font-weight: bold;
-  margin-left: 86%;
+  margin-left: 1%;
   margin-top: 2%;
 }
 .buttonUserEx1{
+    display: flex;
   justify-content: flex-end;
+  margin-right: 1%;
+
 }
 .h3{
 font-family: 'Montserrat';
@@ -319,7 +344,6 @@ flex-grow: 0;
 display: flex;
 flex-direction: row;
 margin-left: 4.17%;
-margin-top: 4.17%;
 width: 80%;
 line-height: 30px;
 
