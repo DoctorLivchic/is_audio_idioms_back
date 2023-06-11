@@ -77,7 +77,7 @@ function SearchCategory() {
 
     return ( 
         <div className="SearchCategory">
-      <Checkbox id="one" className="one" colorBorder="#f44336" onChange={onChange}>Поиск по категории</Checkbox>
+      <Checkbox id="one" className="one" colorborder="#f44336" onChange={onChange}>Поиск по категории</Checkbox>
         
     <Form.Item  style={{ display: chbox }}>
     <Select

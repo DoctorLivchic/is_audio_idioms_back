@@ -143,6 +143,8 @@ export default function Authorization() {
           try {
             const { error } = await supabase.from("user").insert({
               name: name1,
+              surname:surname1,
+              patronymic:lastname,
               email: email1,
               password: password1,
               role_id: 3,

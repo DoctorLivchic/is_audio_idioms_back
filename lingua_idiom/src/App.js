@@ -36,10 +36,6 @@ const App = () => {
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="/pages/Authorization" element={<Authorization />} />
-          <Route
-            path="/pages/RegistrationForInternalUsers"
-            element={<RegistrationForInternalUsers />}
-          />
           <Route path="/pages/Translater" element={<Translater />} />
           <Route path="/pages/About" element={<About />} />
           <Route path="/pages/ModerAccount" element={<ModerAccount />} />
