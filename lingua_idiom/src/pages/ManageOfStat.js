@@ -218,16 +218,16 @@ function ManageOfStat() {
                     style={{padding: 20}}>
                         <Form.Item
                             name="stat_name"
-                            label="категория"
+                            label="Статус"
                             rules={[
                                 {
                                     required: true,
-                                    message: "категория не может быть пустым"
+                                    message: "Статус не может быть пустым"
                                 }
                             ]}>
                             <Input name="stat_name"
                             id="stat_name"
-                            placeholder="категория"/>
+                            placeholder="Статус"/>
                         </Form.Item>
                 </Form>
             </Modal>

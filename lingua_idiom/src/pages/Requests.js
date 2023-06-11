@@ -302,8 +302,9 @@ else{
     const kor1 = form.getFieldValue("kor");
     const tag = form.getFieldValue("tag_id");
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
+    console.log(fre1)
     if (validrus(rus1)) {
-      if (validfre(fre1)) {
+      if (fre1.data=="") {
         if (validkor(kor1)) {
           try {
             const { error } = await supabase
