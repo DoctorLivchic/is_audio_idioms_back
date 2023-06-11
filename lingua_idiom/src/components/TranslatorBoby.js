@@ -222,7 +222,9 @@ export default function TranslatorBoby() {
       .ilike("phrase_text_text", `%${firstText}%`);
 
     let ok = false;
-
+    if (fav.data.length == undefined) {
+      return 0;
+    }
     for (let i = 0; i < fav.data.length; i++) {
       if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
         // delFromFav();
