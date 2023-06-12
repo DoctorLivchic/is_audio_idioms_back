@@ -37,7 +37,10 @@ export default function TranslatorBoby() {
 
   async function TranslateFunction() {
     GetLike();
-    isAddFav();
+    if (user) {
+      isAddFav();
+    }
+
     const translationLanguage =
       document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
     // console.log(translationLanguage);
@@ -207,37 +210,39 @@ export default function TranslatorBoby() {
   const [stylBut, setstylBut] = useState([]);
 
   async function isAddFav() {
-    const fav = await supabase
-      .from("favourites_phraseological")
-      .select("phrase_id")
-      .eq("user_id", localStorage.getItem("userID"));
+    try {
+      const fav = await supabase
+        .from("favourites_phraseological")
+        .select("phrase_id")
+        .eq("user_id", localStorage.getItem("userID"));
 
-    const firstT = document.getElementById("textAreaEnter").value;
-    var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+      const firstT = document.getElementById("textAreaEnter").value;
+      var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
-    //Получаем айди фразеологизма
-    const phrase = await supabase
-      .from("phrase_text")
-      .select("phrase_id")
-      .ilike("phrase_text_text", `%${firstText}%`);
+      //Получаем айди фразеологизма
+      const phrase = await supabase
+        .from("phrase_text")
+        .select("phrase_id")
+        .ilike("phrase_text_text", `%${firstText}%`);
 
-    let ok = false;
-    if (fav.data.length == undefined) {
-      return 0;
-    }
-    for (let i = 0; i < fav.data.length; i++) {
-      if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
-        // delFromFav();
-        ok = true;
-        break;
+      let ok = false;
+
+      for (let i = 0; i < fav.data.length; i++) {
+        if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
+          // delFromFav();
+          ok = true;
+          break;
+        }
       }
-    }
-    if (!ok) {
-      setcolor("");
-      setstylBut("");
-    } else {
-      setstylBut("#f5988c");
-      setcolor("#eb2f96");
+      if (!ok) {
+        setcolor("");
+        setstylBut("");
+      } else {
+        setstylBut("#f5988c");
+        setcolor("#eb2f96");
+      }
+    } catch (error) {
+      return 0;
     }
   }
 
