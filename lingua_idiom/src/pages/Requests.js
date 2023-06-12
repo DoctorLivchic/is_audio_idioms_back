@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { useAuth } from "../hoc/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Table, notification,Input, Select , Modal, Form ,Button} from 'antd';
+import { Table, notification, Input, Select, Modal, Form, Button } from "antd";
 //Импорт компонентов
 import Header from "../components/header";
 import ProfileDivTemp from "../components/profileDivTemp";
@@ -25,70 +25,68 @@ function Requests() {
   const [sel_tag, setsel_tag] = useState([]);
   const [lidesc, setlidesc] = useState([]);
   const [litranscEnter, setlitranscEnter] = useState([]);
-  const [id,setid] =useState([]);
+  const [id, setid] = useState([]);
   const [translitExit, settranslitExit] = useState([]);
   const { TextArea } = Input;
   const navigate = useNavigate();
-  const[pagination]=useState({
-    current:1,
-    pageSize:10,
-    showSizeChanger:true,
-    showTotal:(total)=>{
-      return "Всего "+total
+  const [pagination] = useState({
+    current: 1,
+    pageSize: 10,
+    showSizeChanger: true,
+    showTotal: (total) => {
+      return "Всего " + total;
     },
-    onChange:(page,pageSize)=>{
-      pagination.pageSize=pageSize;
-      pagination.current=page;
-      GridDataOption.page=page;
-      GridDataOption.rowCount=pageSize;
-      
-    }
-  })
+    onChange: (page, pageSize) => {
+      pagination.pageSize = pageSize;
+      pagination.current = page;
+      GridDataOption.page = page;
+      GridDataOption.rowCount = pageSize;
+    },
+  });
   const columns = [
     {
-      title: 'Номер запроса',
-      dataIndex: 'request_id',
-      key: 'request_id'
+      title: "Номер запроса",
+      dataIndex: "request_id",
+      key: "request_id",
     },
     {
-      title: 'Русский перевод',
-      dataIndex: 'rus_request',
-      key: 'rus_request'
+      title: "Русский перевод",
+      dataIndex: "rus_request",
+      key: "rus_request",
     },
     {
-      title: 'Французский перевод',
-      dataIndex: 'fre_request',
-      key: 'fre_request'
+      title: "Французский перевод",
+      dataIndex: "fre_request",
+      key: "fre_request",
     },
     {
-      title: 'Корейский перевод',
-      dataIndex: 'kor_request',
-      key: 'kor_request'
+      title: "Корейский перевод",
+      dataIndex: "kor_request",
+      key: "kor_request",
     },
     {
-      title: 'Статус запроса',
-      dataIndex: 'status_id',
-      key: 'status_id'
+      title: "Статус запроса",
+      dataIndex: "status_id",
+      key: "status_id",
     },
     {
-      title: 'Вид операции',
-      dataIndex: 'type_id',
-      key: 'type_id'
+      title: "Вид операции",
+      dataIndex: "type_id",
+      key: "type_id",
     },
     {
-      title: 'Категория',
-      dataIndex: 'tag_id',
-      key: 'tag_id'
-    }
-  ]
+      title: "Категория",
+      dataIndex: "tag_id",
+      key: "tag_id",
+    },
+  ];
 
-
-const GridDataOption = {
+  const GridDataOption = {
     rowCount: 10,
     page: 1,
-    orderBy: 'request_id',
-    from: 'request'
-  }
+    orderBy: "request_id",
+    from: "request",
+  };
   const buttons = [
     <p
       onClick={() => {
@@ -112,34 +110,32 @@ const GridDataOption = {
     >
       Профиль
     </button>,
-
-    
   ];
   useEffect(() => {
-    getrequest().then(() => setLoading(false)); gettags();
+    getrequest().then(() => setLoading(false));
+    gettags();
   }, [loading]);
 
   const onSelectChange = (newSelectedRowKeys) => {
-    console.log('selectedRowKeys changed: ', newSelectedRowKeys);
+    console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
-
   };
   const handleChange = (value) => {
     console.log(`selected ${value}`);
     setsel_tag(value);
   };
 
-const rowSelection = {
+  const rowSelection = {
     selectedRowKeys,
-    onChange: onSelectChange
+    onChange: onSelectChange,
   };
 
-    //Валидация руского перевода
-    function validrus(rus_request) {
-      var re = /^[А-ЯЁ\s]+$/i;
-      var valid = re.test(rus_request);
-      return valid;
-    }
+  //Валидация руского перевода
+  function validrus(rus_request) {
+    var re = /^[А-ЯЁ\s]+$/i;
+    var valid = re.test(rus_request);
+    return valid;
+  }
 
   //Валидация французского перевода
   function validfre(rus_request) {
@@ -155,81 +151,83 @@ const rowSelection = {
     return valid;
   }
 
-// -----------------------------------------------
+  // -----------------------------------------------
 
-async function TranslateFunction() {
-
-
+  async function TranslateFunction() {
     const firstT = document.getElementById("textAreaEnter").value;
     const firstText = firstT.toLowerCase(); //Возвращаем текст к переводу
-if(firstText==""){
-  notification.open({
-    message: "Внимание!",
-    description:
-      "Введите введите фразеологизм который вы хотите найти в текстовое поле!",
-  });
-}
-else{
     if (firstText == "") {
-      document.getElementById("textAreaExit").value = "";
+      notification.open({
+        message: "Внимание!",
+        description:
+          "Введите введите фразеологизм который вы хотите найти в текстовое поле!",
+      });
     } else {
-      //Получаем айди фразеологизма с которого переводим
-      const phrase = await supabase
-        .from("phrase_text")
-        .select()
-        .eq("phrase_text_text", firstText);
-
-      try {
-        //Получаем фразеологизм на языке, который выбран к переводу
-        const translate = await supabase
+      if (firstText == "") {
+        document.getElementById("textAreaExit").value = "";
+      } else {
+        //Получаем айди фразеологизма с которого переводим
+        const phrase = await supabase
           .from("phrase_text")
           .select()
-          .eq("phrase_id", phrase.data[0]["phrase_id"])
-          .eq("language_id", 1);
+          .eq("phrase_text_text", firstText);
 
-          setid(translate.data[0]["phrase_id"])
+        try {
+          //Получаем фразеологизм на языке, который выбран к переводу
+          const translate = await supabase
+            .from("phrase_text")
+            .select()
+            .eq("phrase_id", phrase.data[0]["phrase_id"])
+            .eq("language_id", 1);
+
+          setid(translate.data[0]["phrase_id"]);
           const translatekor = await supabase
-          .from("phrase_text")
-          .select()
-          .eq("phrase_id", phrase.data[0]["phrase_id"])
-          .eq("language_id", 2);
-          document.getElementById("logkor").value =translatekor.data[0]["phrase_text_text"];
-
+            .from("phrase_text")
+            .select()
+            .eq("phrase_id", phrase.data[0]["phrase_id"])
+            .eq("language_id", 2);
+          document.getElementById("logkor").value =
+            translatekor.data[0]["phrase_text_text"];
 
           const translatefre = await supabase
-          .from("phrase_text")
-          .select()
-          .eq("phrase_id", phrase.data[0]["phrase_id"])
-          .eq("language_id", 3);
-          document.getElementById("logfre").value =translatefre.data[0]["phrase_text_text"];
-        //settranslitExit(translate.data[0]["phrase_text_text"]);
-        const translate1 = await supabase
-        .from("phraseological")
-        .select()
-        .eq("phrase_id", phrase.data[0]["phrase_id"])
+            .from("phrase_text")
+            .select()
+            .eq("phrase_id", phrase.data[0]["phrase_id"])
+            .eq("language_id", 3);
+          document.getElementById("logfre").value =
+            translatefre.data[0]["phrase_text_text"];
+          //settranslitExit(translate.data[0]["phrase_text_text"]);
+          const translate1 = await supabase
+            .from("phraseological")
+            .select()
+            .eq("phrase_id", phrase.data[0]["phrase_id"]);
 
-        document.getElementById("link").value = translate1.data[0]["link_phraseological"];
-        document.getElementById("log_rus_tr").value =translate.data[0]["phrase_text_transcription"];
-        document.getElementById("log_rus_desc").value =translate.data[0]["phrase_text_desc"];
-        document.getElementById("tag_id").value=translate1.data[0]["tag_id"];
-        //то выводим во второй текстБокс перевод по выбранному языку к переводу
-          document.getElementById("logrus").value = translate.data[0]["phrase_text_text"];
-      } catch (error) {
-        notification.open({
-          message: "Простите!",
-          description:
-            "Мы не нашли нужного Вам фразеологизма. Вы всегда можете отправить нам запрос на добавление нового фразеологизма в Личном кабинете!",
-        });
+          document.getElementById("link").value =
+            translate1.data[0]["link_phraseological"];
+          document.getElementById("log_rus_tr").value =
+            translate.data[0]["phrase_text_transcription"];
+          document.getElementById("log_rus_desc").value =
+            translate.data[0]["phrase_text_desc"];
+          document.getElementById("tag_id").value =
+            translate1.data[0]["tag_id"];
+          //то выводим во второй текстБокс перевод по выбранному языку к переводу
+          document.getElementById("logrus").value =
+            translate.data[0]["phrase_text_text"];
+        } catch (error) {
+          notification.open({
+            message: "Простите!",
+            description:
+              "Мы не нашли нужного Вам фразеологизма. Вы всегда можете отправить нам запрос на добавление нового фразеологизма в Личном кабинете!",
+          });
+        }
       }
     }
   }
-}
 
   function cancel() {
     setShow(false);
     setShow1(false);
-  
-}
+  }
   async function change_phrase() {
     setShow(true);
     for (let i = 0; i < selectedRowKeys.length; i++) {
@@ -282,19 +280,18 @@ else{
 
   async function getrequest() {
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
-    console.log(userID)
+    console.log(userID);
     // const request = await supabase.from("request").select();
     // const data = (await request).data;
     const request = await supabase.from("request").select();
     const req = (await request).data;
     const data = await supabase
-      .from('request')
+      .from("request")
       .select()
-      .eq('user_id', `${parseInt(userID)}`)
-      .order('request_id')
-    setrequest(data.data)
+      .eq("user_id", `${parseInt(userID)}`)
+      .order("request_id");
+    setrequest(data.data);
   }
-
 
   async function add_phrase() {
     const rus1 = form.getFieldValue("rus");
@@ -302,37 +299,44 @@ else{
     const kor1 = form.getFieldValue("kor");
     const tag = form.getFieldValue("tag_id");
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
-    console.log(fre1)
+    console.log(fre1);
     if (validrus(rus1)) {
-      if (fre1.data=="") {
+      if (fre1.data == "") {
         if (validkor(kor1)) {
           try {
-            const { error } = await supabase
-              .from("request")
-              .insert({
-                rus_request: rus1,
-                  fre_request: fre1,
-                  kor_request: kor1,
-                  status_id:1,
-                  type_id:0,
-                  user_id:parseInt(userID),
-                  tag_id:tag,
-              });
+            const { error } = await supabase.from("request").insert({
+              rus_request: rus1,
+              fre_request: fre1,
+              kor_request: kor1,
+              status_id: 1,
+              type_id: 0,
+              user_id: parseInt(userID),
+              tag_id: tag,
+            });
           } catch (error) {
             alert(error.error_description || error.message);
           }
-          notification.open({message:'Успешно',description:'Вы успешно добавили запрос!'})
-        } else {      
-          notification.open({message:'Ошибка',description:'Вы ввели некорректный корейский перевод!'})
-         
+          notification.open({
+            message: "Успешно",
+            description: "Вы успешно добавили запрос!",
+          });
+        } else {
+          notification.open({
+            message: "Ошибка",
+            description: "Вы ввели некорректный корейский перевод!",
+          });
         }
-      } else {       
-        notification.open({message:'Ошибка',description:'Вы ввели некорректный французский перевод перевод!'})
-       
+      } else {
+        notification.open({
+          message: "Ошибка",
+          description: "Вы ввели некорректный французский перевод!",
+        });
       }
     } else {
-      notification.open({message:'Ошибка',description:'Вы ввели некорректный русский перевод!'})
-      
+      notification.open({
+        message: "Ошибка",
+        description: "Вы ввели некорректный русский перевод!",
+      });
     }
   }
 
@@ -352,41 +356,47 @@ else{
       if (validfre(fre1)) {
         if (validkor(kor1)) {
           try {
-            const { error } = await supabase
-              .from("request")
-              .insert({
-                rus_request: rus1,
-                  fre_request: fre1,
-                  kor_request: kor1,
-                  status_id:1,
-                  type_id:0,
-                  user_id:parseInt(userID),
-                  tag_id:tag,
-                phrase_id:id
-              });
+            const { error } = await supabase.from("request").insert({
+              rus_request: rus1,
+              fre_request: fre1,
+              kor_request: kor1,
+              status_id: 1,
+              type_id: 0,
+              user_id: parseInt(userID),
+              tag_id: tag,
+              phrase_id: id,
+            });
           } catch (error) {
             alert(error.error_description || error.message);
           }
-          notification.open({message:'Успешно',description:'Вы успешно добавили запрос!'})
-        } else {      
-          notification.open({message:'Ошибка',description:'Вы ввели некорректный корейский перевод!'})
-         
+          notification.open({
+            message: "Успешно",
+            description: "Вы успешно добавили запрос!",
+          });
+        } else {
+          notification.open({
+            message: "Ошибка",
+            description: "Вы ввели некорректный корейский перевод!",
+          });
         }
-      } else {       
-        notification.open({message:'Ошибка',description:'Вы ввели некорректный французский перевод перевод!'})
-       
+      } else {
+        notification.open({
+          message: "Ошибка",
+          description: "Вы ввели некорректный французский перевод перевод!",
+        });
       }
     } else {
-      notification.open({message:'Ошибка',description:'Вы ввели некорректный русский перевод!'})
-      
+      notification.open({
+        message: "Ошибка",
+        description: "Вы ввели некорректный русский перевод!",
+      });
     }
   }
 
-  
   return (
     <div className="">
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
-{/* Модальное окно для добавления фразеологизма */}
+      {/* Модальное окно для добавления фразеологизма */}
       <Modal
         open={show}
         title="Добавление фразеологизма"
@@ -408,21 +418,20 @@ else{
             label="Русский фразеологизм"
             rules={[
               {
-                required: true,
+                required: false,
                 message: "фразеологизм не может быть пустым",
               },
             ]}
           >
             <Input name="rus" id="logrus" placeholder="Русский фразеологизм" />
           </Form.Item>
-         
 
           <Form.Item
             name="kor"
             label="Корейский фразеологизм"
             rules={[
               {
-                required: true,
+                required: false,
                 message: "Корейский не может быть пустым",
               },
             ]}
@@ -439,7 +448,7 @@ else{
             label="Французский фразеологизм"
             rules={[
               {
-                required: true,
+                required: false,
                 message: "фразеологизм не может быть пустым",
               },
             ]}
@@ -471,7 +480,7 @@ else{
             label="Ссылка на фразеологизм"
             rules={[
               {
-                required: true,
+                required: false,
                 message: "Укажите источник фразеологизма",
               },
             ]}
@@ -505,9 +514,9 @@ else{
           </Form.Item>
         </Form>
       </Modal>
-{/* Модельное окно для обновления --------------------------------------------*/}
+      {/* Модельное окно для обновления --------------------------------------------*/}
 
-<Modal
+      <Modal
         open={show1}
         title="Обновление фразеологизма"
         onCancel={cancel}
@@ -525,13 +534,13 @@ else{
           style={{ padding: 20 }}
         >
           <Form.Item>
-          <TextArea
-            className="txt"
-            id="textAreaEnter"
-            maxLength={100}
-            style={{ height: "70px" }}
-            placeholder="Введите текст для перевода"
-          />
+            <TextArea
+              className="txt"
+              id="textAreaEnter"
+              maxLength={100}
+              style={{ height: "70px" }}
+              placeholder="Введите текст для перевода"
+            />
           </Form.Item>
           <Form.Item
             name="rus"
@@ -544,9 +553,8 @@ else{
             ]}
             value={translitExit}
           >
-            <Input name="rus" id="logrus"  value={translitExit} />
+            <Input name="rus" id="logrus" value={translitExit} />
           </Form.Item>
-         
 
           <Form.Item
             name="kor"
@@ -644,18 +652,16 @@ else{
 
       <div className="bodyApp">
         <Table
-        loading={loading}
-        pagination={pagination}
-        dataSource={request}
-        columns={columns}
-        rowSelection={rowSelection}
-        rowKey={(record) => record.request_id}
-        onRow={(record) => ({
-          onClick: () => {
-
-          },
-        })}
-      />
+          loading={loading}
+          pagination={pagination}
+          dataSource={request}
+          columns={columns}
+          rowSelection={rowSelection}
+          rowKey={(record) => record.request_id}
+          onRow={(record) => ({
+            onClick: () => {},
+          })}
+        />
       </div>
     </div>
   );

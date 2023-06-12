@@ -68,6 +68,18 @@ function ExpertBody() {
         case "характер человека":
           tag_id = 16;
           break;
+
+        case "коммуникация":
+          tag_id = 18;
+          break;
+
+        case "описание ситуации":
+          tag_id = 19;
+          break;
+
+        case "характер действия":
+          tag_id = 20;
+          break;
       }
       if (tag_id == 0) {
         console.log(phrases.data[i]["id"]);
@@ -127,9 +139,9 @@ function ExpertBody() {
   return (
     <div className="PageBobiExp">
       <img src={bodyacc}></img>
-      <button className="buttonWhite" onClick={setTable}>
+      {/* <button className="buttonWhite" onClick={setTable}>
         Добавить записи
-      </button>
+      </button> */}
       ,
     </div>
   );
