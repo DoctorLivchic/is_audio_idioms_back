@@ -9,6 +9,7 @@ import { useState } from "react";
 import { useAuth } from "../hoc/useAuth";
 
 export default function TranslatorBoby() {
+  const [enter, setenter] = useState([]);
   const [lidesc, setlidesc] = useState([]);
   const [litranscEnter, setlitranscEnter] = useState([]);
   const [translitExit, settranslitExit] = useState([]);
@@ -18,6 +19,10 @@ export default function TranslatorBoby() {
   const [isplaying2, setisplaying2] = useState(false);
   const [userid, setuserid] = useState(0);
   const [phreid, setphreid] = useState([]);
+
+  function handleChange(event) {
+    setenter(event.target.value);
+  }
 
   async function ChangeLanguage() {
     const chosenLanguage = document.getElementById("select_lang_enter").value; //Возвращаем выбранный язык ввода
@@ -36,8 +41,15 @@ export default function TranslatorBoby() {
   }
 
   async function TranslateFunction() {
+    setlidesc("");
+    setlitranscEnter("");
+    settranslitExit("");
+
     GetLike();
-    isAddFav();
+    if (user) {
+      isAddFav();
+    }
+
     const translationLanguage =
       document.getElementById("select_lang_exit").value; //Возвращаем выбранный язык вывода
     // console.log(translationLanguage);
@@ -58,23 +70,35 @@ export default function TranslatorBoby() {
     if (firstText == "") {
       document.getElementById("textAreaExit").value = "";
     } else {
-      //Получаем айди фразеологизма с которого переводим
-      const phrase = await supabase
-        .from("phrase_text")
-        .select()
-        .ilike("phrase_text_text", `%${firstText}%`);
-
       try {
+        //Получаем айди фразеологизма с которого переводим
+        const phrase = await supabase
+          .from("phrase_text")
+          .select()
+          .ilike("phrase_text_text", `%${firstText}%`);
+
         //Получаем фразеологизм на языке, который выбран к переводу
         const translate = await supabase
           .from("phrase_text")
           .select()
           .eq("phrase_id", phrase.data[0]["phrase_id"])
           .eq("language_id", lang);
-        settranslitExit(translate.data[0]["phrase_text_text"]);
-        setphreid(translate.data[0]["phrase_id"]);
-        setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
-        setlidesc(translate.data[0]["phrase_text_desc"]);
+
+        if (translate.data[0]["phrase_text_text"] == "") {
+          notification.open({
+            message: "Простите!",
+            description:
+              "Мы не нашли нужного Вам фразеологизма. Вы всегда можете отправить нам запрос на добавление нового фразеологизма в Личном кабинете!",
+          });
+        } else {
+          settranslitExit(translate.data[0]["phrase_text_text"]);
+          setphreid(translate.data[0]["phrase_id"]);
+          setlitranscEnter(translate.data[0]["phrase_text_transcription"]);
+          setlidesc(translate.data[0]["phrase_text_desc"]);
+          // handleChange(phrase.data[0]["phrase_text_text"]);
+          // document.getElementById("textAreaEnter").value =
+          //   phrase.data[0]["phrase_text_text"];
+        }
 
         //то выводим во второй текстБокс перевод по выбранному языку к переводу
         //  document.getElementById("textAreaExit").value += translate1.data[0]["link_phraseological"];
@@ -207,35 +231,39 @@ export default function TranslatorBoby() {
   const [stylBut, setstylBut] = useState([]);
 
   async function isAddFav() {
-    const fav = await supabase
-      .from("favourites_phraseological")
-      .select("phrase_id")
-      .eq("user_id", localStorage.getItem("userID"));
+    try {
+      const fav = await supabase
+        .from("favourites_phraseological")
+        .select("phrase_id")
+        .eq("user_id", localStorage.getItem("userID"));
 
-    const firstT = document.getElementById("textAreaEnter").value;
-    var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
+      const firstT = document.getElementById("textAreaEnter").value;
+      var firstText = firstT.toLowerCase(); //Возвращаем текст фразеологизма
 
-    //Получаем айди фразеологизма
-    const phrase = await supabase
-      .from("phrase_text")
-      .select("phrase_id")
-      .ilike("phrase_text_text", `%${firstText}%`);
+      //Получаем айди фразеологизма
+      const phrase = await supabase
+        .from("phrase_text")
+        .select("phrase_id")
+        .ilike("phrase_text_text", `%${firstText}%`);
 
-    let ok = false;
+      let ok = false;
 
-    for (let i = 0; i < fav.data.length; i++) {
-      if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
-        // delFromFav();
-        ok = true;
-        break;
+      for (let i = 0; i < fav.data.length; i++) {
+        if (phrase.data[0]["phrase_id"] == fav.data[i]["phrase_id"]) {
+          // delFromFav();
+          ok = true;
+          break;
+        }
       }
-    }
-    if (!ok) {
-      setcolor("");
-      setstylBut("");
-    } else {
-      setstylBut("#f5988c");
-      setcolor("#eb2f96");
+      if (!ok) {
+        setcolor("");
+        setstylBut("");
+      } else {
+        setstylBut("#f5988c");
+        setcolor("#eb2f96");
+      }
+    } catch (error) {
+      return 0;
     }
   }
 
@@ -498,6 +526,7 @@ export default function TranslatorBoby() {
           <TextArea
             className="txt"
             id="textAreaEnter"
+            onChange={handleChange}
             maxLength={100}
             style={{ height: "390px" }}
             placeholder="Введите текст для перевода"
