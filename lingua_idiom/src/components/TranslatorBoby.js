@@ -387,7 +387,7 @@ export default function TranslatorBoby() {
       const audio_id = await supabase
         .from("phrase_text")
         .select("audio_id")
-        .eq("phrase_text_text", firstText);
+        .ilike("phrase_text_text", `%${firstText}%`);
 
       //----------------------------Получаем аудиодорожку
       const audio_path = await supabase

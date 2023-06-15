@@ -302,7 +302,7 @@ flex-grow: 0;
 .buttonUserEx1{
     display: flex;
   justify-content: flex-end;
-  margin-right: 1%;
+  margin-right: 5%;
 
 }
 .h3{
