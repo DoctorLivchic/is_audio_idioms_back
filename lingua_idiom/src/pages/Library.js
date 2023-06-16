@@ -17,21 +17,20 @@ function Library() {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(true);
-  const[pagination]=useState({
-    current:1,
-    pageSize:10,
-    showSizeChanger:true,
-    showTotal:(total)=>{
-      return "Всего "+total
+  const [pagination] = useState({
+    current: 1,
+    pageSize: 10,
+    showSizeChanger: true,
+    showTotal: (total) => {
+      return "Всего " + total;
     },
-    onChange:(page,pageSize)=>{
-      pagination.pageSize=pageSize;
-      pagination.current=page;
-      GridDataOption.page=page;
-      GridDataOption.rowCount=pageSize;
-      
-    }
-  })
+    onChange: (page, pageSize) => {
+      pagination.pageSize = pageSize;
+      pagination.current = page;
+      GridDataOption.page = page;
+      GridDataOption.rowCount = pageSize;
+    },
+  });
   const columns = [
     {
       title: "Номер фразы",
@@ -152,12 +151,17 @@ function Library() {
       .order("phrase_text_id");
     setrequest(data.data);
   }
-  if (user) {
+  if (localStorage.getItem("isAuth") == true) {
     return (
       <div className="">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
         <div className="bodylibrary">
-          <Table loading={loading} dataSource={phrase_text} columns={columns} pagination={pagination}/>
+          <Table
+            loading={loading}
+            dataSource={phrase_text}
+            columns={columns}
+            pagination={pagination}
+          />
         </div>
       </div>
     );
@@ -166,7 +170,12 @@ function Library() {
       <div className="">
         <Header logo={logoHeader} buttons={buttons} />
         <div className="bodylibrary">
-          <Table loading={loading} dataSource={phrase_text} columns={columns} pagination={pagination}/>
+          <Table
+            loading={loading}
+            dataSource={phrase_text}
+            columns={columns}
+            pagination={pagination}
+          />
         </div>
       </div>
     );

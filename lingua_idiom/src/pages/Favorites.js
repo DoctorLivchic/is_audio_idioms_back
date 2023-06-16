@@ -35,7 +35,7 @@ function UserAccount() {
       pagination.current=page;
       GridDataOption.page=page;
       GridDataOption.rowCount=pageSize;
-      
+
     }
   })
   const columns = [

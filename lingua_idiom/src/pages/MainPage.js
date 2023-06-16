@@ -87,7 +87,7 @@ function MainPage() {
     </button>,
   ];
 
-  if (user) {
+  if (localStorage.getItem("isAuth")==true) {
     return (
       <div className="body_MainPage">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />

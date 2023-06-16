@@ -31,6 +31,7 @@ function ExpertAccount() {
       className="buttonWhite"
       onClick={() => {
         signout(() => navigate("/", { replace: true }));
+        localStorage.setItem("isAuth", false);
       }}
     >
       Выход

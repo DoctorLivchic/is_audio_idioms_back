@@ -12,7 +12,7 @@ import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 function Translater() {
   const navigate = useNavigate();
   const { user } = useAuth();
-  console.log(user)
+  console.log(user);
   const buttons = [
     <p
       onClick={() => {
@@ -61,7 +61,7 @@ function Translater() {
       Профиль
     </button>,
   ];
-  if (user) {
+  if (localStorage.getItem("isAuth") == true) {
     return (
       <div>
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
