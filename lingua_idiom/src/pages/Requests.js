@@ -18,8 +18,8 @@ function Requests() {
   const [selectedRowKeys, setSelectedRowKeys] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const [show, setShow] = useState(false);
-  const [show1, setShow1] = useState(false);
+  const [showAdding, setshowAdding] = useState(false);
+  const [showUpdating, setshowUpdating] = useState(false);
   const [form] = useForm();
   const [tag, settag] = useState([]);
   const [sel_tag, setsel_tag] = useState([]);
@@ -225,11 +225,11 @@ function Requests() {
   }
 
   function cancel() {
-    setShow(false);
-    setShow1(false);
+    setshowAdding(false);
+    setshowUpdating(false);
   }
   async function change_phrase() {
-    setShow(true);
+    setshowAdding(true);
     for (let i = 0; i < selectedRowKeys.length; i++) {
       try {
         const data = await supabase.from("phraseological").select();
@@ -250,7 +250,7 @@ function Requests() {
   }
 
   async function change_phrase1() {
-    setShow1(true);
+    setshowUpdating(true);
     for (let i = 0; i < selectedRowKeys.length; i++) {
       try {
         const data = await supabase.from("phraseological").select();
@@ -300,9 +300,9 @@ function Requests() {
     const tag = form.getFieldValue("tag_id");
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
     console.log(fre1);
-    if (validrus(rus1)) {
-      if (fre1.data == "") {
-        if (validkor(kor1)) {
+    if (rus1 != null) {
+      if (fre1 != null) {
+        if (kor1 != null) {
           try {
             const { error } = await supabase.from("request").insert({
               rus_request: rus1,
@@ -320,6 +320,7 @@ function Requests() {
             message: "Успешно",
             description: "Вы успешно добавили запрос!",
           });
+          setshowAdding(false);
         } else {
           notification.open({
             message: "Ошибка",
@@ -352,9 +353,9 @@ function Requests() {
     const tag = form.getFieldValue("tag_id");
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
     //Запись
-    if (validrus(rus1)) {
-      if (validfre(fre1)) {
-        if (validkor(kor1)) {
+    if (rus1 != null) {
+      if (fre1 != null) {
+        if (kor1 != null) {
           try {
             const { error } = await supabase.from("request").insert({
               rus_request: rus1,
@@ -373,6 +374,7 @@ function Requests() {
             message: "Успешно",
             description: "Вы успешно добавили запрос!",
           });
+          setshowUpdating(false);
         } else {
           notification.open({
             message: "Ошибка",
@@ -398,7 +400,7 @@ function Requests() {
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
       {/* Модальное окно для добавления фразеологизма */}
       <Modal
-        open={show}
+        open={showAdding}
         title="Добавление фразеологизма"
         onCancel={cancel}
         footer={[
@@ -517,7 +519,7 @@ function Requests() {
       {/* Модельное окно для обновления --------------------------------------------*/}
 
       <Modal
-        open={show1}
+        open={showUpdating}
         title="Обновление фразеологизма"
         onCancel={cancel}
         footer={[

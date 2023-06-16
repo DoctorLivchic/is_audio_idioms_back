@@ -143,7 +143,7 @@ function About(props) {
     </div>,
   ];
 
-  if (user) {
+  if (localStorage.getItem("isAuth")==true) {
     return (
       <div>
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />

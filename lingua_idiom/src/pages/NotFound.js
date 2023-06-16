@@ -70,7 +70,7 @@ function NotFound() {
       Профиль
     </button>,
   ];
-  if (user) {
+  if (localStorage.getItem("isAuth") == true) {
     return (
       <div className="">
         <Header buttons={buttons2} />

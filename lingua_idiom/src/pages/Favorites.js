@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { useAuth } from "../hoc/useAuth";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { Table, notification,Input, Select , Modal, Form ,Button} from 'antd';
+import { Table, notification, Input, Select, Modal, Form, Button } from "antd";
 //Импорт компонентов
 import Header from "../components/header";
 import FavoritesBody from "../components/FavoritesBody";
@@ -20,7 +20,7 @@ function UserAccount() {
         delete_row();
       }}
     >
-     Удалить
+      Удалить
     </p>,
     <p
       onClick={() => {
@@ -29,7 +29,7 @@ function UserAccount() {
     >
       Переводчик
     </p>,
-  
+
     <button
       className="buttonWhite"
       onClick={() => {
@@ -41,6 +41,8 @@ function UserAccount() {
   ];
 
   async function delete_row() {
+    console.log("Вызвали");
+
     for (let i = 0; i < selectedRowKeys.length; i++) {
       try {
         const { error } = await supabase
@@ -56,7 +58,9 @@ function UserAccount() {
         notification.open({ message: "Ошибка", description: error.message });
       }
     }
+    console.log(selectedRowKeys.length);
   }
+
   const onSelectChange = (newSelectedRowKeys) => {
     console.log("selectedRowKeys changed: ", newSelectedRowKeys);
     setSelectedRowKeys(newSelectedRowKeys);
@@ -66,7 +70,7 @@ function UserAccount() {
     <div className="">
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
       <div className="FavoritesBody">
-      <FavoritesBody></FavoritesBody>
+        <FavoritesBody></FavoritesBody>
       </div>
     </div>
   );

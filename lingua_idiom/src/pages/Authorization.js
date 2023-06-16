@@ -39,9 +39,7 @@ export default function Authorization() {
         .eq("login", email)
         .eq("password", password);
 
-        const ril = await supabase
-        .from("role")
-        .select()
+      const ril = await supabase.from("role").select();
 
       if (user.data.length == 0) {
         notification.open({
@@ -50,12 +48,13 @@ export default function Authorization() {
         });
       } else {
         if (user.data[0]["role_id"] == 1) {
+          localStorage.setItem("isAuth", true);
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
           localStorage.setItem("userpatronymic", user.data[0]["patronymic"]);
           localStorage.setItem("useremail", user.data[0]["email"]);
-          localStorage.setItem("userol", ril.data[0+1]["role_name"]);
+          localStorage.setItem("userol", ril.data[0 + 1]["role_name"]);
           setUser_id(user.data[0]["user_id"]);
           console.log(String(user_id));
           signin(true, () => navigate("/pages/ModerAccount"));
@@ -64,6 +63,7 @@ export default function Authorization() {
             description: "Вы успешно авторизовались!",
           });
         } else if (user.data[0]["role_id"] == 2) {
+          localStorage.setItem("isAuth", true);
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
@@ -74,15 +74,16 @@ export default function Authorization() {
           signin(true, () => navigate("/pages/ExpertAccount"));
           notification.open({
             message: "Успешно",
-            description:  "Вы успешно авторизовались!",
+            description: "Вы успешно авторизовались!",
           });
         } else {
+          localStorage.setItem("isAuth", true);
           localStorage.setItem("userID", user.data[0]["user_id"]);
           localStorage.setItem("userName", user.data[0]["name"]);
           localStorage.setItem("userSurname", user.data[0]["surname"]);
           localStorage.setItem("userpatronymic", user.data[0]["patronymic"]);
           localStorage.setItem("useremail", user.data[0]["email"]);
-          localStorage.setItem("userol", ril.data[0+2]["role_name"]);
+          localStorage.setItem("userol", ril.data[0 + 2]["role_name"]);
           setUser_id(user.data[0]["user_id"]);
           signin(true, () => navigate("/pages/UserAccount"));
           notification.open({
@@ -143,8 +144,8 @@ export default function Authorization() {
           try {
             const { error } = await supabase.from("user").insert({
               name: name1,
-              surname:surname1,
-              patronymic:lastname,
+              surname: surname1,
+              patronymic: lastname,
               email: email1,
               password: password1,
               role_id: 3,

@@ -47,10 +47,11 @@ function ModerAccount() {
         signout(() => {
           navigate("/", { replace: true });
         });
+        localStorage.setItem("isAuth", false);
       }}
     >
       Выход
-    </button>
+    </button>,
   ];
   return (
     <div className="">
