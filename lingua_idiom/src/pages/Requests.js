@@ -301,7 +301,7 @@ function Requests() {
     let userID = localStorage.getItem("userID"); //получаем айди авторизованного пользователя
     console.log(fre1);
     if (validrus(rus1)) {
-      if (fre1.data == "") {
+      if (validfre(fre1)) {
         if (validkor(kor1)) {
           try {
             const { error } = await supabase.from("request").insert({
