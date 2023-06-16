@@ -151,7 +151,7 @@ function Library() {
       .order("phrase_text_id");
     setrequest(data.data);
   }
-  if (localStorage.getItem("isAuth") == true) {
+  if (user) {
     return (
       <div className="">
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />

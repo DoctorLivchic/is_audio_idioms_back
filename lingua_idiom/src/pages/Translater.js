@@ -61,7 +61,7 @@ function Translater() {
       Профиль
     </button>,
   ];
-  if (localStorage.getItem("isAuth") == true) {
+  if (user) {
     return (
       <div>
         <Header logo={logoHeaderAuthUser} buttons={buttons2} />
