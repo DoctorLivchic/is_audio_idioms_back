@@ -118,21 +118,26 @@ function ManageOfPhrase() {
       }
 
       async function getphrase() {
-        const phraseological = await supabase.from("phrase_text").select();
-        const phre = (await phraseological).data;
-        const data = await supabase
-           .from("phrase_text")
-           .select()
-           .order("phrase_text_id")
-         for (let i = 0; i < data.length; i++) {
-          console.log(data.data[0]["language_id"]+" в цикле")
-          if(data.data[i]["language_id"]==1){
-            data.data[i]["language_id"]="русский"
-            console.log(data.data[i]["language_id"])
-          }
-          
-         } 
-        setrequest(data.data);
+        // const phraseological = await supabase.from("phrase_text").select();
+        // const phre = (await phraseological).data;
+       try {
+         const data = await supabase
+            .from("phrase_text")
+            .select()
+            .order("phrase_text_id")
+          for (let i = 0; i < data.length; i++) {
+           console.log(data.data[0]["language_id"]+" в цикле")
+           if(data.data[i]["language_id"]==1){
+             data.data[i]["language_id"]="русский"
+             console.log(data.data[i]["language_id"])
+           }
+           
+          } setrequest(data.data);
+       } catch (error) {
+        console.log(error)
+        
+       }
+        
       }
 
       
