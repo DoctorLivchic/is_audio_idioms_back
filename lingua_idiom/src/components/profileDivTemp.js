@@ -98,13 +98,11 @@ export default function ProfileDivTemp() {
                 required: true,
                 message: "Пароль не может быть пустым",
               },
-            ]}
-          >
+            ]}>
             <Input
               name="logpassIn"
               id="logpassIn"
-              placeholder="Введите действующий пароль"
-            />
+              placeholder="Введите действующий пароль"/>       
           </Form.Item>
           <Form.Item name="logpassNew" label="Новый пароль  ">
             <Input
@@ -115,9 +113,7 @@ export default function ProfileDivTemp() {
                 {
                   required: true,
                   message: "Новый пароль не может быть пустым",
-                },
-              ]}
-            />
+                }, ]}/>     
           </Form.Item>
           <Form.Item name="logpassNew2" label="Повторите пароль">
             <Input
@@ -128,37 +124,29 @@ export default function ProfileDivTemp() {
                 {
                   required: true,
                   message: "Новый пароль не может быть пустым",
-                },
-              ]}
-            />
+                },]}/>                       
           </Form.Item>
         </Form>
       </Modal>
-
       <div className="BobyUser">
         <div className="buttonUserEx1">
           <Button
             className="buttonUserEx"
             onClick={() => {
               navigate("/pages/Favorites");
-            }}
-          >
-            {" "}
+            }} >
+          {" "}
             Избранное
-          </Button>
-
+            </Button>        
           <Button
             className="buttonUserEx"
             onClick={() => {
               signout(() => navigate("/", { replace: true }));
               localStorage.setItem("isAuth", false);
-            }}
-          >
-            {" "}
-            Выйти
-          </Button>
+            }} >  {" "}
+          Выйти
+          </Button>               
         </div>
-
         <div className="UserIMG">
           <div className="doby_user_unfo">
             <div className="user_info">
@@ -184,7 +172,6 @@ export default function ProfileDivTemp() {
               <div className="linmin"></div>
             </div>
           </div>
-
           <div className="user_info_more">
             <h3 className="H3">
               {" "}

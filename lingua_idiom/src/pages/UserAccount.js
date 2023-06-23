@@ -10,53 +10,45 @@ import logoHeaderAuthOther from "../img/logoHeaderAuthOther.png";
 
 function UserAccount() {
   const { signout, user } = useAuth();
-
   const navigate = useNavigate();
   const buttons = [
     <p
       onClick={() => {
         navigate("/pages/About");
-      }}
-    >
+      }}>
       О нас
     </p>,
     <p
       onClick={() => {
         navigate("/pages/Library");
-      }}
-    >
+      }} > 
       Библиотека
     </p>,
     <p
       onClick={() => {
         navigate("/pages/Translater");
-      }}
-    >
+      }}>  
       Переводчик
     </p>,
     <p
       onClick={() => {
         navigate("/pages/Requests");
-      }}
-    >
+      }} >
       Мои запросы
     </p>,
     <button
       className="buttonWhite"
       onClick={() => {
         navigate("/pages/UserAccount");
-      }}
-    >
+      }} >
       Профиль
     </button>,
   ];
   return (
-    <div className="">
+    <div className="User_Acc">
       <Header logo={logoHeaderAuthUser} buttons={buttons} />
-      <ProfileDivTemp />
+      <ProfileDivTemp/>
     </div>
   );
 }
-//Передаваемые кнопки в футер
-
 export default UserAccount;
