@@ -283,14 +283,75 @@ function Requests() {
     console.log(userID);
     // const request = await supabase.from("request").select();
     // const data = (await request).data;
-    const request = await supabase.from("request").select();
-    const req = (await request).data;
-    const data = await supabase
-      .from("request")
-      .select()
-      .eq("user_id", `${parseInt(userID)}`)
-      .order("request_id");
-    setrequest(data.data);
+    try {
+      const request = await supabase.from("request").select();
+      const req = (await request).data;
+      const data = await supabase
+        .from("request")
+        .select()
+        .eq("user_id", `${parseInt(userID)}`)
+        .order("request_id");
+        for (let i = 0; i < data.data.length; i++) { 
+          if (data.data[i]["type_id"] == 0) {
+            data.data[i]["type_id"] = "Редактирование";
+          } else if ((data.data[i]["type_id"] == 1)) {
+            data.data[i]["type_id"] = "Добавление";}
+
+            if (data.data[i]["status_id"] == 1) {
+              data.data[i]["status_id"] = "Новое";
+            } else if ((data.data[i]["status_id"] == 2)) {
+              data.data[i]["status_id"] = "Отклонено";}
+              else if ((data.data[i]["status_id"] == 3)) {
+                data.data[i]["status_id"] = "Принято";}
+                else if ((data.data[i]["status_id"] == 4)) {
+                  data.data[i]["status_id"] = "Обработанно";}
+
+
+                  if (data.data[i]["tag_id"] == 1) {
+                    data.data[i]["tag_id"] = "Влияние на человека";}  
+                    else if ((data.data[i]["tag_id"] == 2)) {
+                      data.data[i]["tag_id"] = "внешность человека";}
+                      else if ((data.data[i]["tag_id"] == 3)) {
+                        data.data[i]["tag_id"] = "действия человека";}
+                        else if ((data.data[i]["tag_id"] == 5)) {
+                          data.data[i]["tag_id"] = "другое";}
+                          else if ((data.data[i]["tag_id"] == 6)) {
+                            data.data[i]["tag_id"] = "количество";}
+                            else if ((data.data[i]["tag_id"] == 7)) {
+                              data.data[i]["tag_id"] = "негативные привычки";}
+                              else if ((data.data[i]["tag_id"] == 9)) {
+                                data.data[i]["tag_id"] = "описание человека";}
+                                else if ((data.data[i]["tag_id"] == 10)) {
+                                  data.data[i]["tag_id"] = "отличительные черты человека";}
+                                  else if ((data.data[i]["tag_id"] == 11)) {
+                                    data.data[i]["tag_id"] = "поведение человека";}
+                                    else if ((data.data[i]["tag_id"] == 12)) {
+                                      data.data[i]["tag_id"] = "поступки человека";}
+                                      else if ((data.data[i]["tag_id"] == 13)) {
+                                        data.data[i]["tag_id"] = "предпочтение человека ";}
+                                        else if ((data.data[i]["tag_id"] == 14)) {
+                                          data.data[i]["tag_id"] = "состояние человека";}
+                                          else if ((data.data[i]["tag_id"] == 15)) {
+                                            data.data[i]["tag_id"] = "социальные отношения";}
+                                            else if ((data.data[i]["tag_id"] == 16)) {
+                                              data.data[i]["tag_id"] = "характер человека";}
+                                              else if ((data.data[i]["tag_id"] == 18)) {
+                                                data.data[i]["tag_id"] = "коммуникация";}
+                                                else if ((data.data[i]["tag_id"] == 19)) {
+                                                  data.data[i]["tag_id"] = "описание ситуации";}
+                                                  else if ((data.data[i]["tag_id"] == 20)) {
+                                                    data.data[i]["tag_id"] = "характер действия";}
+
+
+
+        }
+
+
+      setrequest(data.data); 
+    } catch (error) {
+      console.log(error)
+      
+    }
   }
 
   async function add_phrase() {

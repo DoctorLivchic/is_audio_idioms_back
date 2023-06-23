@@ -127,9 +127,9 @@ function ManageOfPhrase() {
       for (let i = 0; i < data.data.length; i++) {
         if (data.data[i]["language_id"] == 1) {
           data.data[i]["language_id"] = "Русский";
-        } else if ((data.data[i]["language_id"] = 2)) {
+        } else if ((data.data[i]["language_id"] == 2)) {
           data.data[i]["language_id"] = "Корейский";
-        } else {
+        } else if ((data.data[i]["language_id"] == 3)) {
           data.data[i]["language_id"] = "Французский";
         }
       }
